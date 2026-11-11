@@ -9,6 +9,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { anthropicChat, DEFAULT_ANTHROPIC_MODEL, usage } from "../lib/anthropic.mjs";
 import { createEngine, headingMessages, llmOnlyMessages, parseChoice, parseHeadings, ragMessages, resolveCode } from "../lib/ccc/core.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -33,9 +34,24 @@ const N = Number(flag("n", "300"));
 const CONC = Number(flag("concurrency", "8"));
 const MODES = flag("modes", "nearest").split(",").map((s) => s.trim()).filter(Boolean);
 const RESUME = args.includes("--resume");
-const API_KEY = process.env.LLM_API_KEY || process.env.GMI_API_KEY || "";
+const OPENAI_KEY = process.env.LLM_API_KEY || process.env.GMI_API_KEY || "";
+// same choice as lib/llm.ts: Claude when ANTHROPIC_API_KEY is set, else an OpenAI-compatible endpoint
+const PROVIDER =
+  process.env.LLM_PROVIDER === "openai" && OPENAI_KEY
+    ? "openai"
+    : process.env.ANTHROPIC_API_KEY
+      ? "anthropic"
+      : OPENAI_KEY
+        ? "openai"
+        : null;
+const API_KEY = OPENAI_KEY;
 const BASE_URL = (process.env.LLM_BASE_URL || "https://api.gmi-serving.com/v1").replace(/\/+$/, "");
-const MODEL = flag("model", process.env.LLM_MODEL || "meta-llama/Llama-3.3-70B-Instruct");
+const MODEL = flag(
+  "model",
+  PROVIDER === "anthropic"
+    ? process.env.ANTHROPIC_MODEL || DEFAULT_ANTHROPIC_MODEL
+    : process.env.LLM_MODEL || "meta-llama/Llama-3.3-70B-Instruct"
+);
 
 for (const m of MODES) {
   if (!["nearest", "llm", "rag"].includes(m)) {
@@ -43,13 +59,14 @@ for (const m of MODES) {
     process.exit(1);
   }
 }
-if (MODES.some((m) => m !== "nearest") && !API_KEY) {
-  console.error("Modes llm/rag need LLM_API_KEY or GMI_API_KEY (put it in .env.local).");
+if (MODES.some((m) => m !== "nearest") && !PROVIDER) {
+  console.error("Modes llm/rag need ANTHROPIC_API_KEY, or LLM_API_KEY / GMI_API_KEY (put it in .env.local).");
   process.exit(1);
 }
 
 // --- same call as lib/llm.ts -------------------------------------------------
 async function chat(messages, { json = true, maxTokens = 400 } = {}) {
+  if (PROVIDER === "anthropic") return anthropicChat(messages, { model: MODEL, maxTokens });
   const body = { model: MODEL, messages, temperature: 0, max_tokens: maxTokens };
   if (json) body.response_format = { type: "json_object" };
   let last = "";
@@ -228,3 +245,9 @@ console.log(`wrote ${path.relative(root, resultsPath)}`);
 if (!MODES.includes("llm") || !MODES.includes("rag")) {
   console.log("To run the model modes once a key is in .env.local:  node scripts/benchmark.mjs --modes llm,rag --n 300 --concurrency 8 --resume");
 }
+
+process.on("exit", () => {
+  if (usage.calls > 0) {
+    console.log(`model calls: ${usage.calls}, input tokens: ${usage.input}, output tokens: ${usage.output}`);
+  }
+});

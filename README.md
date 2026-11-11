@@ -69,7 +69,7 @@ Simulated:
 - Next.js 16, TypeScript, no database. Board state lives in the browser and resets on reload.
 - `lib/engine` is the card engine: assignment, escalation, reassignment when someone leaves, the delay event, the single-point list.
 - `lib/ccc` retrieves similar past rulings (BM25 over character bigrams and word tokens), builds a candidate list of real codes, and asks the model to pick one from that list with a reason.
-- `lib/llm.ts` is a small OpenAI-compatible client. It defaults to GMI Cloud.
+- `lib/llm.ts` reaches a model one of two ways: Claude through the Anthropic SDK (`lib/anthropic.mjs`), or any OpenAI-compatible endpoint. The demo and the benchmark ran on Claude.
 - `scripts/build-data.mjs` builds the compact JSON from the government CSV files. `scripts/benchmark.mjs` runs the test.
 
 ## Run it
@@ -80,14 +80,23 @@ cp .env.example .env.local   # then put your key in
 npm run dev
 ```
 
-`.env.local`:
+`.env.local`, one of the two:
 
 ```
-GMI_API_KEY=...
-# optional
+# Claude through the Anthropic API
+ANTHROPIC_API_KEY=...
+
+# or any OpenAI-compatible endpoint
+LLM_API_KEY=...
 LLM_BASE_URL=https://api.gmi-serving.com/v1
 LLM_MODEL=meta-llama/Llama-3.3-70B-Instruct
 ```
+
+## Next: the model runs inside the company
+
+This demo calls a hosted model. A trading company will not send its supplier prices, customer list and landed costs to someone else's server, so the plan for real use is a model running on a machine the company owns.
+
+The code is already split for that. Everything the model does goes through one function in `lib/llm.ts`, and its second path speaks the OpenAI-compatible protocol that local servers such as Ollama and vLLM use. Pointing `LLM_BASE_URL` at one is a configuration change. What is not done yet: running the benchmark above on an open-weight model to see how far the accuracy drops, and choosing the smallest model that still holds it. Duty rates, import rules and the past rulings never depended on the model, so they stay exact whichever model is used.
 
 ## Outside Taiwan
 
