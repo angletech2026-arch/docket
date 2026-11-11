@@ -16,7 +16,7 @@ I used to work at my family's auto parts import business in Taiwan. One import s
 
 When one of those people is away, that step waits. A new hire needs years to cover for them.
 
-Chang Chun, a grain importer in Taiwan, asked me to build this for them. Grain adds its own steps: plant quarantine, border food inspection, best-before dates, shrinkage, lots kept apart by origin, repacking.
+Chang Chun, an international trading company in Taiwan that deals in grains, beans and cereals, asked me to build this for them. Grain adds its own steps: plant quarantine, border food inspection, best-before dates, shrinkage, lots kept apart by origin, repacking.
 
 ## What is in the demo
 

@@ -101,7 +101,7 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
   },
   {
     tag: "Who wants it",
-    say: "The same cards run a grain importer. Chang Chun in Taiwan asked me to build this. Next, I want to bring it to US importers.",
+    say: "The same cards run a grain importer. Chang Chun, an international grain trading company in Taiwan, asked me to build this. Next, I want to bring it to US importers.",
     run: (c) => {
       c.setOpenId(null);
       c.setView("wall");
