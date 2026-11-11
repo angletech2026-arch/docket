@@ -37,9 +37,9 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
   },
   {
     tag: "The idea",
-    say: "So I broke the whole company into cards. One shipment is ten of them, from reordering to logistics (trucks and forklifts).",
+    say: "So I broke the company’s work down into cards. One shipment is ten cards, from reordering to logistics (trucks and forklifts).",
   },
-  { tag: "The idea", say: "AI does most of the work on each card. A person decides." },
+  { tag: "The idea", say: "AI does most of the work on each card, and a person makes the decision." },
   {
     tag: "Does it work?",
     say: "Every imported item needs a customs code. The first six digits are the same in the US.",
@@ -50,7 +50,7 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
   },
   {
     tag: "Does it work?",
-    say: "Asked directly, the model gets 19 percent right. Reading past customs rulings, 62 percent. Tested on 300 real cases.",
+    say: "Asked directly, the model gets 19 percent right. When it reads past customs rulings first, it gets 62 percent. We tested it on 300 real cases.",
     run: (c) => {
       c.setOpenId(null);
       c.setView("bench");
@@ -58,7 +58,7 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
   },
   {
     tag: "Does it work?",
-    say: "With three options on the card, the right one is there 79 percent of the time. And parts the company imported before keep their code.",
+    say: "The card shows three options, and the right one is among them 79 percent of the time. Parts the company has imported before simply keep their code.",
   },
   {
     tag: "What the AI does not know",
@@ -70,12 +70,12 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
   },
   {
     tag: "What the AI does not know",
-    say: "The AI doesn’t know the third, and says so.",
+    say: "The AI doesn’t know the third one, and it says so.",
     run: (c) => c.dispatch({ type: "escalate", cardId: "a0", why: "“鳳梨頭” is not in the glossary" }),
   },
   {
     tag: "What the AI does not know",
-    say: "A senior answers once. It goes into the company brain, and everyone\u2019s assistant can teach it.",
+    say: "A senior answers once. The answer goes into the company brain, and everyone\u2019s assistant can teach it.",
     run: (c) =>
       c.dispatch({
         type: "teach",
@@ -88,7 +88,7 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
   },
   {
     tag: "When something goes wrong",
-    say: "A typhoon delays the ship. All the logistics (truck, forklift, crew) are rebooked.",
+    say: "A typhoon delays the ship. The logistics (truck, forklift and crew) are rebooked automatically.",
     run: (c) => {
       c.setOpenId(null);
       c.dispatch({ type: "typhoon" });
@@ -96,16 +96,16 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
   },
   {
     tag: "When something goes wrong",
-    say: "Someone quits. His cards move to other people. Nothing stops.",
+    say: "Someone quits. Their cards move to other people, and nothing stops.",
     run: (c) => c.dispatch({ type: "quit", personId: "jr1" }),
   },
   {
     tag: "Next",
-    say: "Today this runs on Claude. Next, a model inside the company, trained on its own cards.",
+    say: "Today this runs on Claude. Next, it will run on a model inside the company, trained on the company’s own cards.",
   },
   {
     tag: "Who wants it",
-    say: "The same cards run a grain importer. Chang Chun, an international grain trading company in Taiwan, asked me to build this. Next, I want to bring it to US importers.",
+    say: "The same system works for a grain importer. Chang Chun, an international grain trading company in Taiwan, asked me to build this. I want to bring it to US importers next.",
     run: (c) => {
       c.setOpenId(null);
       c.setView("wall");
