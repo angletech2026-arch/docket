@@ -515,6 +515,42 @@ function fmt(code: string) {
 type Guess = { meaning: string; confidence: string; usedModel: boolean } | null;
 const guessCache = new Map<string, Guess>();
 
+/**
+ * Ask the model for the customs codes and the slang guess ahead of time, so the two cards open
+ * with their answers already on them. Used by presenter mode. Same requests the cards make.
+ */
+export function prewarm(lang: "en" | "zh") {
+  const newLines = invoice.lines.filter((l) => !l.onFile);
+  if (!cccCache.has(`a4:${lang}`)) {
+    fetch("/api/classify", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        lang,
+        items: newLines.map((l) => ({ name: `${l.nameZh} ${l.nameEn}`, material: l.material, use: l.use })),
+      }),
+    })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j: { suggestions: Suggestion[]; llm: boolean } | null) => {
+        if (!j) return;
+        const byLine: Record<string, Suggestion> = {};
+        newLines.forEach((l, i) => (byLine[l.sku] = j.suggestions[i]));
+        cccCache.set(`a4:${lang}`, { byLine, llm: j.llm });
+      })
+      .catch(() => {});
+  }
+  if (!guessCache.has(`a0:${lang}`)) {
+    fetch("/api/inquiry", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ lang, message: inquiry.message, term: "鳳梨頭", known: ["水龜", "李仔串"] }),
+    })
+      .then((r) => r.json())
+      .then((j: Guess) => guessCache.set(`a0:${lang}`, j))
+      .catch(() => {});
+  }
+}
+
 function InquiryPanel({ card, state, dispatch, onClose }: Props) {
   const t = tr(state);
   const zh = state.lang === "zh";

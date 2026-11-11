@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // no dev badge in the corner, so screen recordings stay clean
+  devIndicators: false,
   cacheComponents: true,
   partialPrefetching: true,
 };

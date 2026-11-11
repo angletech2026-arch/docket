@@ -225,6 +225,21 @@ tr.unknown td { background: var(--red-bg); }
 .teach .row { display: grid; grid-template-columns: 1fr 240px auto; gap: 8px; align-items: end; }
 .reply { white-space: pre-wrap; background: #fffdf8; border: 1px solid var(--rule); padding: 10px 12px; font-size: 14px; }
 
+/* ---------- presenter mode ---------- */
+.cap {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 80;
+  background: rgba(20, 19, 17, 0.93); color: #fff;
+  padding: 14px 48px 16px; font-size: 23px; line-height: 1.35; text-align: center; font-weight: 500;
+}
+.capnote {
+  position: fixed; right: 28px; bottom: 110px; z-index: 79; width: 460px;
+  background: var(--sheet); border: 2px solid var(--ink); box-shadow: 6px 6px 0 var(--ink);
+  padding: 14px 18px; font-size: 15px; animation: land 0.5s ease-out;
+}
+.capnote .row { display: grid; grid-template-columns: 64px 1fr; gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--rule-2); }
+.capnote .row span { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-2); padding-top: 3px; }
+.capnote p { font-size: 13px; color: var(--ink-2); margin-top: 8px; }
+
 /* ---------- benchmark & setup ---------- */
 .page { padding: 20px; max-width: 1180px; }
 .page h1 { font-size: 20px; margin-bottom: 4px; }

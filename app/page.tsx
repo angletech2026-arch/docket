@@ -2,20 +2,136 @@
 
 import { useEffect, useReducer, useState } from "react";
 import { initialState, load, openStake, reducer, singlePoints } from "@/lib/engine/engine";
-import type { Card, CompanyId, Lang, State } from "@/lib/engine/types";
+import type { Action, Card, CompanyId, Lang, State } from "@/lib/engine/types";
 import { nt, usd } from "@/lib/fmt";
 import { literal } from "@/lib/sample/auto";
-import { Drawer } from "./ui/Drawer";
+import { Drawer, prewarm } from "./ui/Drawer";
 import { Bench } from "./ui/Bench";
 import { Setup } from "./ui/Setup";
 
 type View = "wall" | "bench" | "setup";
+
+/**
+ * Presenter mode, for recording the demo. Press P to start, then the right arrow for each step.
+ * Every step puts its line on screen as a caption and performs the matching action on the board,
+ * so the words and the screen cannot drift apart.
+ */
+type Ctx = {
+  dispatch: (a: Action) => void;
+  setView: (v: View) => void;
+  setOpenId: (id: string | null) => void;
+};
+const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
+  {
+    say: "I used to work at my family’s auto parts import business in Taiwan. Every step depended on one or two senior people.",
+    run: (c) => {
+      c.setOpenId(null);
+      c.setView("wall");
+      c.dispatch({ type: "reset", company: "auto", lang: "en" });
+    },
+  },
+  { say: "So every job becomes a card. AI does most of the work. A person decides." },
+  {
+    say: "Every imported item needs a customs code. The first six digits are the same in the US.",
+    run: (c) => {
+      c.setView("wall");
+      c.setOpenId("a4");
+    },
+  },
+  {
+    say: "Asked directly, the model gets 19 percent. Reading past customs rulings, 62, on 300 real cases.",
+    run: (c) => {
+      c.setOpenId(null);
+      c.setView("bench");
+    },
+  },
+  {
+    say: "A mechanic asks for two plum skewers, a water turtle and a pineapple head. That’s slang for car parts.",
+    run: (c) => {
+      c.setView("wall");
+      c.setOpenId("a0");
+    },
+  },
+  {
+    say: "The AI doesn’t know the third, and says so.",
+    run: (c) => c.dispatch({ type: "escalate", cardId: "a0", why: "“鳳梨頭” is not in the glossary" }),
+  },
+  {
+    say: "A senior answers once. Now everyone knows.",
+    run: (c) =>
+      c.dispatch({
+        type: "teach",
+        term: "鳳梨頭",
+        meaning: "CV joint, the outer end of the drive shaft",
+        sku: "BR-CV-5521",
+        by: "Chen",
+        cardId: "a0",
+      }),
+  },
+  {
+    say: "A typhoon delays the ship. Truck, forklift and crew are rebooked.",
+    run: (c) => {
+      c.setOpenId(null);
+      c.dispatch({ type: "typhoon" });
+    },
+  },
+  {
+    say: "Someone quits. His cards move to other people. Nothing stops.",
+    run: (c) => c.dispatch({ type: "quit", personId: "jr1" }),
+  },
+  {
+    say: "Today this runs on Claude. Next, it runs on a model inside the company, trained on its own cards. The know-how stays in the building.",
+  },
+  {
+    say: "Chang Chun, a grain importer in Taiwan, asked me to build this. The US is next.",
+    run: (c) => {
+      c.setOpenId(null);
+      c.setView("wall");
+      c.dispatch({ type: "reset", company: "grain", lang: "en" });
+    },
+  },
+];
+const MODEL_STEP = 9;
 
 export default function Home() {
   const [state, dispatch] = useReducer(reducer, "auto" as CompanyId, initialState);
   const [view, setView] = useState<View>("wall");
   const [openId, setOpenId] = useState<string | null>(null);
   const [quitPick, setQuitPick] = useState("jr1");
+  const [present, setPresent] = useState(false);
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const el = e.target as HTMLElement | null;
+      if (el && ["INPUT", "TEXTAREA", "SELECT"].includes(el.tagName)) return;
+      const go = (n: number) => {
+        const next = Math.max(0, Math.min(STEPS.length - 1, n));
+        setStep(next);
+        STEPS[next].run?.({ dispatch, setView, setOpenId });
+      };
+      if (!present) {
+        if (e.key === "p" || e.key === "P") {
+          setPresent(true);
+          prewarm("en");
+          go(0);
+        }
+        return;
+      }
+      if (e.key === "ArrowRight" || e.key === " ") {
+        e.preventDefault();
+        go(step + 1);
+      } else if (e.key === "ArrowLeft") {
+        setStep(Math.max(0, step - 1));
+      } else if (e.key === "r" || e.key === "R") {
+        go(0);
+      } else if (e.key === "Escape") {
+        setPresent(false);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [present, step]);
   const lang = state.lang;
   const t = (en: string, zh: string) => (lang === "zh" ? zh : en);
 
@@ -126,6 +242,24 @@ export default function Home() {
           <Side state={state} />
         </main>
       )}
+
+      {present && step === MODEL_STEP && (
+        <div className="capnote">
+          <div className="row">
+            <span>Today</span>
+            <b>Claude, hosted</b>
+          </div>
+          <div className="row">
+            <span>Next</span>
+            <b>A model inside the company, trained on its own cards</b>
+          </div>
+          <p>
+            Every decision made on a card, and every answer a senior gives, is a training example that never leaves the
+            building.
+          </p>
+        </div>
+      )}
+      {present && <div className="cap">{STEPS[step].say}</div>}
 
       {open && (
         <>
