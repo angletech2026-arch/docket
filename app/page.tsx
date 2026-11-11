@@ -30,7 +30,10 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
       c.dispatch({ type: "reset", company: "auto", lang: "en" });
     },
   },
-  { say: "So every job becomes a card. AI does most of the work. A person decides." },
+  {
+    say: "So I broke the whole company into cards. One shipment is ten of them, from reordering to the forklift.",
+  },
+  { say: "AI does most of the work on each card. A person decides. So anyone can pick a card up." },
   {
     say: "Every imported item needs a customs code. The first six digits are the same in the US.",
     run: (c) => {
@@ -91,7 +94,7 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
     },
   },
 ];
-const MODEL_STEP = 9;
+const MODEL_STEP = 10;
 
 export default function Home() {
   const [state, dispatch] = useReducer(reducer, "auto" as CompanyId, initialState);
