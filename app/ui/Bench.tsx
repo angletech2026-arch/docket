@@ -22,6 +22,7 @@ type Results = {
   n: number;
   protocol: string;
   modes: Record<string, Mode>;
+  top3?: { n: number; top1: { d6: number; d8: number; d11: number }; top3: { d6: number; d8: number; d11: number } } | null;
   items: Item[];
 };
 
@@ -117,6 +118,14 @@ export function Bench({ lang }: { lang: Lang }) {
                       {p(s.d11, s.n)}
                     </div>
                   </div>
+                  {m.key === "rag" && r.top3 && (
+                    <div className="top3">
+                      <b>{p(r.top3.top3.d8, r.top3.n)}</b>{" "}
+                      {zh
+                        ? `的時候，正確答案在卡片給的三個選項裡（${r.top3.n} 題裡 ${r.top3.top3.d8} 題）。卡片給一個建議加兩個備選，由人來選。`
+                        : `of the time the right code is among the three the card shows (${r.top3.top3.d8} of ${r.top3.n}). The card gives one suggestion and two alternatives, and a person picks.`}
+                    </div>
+                  )}
                   {s.invalid > 0 && (
                     <div className="no" style={{ fontSize: 12, marginTop: 6 }}>
                       {zh ? `有 ${s.invalid} 題寫出來的號列根本不存在` : `${s.invalid} answers were codes that do not exist`}

@@ -16,6 +16,13 @@ export async function GET() {
       it.nameEn = glosses[it.id];
       it.truthEn = en.get(it.truth);
     }
+    // how often the right code is among the three the card shows (scripts/benchmark-top3.mjs), if that run exists
+    results.top3 = await readFile(path.join(dir, "benchmark", "top3.json"), "utf8")
+      .then((t) => {
+        const j = JSON.parse(t);
+        return { n: j.n, top1: j.top1, top3: j.top3, model: j.model };
+      })
+      .catch(() => null);
     return Response.json(results);
   } catch {
     return Response.json({ missing: true });

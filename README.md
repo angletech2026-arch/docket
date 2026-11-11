@@ -47,6 +47,10 @@ A time split, and not leave-one-out, because many rulings are near-copies of eac
 
 Model: `claude-haiku-5-5`, the cheapest current Claude model. One full run of all three methods costs under one US dollar.
 
+The card does not give one answer. It gives a suggestion and up to two alternatives, and a person picks. In a separate run on the same 300 items (`scripts/benchmark-top3.mjs`), the right code at 8 digits was the suggestion 60.3% of the time and was among the codes shown 78.7% of the time. On average the card showed 2.97 codes per item. That second number is the one that matches how the card is used.
+
+These are also the hard cases. Importers ask Customs for an advance ruling when they cannot tell which code applies, so the test set is made of the goods people found difficult. Parts a company has imported before simply keep their code.
+
 One caveat. The first full run of the third method scored 56.7% at 8 digits. We then changed how candidate codes are gathered and how the model is asked to choose, and reran on the same 300 items to get 61.7%. Because the method was revised after seeing a score on this test set, 61.7% is slightly optimistic. Both runs are described in `data/benchmark/README.md`. No rule was written for any single item, and no 2018 ruling reaches a prompt.
 
 Asked directly, the model usually knows the chapter and often the 6-digit international code, but it cannot recall Taiwan's national digits: 297 of the 300 codes it wrote do not exist in the tariff. Given past rulings and a list of real codes to choose from, it never returns a code that does not exist, and it is right at the duty-rate level more than three times as often.

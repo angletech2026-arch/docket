@@ -57,6 +57,10 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
     },
   },
   {
+    tag: "Does it work?",
+    say: "With three options on the card, the right one is there 79 percent of the time. And parts the company imported before keep their code.",
+  },
+  {
     tag: "What the AI does not know",
     say: "A mechanic asks for two plum skewers, a water turtle and a pineapple head. That’s slang for car parts.",
     run: (c) => {
