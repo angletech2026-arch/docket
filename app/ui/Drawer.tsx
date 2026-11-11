@@ -67,6 +67,8 @@ export function Drawer({ card, state, dispatch, onClose }: Props) {
           <GenericPanel card={card} state={state} dispatch={dispatch} onClose={onClose} />
         )}
 
+        <Assistant key={card.id} card={card} state={state} />
+
         <h4>{t("History", "紀錄")}</h4>
         <ul className="hist">
           {card.history.map((h, i) => (
@@ -145,6 +147,107 @@ function GenericPanel({ card, state, dispatch, onClose }: Props) {
         </div>
       )}
     </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* The assistant on each card                                         */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Each person has an assistant on the card they are holding. It teaches from the company brain:
+ * what the owner and the senior staff have said about this kind of card.
+ */
+function Assistant({ card, state }: { card: Card; state: State }) {
+  const t = tr(state);
+  const zh = state.lang === "zh";
+  const holder = state.people.find((p) => p.id === card.assignee);
+  const lessons = state.brain.filter((l) => l.kind === card.kind);
+  const [q, setQ] = useState("");
+  const [a, setA] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  if (!holder || holder.external || card.status === "done" || card.status === "waiting") return null;
+
+  const ask = async (question: string) => {
+    if (!question.trim() || busy) return;
+    setQ(question);
+    setBusy(true);
+    setA(null);
+    try {
+      const r = await fetch("/api/ask", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          lang: state.lang,
+          person: `${holder.name}, ${holder.role}`,
+          question,
+          card: { stage: card.stage, title: card.title, prepared: card.prepared, ask: card.ask, stakeNote: card.stakeNote },
+          lessons: lessons.map((l) => ({ text: l.text, by: l.by })),
+          seniors: state.people.filter((p) => p.active && !p.external && p.level >= 2).map((p) => `${p.name} (${p.role})`),
+        }),
+      });
+      const j = await r.json();
+      setA(j.answer ?? j.error ?? "");
+    } catch (e) {
+      setA(String((e as Error).message));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const chips = zh
+    ? ["這張卡我要檢查什麼？", "做錯會怎樣？", "為什麼是這樣處理？"]
+    : ["What should I check on this card?", "What happens if I get it wrong?", "Why is it done this way?"];
+
+  return (
+    <div className="assist">
+      <h4>
+        {zh ? `${holder.name} 的助手` : `${holder.name}${holder.name.endsWith("s") ? "'" : "'s"} assistant`}
+        <span>
+          {zh
+            ? `從公司大腦教你：老闆和老手留下的 ${state.brain.length} 條經驗`
+            : `teaches from the company brain: ${state.brain.length} things the owner and the seniors have said`}
+        </span>
+      </h4>
+      {lessons.length === 0 ? (
+        <p className="faint">
+          {t("Nobody senior has left a note on this kind of card yet.", "這種卡還沒有老手留下經驗。")}
+        </p>
+      ) : (
+        lessons.map((l, i) => (
+          <div key={i} className="lesson">
+            &ldquo;{l.text}&rdquo;
+            <span className="by">{l.by}</span>
+          </div>
+        ))
+      )}
+      <div className="chips">
+        {chips.map((c) => (
+          <button key={c} className="btn small" disabled={busy} onClick={() => ask(c)}>
+            {c}
+          </button>
+        ))}
+      </div>
+      <form
+        className="askrow"
+        onSubmit={(e) => {
+          e.preventDefault();
+          ask(q);
+        }}
+      >
+        <input
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          placeholder={t("Ask about this card", "問這張卡的事")}
+          aria-label={t("Ask about this card", "問這張卡的事")}
+        />
+        <button className="btn solid" disabled={busy || !q.trim()}>
+          {t("Ask", "問")}
+        </button>
+      </form>
+      {busy && <span className="working">{t("looking in the company brain", "正在查公司大腦")}</span>}
+      {a && <div className="reply">{a}</div>}
+    </div>
   );
 }
 

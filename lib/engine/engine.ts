@@ -182,6 +182,8 @@ export function reducer(state: State, action: Action): State {
       let next: State = {
         ...state,
         glossary,
+        // the answer also goes into the company brain, so the assistant on every card can teach it
+        brain: [...state.brain, { kind: "inquiry", by: action.by, text: `${action.term} = ${action.meaning}` }],
         cards: state.cards.map((c) =>
           c.id === action.cardId
             ? {

@@ -60,7 +60,7 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
     run: (c) => c.dispatch({ type: "escalate", cardId: "a0", why: "“鳳梨頭” is not in the glossary" }),
   },
   {
-    say: "A senior answers once. Now everyone knows.",
+    say: "A senior answers once. It goes into the company brain, and everyone\u2019s assistant can teach it.",
     run: (c) =>
       c.dispatch({
         type: "teach",
@@ -86,7 +86,7 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
     say: "Today this runs on Claude. Next, a model inside the company, trained on its own cards.",
   },
   {
-    say: "The same cards run a grain importer. Chang Chun, a grain importer in Taiwan, asked me to build this. Next, I want to bring it to US importers.",
+    say: "The same cards run a grain importer. Chang Chun in Taiwan asked me to build this. Next, I want to bring it to US importers.",
     run: (c) => {
       c.setOpenId(null);
       c.setView("wall");
@@ -272,6 +272,7 @@ export default function Home() {
             <ol>
               <li>The know-how goes on the card, not in one person&apos;s head.</li>
               <li>AI does most of the work on each card. A person decides.</li>
+              <li>Each person has an assistant that teaches from the company brain: what the founder and the seniors know.</li>
               <li>When someone is out, the card moves. The work does not stop.</li>
               <li>Every decision on a card becomes training data for the company&apos;s own model.</li>
             </ol>
@@ -442,6 +443,28 @@ function Side({ state }: { state: State }) {
           ))}
         </section>
       )}
+
+      <section>
+        <h3>{t("Company brain", "公司大腦")}</h3>
+        <p className="faint" style={{ fontSize: 11.5, marginBottom: 4 }}>
+          {t(
+            "What the owner and the seniors have said. Every person's assistant teaches from it.",
+            "老闆和老手說過的話。每個人的助手都從這裡教。",
+          )}
+        </p>
+        {Object.entries(
+          state.brain.reduce<Record<string, number>>((acc, l) => {
+            const who = l.by.split(/[,（]/)[0].trim();
+            acc[who] = (acc[who] ?? 0) + 1;
+            return acc;
+          }, {}),
+        ).map(([who, n]) => (
+          <div key={who} className="brainrow">
+            <span>{who}</span>
+            <b>{n}</b>
+          </div>
+        ))}
+      </section>
 
       <section>
         <h3>{t("Where the model runs", "模型跑在哪裡")}</h3>

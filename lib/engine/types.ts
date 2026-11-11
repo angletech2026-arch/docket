@@ -93,6 +93,9 @@ export type GlossaryEntry = {
   by: string;
 };
 
+/** Something the owner or a senior knows about a kind of card, in their own words. */
+export type Lesson = { kind: CardKind; text: string; by: string };
+
 export type LogEntry = { id: number; text: string; tone?: "event" | "owner" | "plain" };
 
 export type Capability = { label: string; skill: Skill; minLevel: 1 | 2 | 3 };
@@ -112,6 +115,8 @@ export type State = {
   shipments: Shipment[];
   cards: Card[];
   glossary: GlossaryEntry[];
+  /** the company brain: what the owner and senior staff have taught, by kind of card */
+  brain: Lesson[];
   capabilities: Capability[];
   log: LogEntry[];
   seq: number;
