@@ -37,7 +37,7 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
   },
   {
     tag: "The idea",
-    say: "So I broke the whole company into cards. One shipment is ten of them, from reordering to the forklift.",
+    say: "So I broke the whole company into cards. One shipment is ten of them, from reordering to logistics.",
   },
   { tag: "The idea", say: "AI does most of the work on each card. A person decides." },
   {
@@ -84,7 +84,7 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
   },
   {
     tag: "When something goes wrong",
-    say: "A typhoon delays the ship. Truck, forklift and crew are rebooked.",
+    say: "A typhoon delays the ship. All the logistics are rebooked.",
     run: (c) => {
       c.setOpenId(null);
       c.dispatch({ type: "typhoon" });
