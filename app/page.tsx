@@ -50,7 +50,7 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
   },
   {
     tag: "Does it work?",
-    say: "Asked directly, the model gets 19 percent. Reading past customs rulings, 62, on 300 real cases.",
+    say: "Asked directly, the model gets 19 percent right. Reading past customs rulings, 62 percent. Tested on 300 real cases.",
     run: (c) => {
       c.setOpenId(null);
       c.setView("bench");

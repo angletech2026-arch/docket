@@ -1,0 +1,685 @@
+{
+ "recordedAt": "2026-11-11T13:32:09.200Z",
+ "classify": {
+  "en": {
+   "byLine": {
+    "BR-OS-9001": {
+     "code": "90271000009",
+     "formatted": "9027.10.00.00-9",
+     "zh": "氣體或煙之分析器具",
+     "en": "Gas or smoke analysis apparatus",
+     "duty": "0%",
+     "rules": [],
+     "reason": "An automotive exhaust oxygen sensor with a zirconia element is a gas analysis instrument under heading 9027, as Customs ruled for identical goods in 2015.",
+     "confidence": "high",
+     "alternatives": [
+      {
+       "code": "90268010003",
+       "formatted": "9026.80.10.00-3",
+       "zh": "其他供計量氣體流量或其他可變因素之儀器及器具",
+       "en": "Other instruments and apparatus for measuring the flow of gases or other variables",
+       "duty": "0%"
+      },
+      {
+       "code": "85443000001",
+       "formatted": "8544.30.00.00-1",
+       "zh": "點火線組及其他車輛、飛機或船用線組",
+       "en": "Ignition wiring sets and other wiring sets of kind used in vehicles, aircaft or ships",
+       "duty": "3.5%"
+      }
+     ],
+     "similar": [
+      {
+       "id": "104AA0621",
+       "name": "含氧感知器 OXYGEN SENSOR (ZIRCONIA INDUCTORS) TYPE：1 WIRE 1001",
+       "code": "90271000009",
+       "date": "2015-10-23",
+       "why": "本案貨品依檢附之資料說明，係用於偵測車輛排氣中含氧量多寡，以控制車輛之空燃比，提高燃燒效率，依據關務署104年10月15日台關稅字第1041023564號函示及參據HS註解對稅則第9027節之詮釋，宜歸列貨品分類號列9027.10.00.00-9「氣體或煙之分析器具」。",
+       "codeEn": "Gas or smoke analysis apparatus"
+      },
+      {
+       "id": "104BA0227",
+       "name": "含氧感知器OXYGEN SENSOR AZD0101-BA001",
+       "code": "90271000009",
+       "date": "2015-10-16",
+       "why": "一、依據財政部關務署台關稅字第1041023563號函釋，經再審核本關（97）高預字第169號進口貨物稅則預先審核答覆函，原核定貨品分類號列第9027.80.90.90-6號不適當，應予變更。 二、本案貨品依檢附之說明，係用於偵測車輛排氣中之含氧量，供控制車輛空氣及燃料之混合比，屬「氣體或煙之分析器具」，宜歸列稅則號別第9027.10.00.00-9號。",
+       "codeEn": "Gas or smoke analysis apparatus"
+      },
+      {
+       "id": "101AA0122",
+       "name": "接頭組 型號：CSL 規格：300V 20AWG",
+       "code": "85443000001",
+       "date": "2012-02-22",
+       "why": "本案貨品依檢附之資料說明，係用於組裝到汽車之電導體，為用來偵測汽車引擎排放廢氣中含氧量之含氧感知器所用之訊號傳輸線，宜歸列貨品分類號列8544.30.00.00-1。",
+       "codeEn": "Ignition wiring sets and other wiring sets of kind used in vehicles, aircaft or ships"
+      },
+      {
+       "id": "101CA0080",
+       "name": "牙科用氧化鋯陶瓷塊(硬度低於莫氏硬度9)",
+       "code": "69091990000",
+       "date": "2012-07-09",
+       "why": "本案貨品依申請人檢附之資料說明其主要成分為Y2O3、Al2O3、SiO2、Fe2O3、Na2O、Ig-Loss等原料，經混合燒結而成牙科用之氧化鋯陶瓷塊，參據HS中文註解有關稅則第6909節之詮釋所述及其硬度相當於莫氏硬度小於9者，宜歸列貨品分號號列第6909.19.90.00-0號。",
+       "codeEn": "Chemical or other industrial wares, of ceramic"
+      },
+      {
+       "id": "099BA222",
+       "name": "耐磨陶瓷內襯粉煤不銹鋼彎管(CAST CERAMIC LINED STAINLESS STEEL BENDING PIPE)",
+       "code": "73072900003",
+       "date": "2010-10-11",
+       "why": "本案貨品依檢附成分表及圖樣等資料說明,係以不銹鋼管及耐磨陶瓷製成之彎管,參據H.S.中文註解對稅則第7307節之詮釋及其主要材質為不銹鋼製,歸列貨品分類號列第7307.29.00.00-3號。",
+       "codeEn": "Other tube or pipe fittings, of stainless steel"
+      },
+      {
+       "id": "099BA111",
+       "name": "引擎(發動機)管理系統(Engine Management System)",
+       "code": "90328990009",
+       "date": "2010-05-28",
+       "why": "本案貨品依檢附資料說明,係藉引擎內多項部件感應器之量測訊息,輸入引擎控制單元(ECU)加以運算,決定該引擎之最適空氣、噴油量及點火時機等,並加以保持之,參據H.S.中文註解對稅則第9032節之詮釋及(92)高預字第0035號預核案例,歸列貨品分類號列9032.89.90.00-9。",
+       "codeEn": "Other automatic regulating or controlling instruments and apparatus"
+      },
+      {
+       "id": "101AA0913",
+       "name": "High-Function General-Purpose AC Drives THYFREC 400V series,VT240S-018H",
+       "code": "85371010002",
+       "date": "2012-11-09",
+       "why": "本案貨品依檢附之資料說明，為用於感應馬達及PM馬達之驅動控制，具有定扭矩控制、變動扭矩控制、有感知器向量控制、無感知器向量控制、有感知器PM馬達控制、無感知器PM馬達控制等六合一功能，屬專供配合機器使用之電子控制設備，宜歸列貨品分類號列8537.10.10.00-2。",
+       "codeEn": "Electronics control apparatus (including digital controllers, programmed controllers, microprocessors and other similar control apparatus) exclusively for use with machineries, for a voltage not exceeding 1,000 V"
+      },
+      {
+       "id": "100DA0154",
+       "name": "STAINLESS STEEL CASTING(CASTING PART FOR BEAR BARREL IN ROUGH STATE)",
+       "code": "84819090004",
+       "date": "2011-12-15",
+       "why": "本案貨品依檢附之圖樣資料係可識別為安裝於啤酒桶上之閥組件毛胚，宜歸列貨品分類號列第8481.90.90.00-4號。",
+       "codeEn": "Other parts of articles of heading 84.81"
+      },
+      {
+       "id": "104CA0229",
+       "name": "不鏽鋼手鍊(STAINLESS STEEL BRACELET)名稱:王者之風，型號:S016，規格:23節數 20.5公分 10MM",
+       "code": "71171900005",
+       "date": "2015-10-20",
+       "why": "本案貨物為不鏽鋼手鍊，用於配帶裝飾，參考HS註解中文版對稅則第7117節詮釋及本關（092）北預字第103號稅則預先審核案例，案內貨物宜依功能與用途歸列貨品分類號列第7117.19.00.00-5號「其他卑金屬製仿首飾，不論是否鍍貴金屬」項下。",
+       "codeEn": "Other imitation jewellery, of base metal, whether or not plated with precious metal"
+      },
+      {
+       "id": "102AA0924",
+       "name": "真空斷路器另件 HARNESS(線束) 規格：PVC 500V 1.25mm2 電壓範圍：直流(DC)110/220V、交流(AC)110/220V",
+       "code": "85444290909",
+       "date": "2013-11-19",
+       "why": "本案貨品依檢附之圖說資料，為用真空斷路器之線束，參據HS註解對稅則第8544節之詮釋，宜歸列貨品分類號列8544.42.90.90-9。",
+       "codeEn": "Other electric conductors, fitted with connectors, for a voltage not exceeding 1000 V"
+      }
+     ],
+     "source": "llm+rulings"
+    },
+    "BR-TH-3310": {
+     "code": "84099190903",
+     "formatted": "8409.91.90.90-3",
+     "zh": "其他專用或主要用於火花點火內燃活塞引擎之零件",
+     "en": "Other parts suitable for use solely or principally with spark-ignition internal combustion piston engines",
+     "duty": "15%",
+     "rules": [],
+     "reason": "A passenger-car engine coolant thermostat is a part suitable principally for internal combustion piston engines and is classed under heading 8409, in the residual spark-ignition parts line since the engine type is unspecified.",
+     "confidence": "medium",
+     "alternatives": [
+      {
+       "code": "84099990004",
+       "formatted": "8409.99.90.00-4",
+       "zh": "其他專用或主要用於壓縮點火內燃活塞引擎之零件",
+       "en": "Other parts suitable for use solely or principally with compression-ignition internal combustion piston engines",
+       "duty": "5%"
+      },
+      {
+       "code": "84819090004",
+       "formatted": "8481.90.90.00-4",
+       "zh": "其他第８４８１節所屬貨品之零件",
+       "en": "Other parts of articles of heading 84.81",
+       "duty": "3%"
+      }
+     ],
+     "similar": [
+      {
+       "id": "102BA173",
+       "name": "\"TRANE\"CenTraVac Liquid chillers單冷定頻離心式主機，型號:CVHF-1300， 冷卻能力(Cooling Capacity):1250RT(蒸發器進/出水溫度:13℃/7℃、冷凝器進/出水溫度:32℃/37℃) 冷卻能力(Cooling Capacity):1250RT",
+       "code": "84186910006",
+       "date": "2013-07-23",
+       "why": "本案貨品依檢附資料，係用於空調系統之冰水主機（chillers），歸列貨品分類號列第8418.69.10.00-6號項下。",
+       "codeEn": "Refrigerating machines of electricity, for central system"
+      },
+      {
+       "id": "101AA0827",
+       "name": "Spring Element/KY-R233",
+       "code": "86080019009",
+       "date": "2012-10-24",
+       "why": "本案貨品依檢附資料說明及圖片，為裝置於捷運軌道浮動式道床上之彈簧隔振器，其功用係作為支承及緩衝以降低電聯車通過時所引起之振動干擾，類似電車軌道之固定裝置及配件，依據HS註解對稅則第8608節詮釋並參考歐盟海關分類意見及總局101年10月5日台總局稅字第1011022343號函說明，本案貨品宜歸列貨品分類號列8608.00.19.00-9「其他鐵路或電車道軌道固定裝置及其零配件」項下。",
+       "codeEn": "Other railway and tramway track fixtures and fittings and parts thereof"
+      },
+      {
+       "id": "101AA0826",
+       "name": "Spring Element/GSI-R21",
+       "code": "86080019009",
+       "date": "2012-10-24",
+       "why": "本案貨品依檢附資料說明及圖片，為裝置於捷運軌道浮動式道床上之彈簧隔振器，其功用係作為支承及緩衝以降低電聯車通過時所引起之振動干擾，類似電車軌道之固定裝置及配件，依據HS註解對稅則第8608節詮釋並參考歐盟海關分類意見及總局101年10月5日台總局稅字第1011022343號函說明，本案貨品宜歸列貨品分類號列8608.00.19.00-9「其他鐵路或電車道軌道固定裝置及其零配件」項下。",
+       "codeEn": "Other railway and tramway track fixtures and fittings and parts thereof"
+      },
+      {
+       "id": "101AA0828",
+       "name": "Spring Element/GSIF-R21",
+       "code": "86080019009",
+       "date": "2012-10-24",
+       "why": "本案貨品依檢附資料說明及圖片，為裝置於捷運軌道浮動式道床上之彈簧隔振器，其功用係作為支承及緩衝以降低電聯車通過時所引起之振動干擾，類似電車軌道之固定裝置及配件，依據HS註解對稅則第8608節詮釋並參考歐盟海關分類意見及總局101年10月5日台總局稅字第1011022343號函說明，本案貨品宜歸列貨品分類號列8608.00.19.00-9「其他鐵路或電車道軌道固定裝置及其零配件」項下。",
+       "codeEn": "Other railway and tramway track fixtures and fittings and parts thereof"
+      },
+      {
+       "id": "101AA0829",
+       "name": "Spring Element/KY-R222",
+       "code": "86080019009",
+       "date": "2012-10-24",
+       "why": "本案貨品依檢附資料說明及圖片，為裝置於捷運軌道浮動式道床上之彈簧隔振器，其功用係作為支承及緩衝以降低電聯車通過時所引起之振動干擾，類似電車軌道之固定裝置及配件，依據HS註解對稅則第8608節詮釋並參考歐盟海關分類意見及總局101年10月5日台總局稅字第1011022343號函說明，本案貨品宜歸列貨品分類號列8608.00.19.00-9「其他鐵路或電車道軌道固定裝置及其零配件」項下。",
+       "codeEn": "Other railway and tramway track fixtures and fittings and parts thereof"
+      },
+      {
+       "id": "106BA0015",
+       "name": "名稱:RST-CECB-333K Circuit Breaker; 型號: DB3202BH ；規格:DC150A",
+       "code": "85362049006",
+       "date": "2017-01-24",
+       "why": "本案貨品依檢附之資料說明，係為無熔絲斷路器，使用電壓未超過1000伏特，參據H.S.註解對稅則第8536節之詮釋，宜歸列貨品分類號列8536.20.49.00-6號。",
+       "codeEn": "Other no fuse breakers, for a voltage not exceeding 1,000 V"
+      },
+      {
+       "id": "103CA0209",
+       "name": "K&S Wedge Bonding（WB）Controller Board，Model:72-34738，Specifications:The part is a Printed Circuit Board Assembly（PCBA).It consist of a Freescale QorIQ processor,1GB DDR,industrial VME bus …詳見申請書",
+       "code": "85371010002",
+       "date": "2014-12-26",
+       "why": "本案貨品「K&S Wedge Bonding（WB）Controller Board 」，依檢附資料說明，係為使用於Wedge Bonding Machine之控制板，具有處理器、記憶體、VME bus interface、I/O ports，另有預錄之程式（但不可修改），可接受黏合位置、強度、電壓電流等指令，參據H.S中文註解對稅則第8537節「可程式控制器」之詮釋，宜歸列貨品分類號列第8537.10.10.00-2號「專供配合機器使用之電子控制設備（包括數值、程式、電腦及其他類似控制設備），電壓未超過",
+       "codeEn": "Electronics control apparatus (including digital controllers, programmed controllers, microprocessors and other similar control apparatus) exclusively for use with machineries, for a voltage not exceeding 1,000 V"
+      },
+      {
+       "id": "104CA0229",
+       "name": "不鏽鋼手鍊(STAINLESS STEEL BRACELET)名稱:王者之風，型號:S016，規格:23節數 20.5公分 10MM",
+       "code": "71171900005",
+       "date": "2015-10-20",
+       "why": "本案貨物為不鏽鋼手鍊，用於配帶裝飾，參考HS註解中文版對稅則第7117節詮釋及本關（092）北預字第103號稅則預先審核案例，案內貨物宜依功能與用途歸列貨品分類號列第7117.19.00.00-5號「其他卑金屬製仿首飾，不論是否鍍貴金屬」項下。",
+       "codeEn": "Other imitation jewellery, of base metal, whether or not plated with precious metal"
+      },
+      {
+       "id": "102AA0682",
+       "name": "車充插座 型號：KSO-33(ABT535) 規格：2-hole car socket with charger,socket and charger are linked by cable,Input：DC 12-24V,Output：DC 12-24V for hole,DC 5V 2.1A in total for 2 USB ports.",
+       "code": "85044099900",
+       "date": "2013-08-08",
+       "why": "本案貨品依檢附之資料說明，為2 Port USB & Dual Socket之Car adaptor，將DC 12/24V轉換成DC 5V做為USB輸出用，屬8504節變流器範疇，參據(01)基預字0222稅則預審案例，宜歸列貨品分類號列8504.40.99.90-0(其他靜電式變流器)。",
+       "codeEn": "Other static converter"
+      },
+      {
+       "id": "104CA0024",
+       "name": "Ray-on towel cabinet，FMC-8LF，Spec.Dual mode function:Hot and Cool",
+       "code": "84198990004",
+       "date": "2015-03-04",
+       "why": "本案貨品根據申請人檢附文件說明為毛巾冷卻及加熱處理機，主要用於美髮美容店、咖啡店及旅館，參據H.S.註解第8418節（冷卻設備）、第8419節（加熱設備）之詮釋，並依HS貨品分類制度解釋準則三（丙）解釋，宜歸列貨品分類號列第8419.89.90.00-4號「其他機器，工廠及實驗室設備」項下。",
+       "codeEn": "Other machinery, plant or laboratory equipment."
+      }
+     ],
+     "source": "llm+rulings"
+    },
+    "BR-CV-5521": {
+     "code": "87089990903",
+     "formatted": "8708.99.90.90-3",
+     "zh": "其他機動車輛之零件及附件",
+     "en": "Parts and accessories for other motor vehicles",
+     "duty": "15%",
+     "rules": [
+      "M26"
+     ],
+     "reason": "An outer ball-type CV joint with boot is a part of a passenger car drive shaft that matches no specific 8708 line (the tripod/cross-joint line does not cover it), so it falls to the residual parts line.",
+     "confidence": "medium",
+     "alternatives": [
+      {
+       "code": "87089983001",
+       "formatted": "8708.99.83.00-1",
+       "zh": "十字接頭、三叉式等速接頭",
+       "en": "Journal cross joint, tripod type constant velocity joint",
+       "duty": "5%"
+      },
+      {
+       "code": "87089982002",
+       "formatted": "8708.99.82.00-2",
+       "zh": "十字接頭式傳動軸、等速接頭式傳動軸",
+       "en": "Transmission shafts, journal cross type and constant velocity type",
+       "duty": "15%"
+      }
+     ],
+     "similar": [
+      {
+       "id": "101AA0590",
+       "name": "MAX Ⅱ,Two passenger 型號：MAX Ⅱ-500T 規格：6-wheel drive amphibious vehicles",
+       "code": "87032190108",
+       "date": "2012-07-27",
+       "why": "本案貨品依檢附資料及說明，為MAX Ⅱ,Two passenger水陸兩用救難車輛，參據H.S.中文版註解對稅則第8703節之詮釋，宜歸列貨品分類號列8703.21.90.10-8。",
+       "codeEn": "All terrain vehicle"
+      },
+      {
+       "id": "104AA0249",
+       "name": "純棉織物休閒鞋-童 22216 KIDS CASUAL SHOES WITH OUTER SOLES OF RUBBER AND UPPERS OF TEXTILE",
+       "code": "64041900713",
+       "date": "2015-04-20",
+       "why": "本案貨品依檢附樣品及資料說明，係鞋面為紡織物、鞋底以橡膠為主體之兒童鞋，宜歸列貨品分類號列6404.19.00.71-3。",
+       "codeEn": "Children's shoes (other than children's sports shoes), with outer soles of rubber or plastics and uppers of textile materials"
+      },
+      {
+       "id": "104AA0263",
+       "name": "純棉織物休閒鞋-女 22215(鞋面材質：100%棉) CASUAL SHOES WITH OUTER SOLES OF RUBBER AND UPPERS OF TEXTILE",
+       "code": "64041900401",
+       "date": "2015-04-27",
+       "why": "本案貨品依檢附樣品及資料說明，係鞋面以紡織物及鞋底以橡膠製之休閒鞋，參據(104)基預字第0134號進口貨物稅則預核案例，宜歸列貨品分類號列6404.19.00.40-1。",
+       "codeEn": "Casual shoes, with outer soles of rubber or plastics and uppers of textile materials"
+      },
+      {
+       "id": "104AA0264",
+       "name": "純聚酯纖維織物休閒鞋-女 23273(鞋面材質：100%聚酯纖維) CASUAL SHOES WITH OUTER SOLES OF RUBBER AND UPPERS OF TEXTILE",
+       "code": "64041900401",
+       "date": "2015-04-27",
+       "why": "本案貨品依檢附樣品及資料說明，係鞋面以紡織物及鞋底以橡膠製之休閒鞋，參據(104)基預字第0134號進口貨物稅則預核案例，宜歸列貨品分類號列6404.19.00.40-1。",
+       "codeEn": "Casual shoes, with outer soles of rubber or plastics and uppers of textile materials"
+      },
+      {
+       "id": "097AA0347",
+       "name": "已使用過(勘用)小客車各式輪胎，未含鋁圈",
+       "code": "40122010002",
+       "date": "2008-06-02",
+       "why": "本案貨品為機動車輛用已使用橡膠氣胎(非屬翻修輪胎)，宜歸列貨品分類號列第4012.20.10.00-2號。",
+       "codeEn": "Used pneumatic tyres, of rubber, for motor vehicles"
+      },
+      {
+       "id": "106BA0188",
+       "name": "鍛造合金鋼製條及桿（FORGED ALLOY STEEL BAR）、 型號(材質)： 1.2738、 厚度200mm~800mm、寬度 800mm~1600mm、長度2000mm~6000mm。",
+       "code": "72286000009",
+       "date": "2017-11-17",
+       "why": "本案貨品依檢附資料說明，符合H.S.中文註解第72章章註1(f)、(m)其他合金鋼及其他條及桿之定義，其加工製程係將鋼錠加熱再經鍛造（鍛造比4：1）後另經熱處理製程，屬「進一步加工」條及桿。參據H.S.中文版對稅則第7214及7228節之詮釋，宜歸列貨品分類號列第7228.60.00.00-9「其他合金鋼製條及桿」項下。",
+       "codeEn": "Other bars and rods, of alloy steel"
+      },
+      {
+       "id": "100AA0164",
+       "name": "汽車傳動 螺帽 材質：鐵",
+       "code": "73181600005",
+       "date": "2011-02-18",
+       "why": "本案貨品根據所附實物樣品及設計圖之說明，功能用途供汽車傳動零件使用，宜歸列貨品分類號列7318.16.00.00-5。",
+       "codeEn": "Nuts, of iron or steel"
+      },
+      {
+       "id": "106BA0187",
+       "name": "鍛造合金鋼製條及桿（FORGED ALLOY STEEL BAR）、 型號(材質)：1.2311、 厚度200mm~800mm、寬度 800mm~1600mm、長度2000mm~6000mm。",
+       "code": "72286000009",
+       "date": "2017-11-17",
+       "why": "本案貨品依檢附資料說明，符合H.S.中文註解第72章章註1(f)、(m)其他合金鋼及其他條及桿之定義，其加工製程係將鋼錠加熱再經鍛造（鍛造比4：1）後另經熱處理製程，屬「進一步加工」條及桿。參據H.S.中文版對稅則第7214及7228節之詮釋，宜歸列貨品分類號列第7228.60.00.00-9「其他合金鋼製條及桿」項下。",
+       "codeEn": "Other bars and rods, of alloy steel"
+      },
+      {
+       "id": "106BA0190",
+       "name": "鍛造合金鋼製條及桿（FORGED ALLOY STEEL BAR）、 型號(材質)：S55C+Cr 厚度200mm~800mm、寬度 800mm~1600mm、長度2000mm~6000mm。",
+       "code": "72286000009",
+       "date": "2017-11-17",
+       "why": "本案貨品依檢附資料說明，符合H.S.中文註解第72章章註1(f)、(m)其他合金鋼及其他條及桿之定義，其加工製程係將鋼錠加熱再經鍛造（鍛造比4：1）後另經熱處理製程，屬「進一步加工」條及桿。參據H.S.中文版對稅則第7214及7228節之詮釋，宜歸列貨品分類號列第7228.60.00.00-9「其他合金鋼製條及桿」項下。",
+       "codeEn": "Other bars and rods, of alloy steel"
+      },
+      {
+       "id": "106BA0189",
+       "name": "鍛造合金鋼製條及桿（FORGED ALLOY STEEL BAR）、 型號(材質)：P20、 厚度厚度200mm~800mm、寬度 800mm~1600mm、長度2000mm~6000mm。",
+       "code": "72286000009",
+       "date": "2017-11-17",
+       "why": "本案貨品依檢附資料說明，符合H.S.中文註解第72章章註1(f)、(m)其他合金鋼及其他條及桿之定義，其加工製程係將鋼錠加熱再經鍛造（鍛造比4：1）後另經熱處理製程，屬「進一步加工」條及桿。參據H.S.中文版對稅則第7214及7228節之詮釋，宜歸列貨品分類號列第7228.60.00.00-9「其他合金鋼製條及桿」項下。",
+       "codeEn": "Other bars and rods, of alloy steel"
+      }
+     ],
+     "source": "llm+rulings"
+    }
+   },
+   "llm": true
+  },
+  "zh": {
+   "byLine": {
+    "BR-OS-9001": {
+     "code": "90271000009",
+     "formatted": "9027.10.00.00-9",
+     "zh": "氣體或煙之分析器具",
+     "en": "Gas or smoke analysis apparatus",
+     "duty": "0%",
+     "rules": [],
+     "reason": "含氧感知器用於量測汽車引擎排氣中的含氧量，屬氣體分析器具，依同類貨品之前例歸列於9027.10項下「氣體或煙之分析器具」。",
+     "confidence": "high",
+     "alternatives": [
+      {
+       "code": "90278990907",
+       "formatted": "9027.89.90.90-7",
+       "zh": "其他第９０２７節所屬貨品",
+       "en": "Other articles of heading No.90.27",
+       "duty": "0%"
+      },
+      {
+       "code": "90279090003",
+       "formatted": "9027.90.90.00-3",
+       "zh": "第９０２７節所屬物品之零件及附件",
+       "en": "Parts and accessories of articles of heading 90.27",
+       "duty": "0%"
+      }
+     ],
+     "similar": [
+      {
+       "id": "104AA0621",
+       "name": "含氧感知器 OXYGEN SENSOR (ZIRCONIA INDUCTORS) TYPE：1 WIRE 1001",
+       "code": "90271000009",
+       "date": "2015-10-23",
+       "why": "本案貨品依檢附之資料說明，係用於偵測車輛排氣中含氧量多寡，以控制車輛之空燃比，提高燃燒效率，依據關務署104年10月15日台關稅字第1041023564號函示及參據HS註解對稅則第9027節之詮釋，宜歸列貨品分類號列9027.10.00.00-9「氣體或煙之分析器具」。",
+       "codeEn": "Gas or smoke analysis apparatus"
+      },
+      {
+       "id": "104BA0227",
+       "name": "含氧感知器OXYGEN SENSOR AZD0101-BA001",
+       "code": "90271000009",
+       "date": "2015-10-16",
+       "why": "一、依據財政部關務署台關稅字第1041023563號函釋，經再審核本關（97）高預字第169號進口貨物稅則預先審核答覆函，原核定貨品分類號列第9027.80.90.90-6號不適當，應予變更。 二、本案貨品依檢附之說明，係用於偵測車輛排氣中之含氧量，供控制車輛空氣及燃料之混合比，屬「氣體或煙之分析器具」，宜歸列稅則號別第9027.10.00.00-9號。",
+       "codeEn": "Gas or smoke analysis apparatus"
+      },
+      {
+       "id": "101AA0122",
+       "name": "接頭組 型號：CSL 規格：300V 20AWG",
+       "code": "85443000001",
+       "date": "2012-02-22",
+       "why": "本案貨品依檢附之資料說明，係用於組裝到汽車之電導體，為用來偵測汽車引擎排放廢氣中含氧量之含氧感知器所用之訊號傳輸線，宜歸列貨品分類號列8544.30.00.00-1。",
+       "codeEn": "Ignition wiring sets and other wiring sets of kind used in vehicles, aircaft or ships"
+      },
+      {
+       "id": "101CA0080",
+       "name": "牙科用氧化鋯陶瓷塊(硬度低於莫氏硬度9)",
+       "code": "69091990000",
+       "date": "2012-07-09",
+       "why": "本案貨品依申請人檢附之資料說明其主要成分為Y2O3、Al2O3、SiO2、Fe2O3、Na2O、Ig-Loss等原料，經混合燒結而成牙科用之氧化鋯陶瓷塊，參據HS中文註解有關稅則第6909節之詮釋所述及其硬度相當於莫氏硬度小於9者，宜歸列貨品分號號列第6909.19.90.00-0號。",
+       "codeEn": "Chemical or other industrial wares, of ceramic"
+      },
+      {
+       "id": "099BA222",
+       "name": "耐磨陶瓷內襯粉煤不銹鋼彎管(CAST CERAMIC LINED STAINLESS STEEL BENDING PIPE)",
+       "code": "73072900003",
+       "date": "2010-10-11",
+       "why": "本案貨品依檢附成分表及圖樣等資料說明,係以不銹鋼管及耐磨陶瓷製成之彎管,參據H.S.中文註解對稅則第7307節之詮釋及其主要材質為不銹鋼製,歸列貨品分類號列第7307.29.00.00-3號。",
+       "codeEn": "Other tube or pipe fittings, of stainless steel"
+      },
+      {
+       "id": "099BA111",
+       "name": "引擎(發動機)管理系統(Engine Management System)",
+       "code": "90328990009",
+       "date": "2010-05-28",
+       "why": "本案貨品依檢附資料說明,係藉引擎內多項部件感應器之量測訊息,輸入引擎控制單元(ECU)加以運算,決定該引擎之最適空氣、噴油量及點火時機等,並加以保持之,參據H.S.中文註解對稅則第9032節之詮釋及(92)高預字第0035號預核案例,歸列貨品分類號列9032.89.90.00-9。",
+       "codeEn": "Other automatic regulating or controlling instruments and apparatus"
+      },
+      {
+       "id": "101AA0913",
+       "name": "High-Function General-Purpose AC Drives THYFREC 400V series,VT240S-018H",
+       "code": "85371010002",
+       "date": "2012-11-09",
+       "why": "本案貨品依檢附之資料說明，為用於感應馬達及PM馬達之驅動控制，具有定扭矩控制、變動扭矩控制、有感知器向量控制、無感知器向量控制、有感知器PM馬達控制、無感知器PM馬達控制等六合一功能，屬專供配合機器使用之電子控制設備，宜歸列貨品分類號列8537.10.10.00-2。",
+       "codeEn": "Electronics control apparatus (including digital controllers, programmed controllers, microprocessors and other similar control apparatus) exclusively for use with machineries, for a voltage not exceeding 1,000 V"
+      },
+      {
+       "id": "100DA0154",
+       "name": "STAINLESS STEEL CASTING(CASTING PART FOR BEAR BARREL IN ROUGH STATE)",
+       "code": "84819090004",
+       "date": "2011-12-15",
+       "why": "本案貨品依檢附之圖樣資料係可識別為安裝於啤酒桶上之閥組件毛胚，宜歸列貨品分類號列第8481.90.90.00-4號。",
+       "codeEn": "Other parts of articles of heading 84.81"
+      },
+      {
+       "id": "104CA0229",
+       "name": "不鏽鋼手鍊(STAINLESS STEEL BRACELET)名稱:王者之風，型號:S016，規格:23節數 20.5公分 10MM",
+       "code": "71171900005",
+       "date": "2015-10-20",
+       "why": "本案貨物為不鏽鋼手鍊，用於配帶裝飾，參考HS註解中文版對稅則第7117節詮釋及本關（092）北預字第103號稅則預先審核案例，案內貨物宜依功能與用途歸列貨品分類號列第7117.19.00.00-5號「其他卑金屬製仿首飾，不論是否鍍貴金屬」項下。",
+       "codeEn": "Other imitation jewellery, of base metal, whether or not plated with precious metal"
+      },
+      {
+       "id": "102AA0924",
+       "name": "真空斷路器另件 HARNESS(線束) 規格：PVC 500V 1.25mm2 電壓範圍：直流(DC)110/220V、交流(AC)110/220V",
+       "code": "85444290909",
+       "date": "2013-11-19",
+       "why": "本案貨品依檢附之圖說資料，為用真空斷路器之線束，參據HS註解對稅則第8544節之詮釋，宜歸列貨品分類號列8544.42.90.90-9。",
+       "codeEn": "Other electric conductors, fitted with connectors, for a voltage not exceeding 1000 V"
+      }
+     ],
+     "source": "llm+rulings"
+    },
+    "BR-TH-3310": {
+     "code": "84818090006",
+     "formatted": "8481.80.90.00-6",
+     "zh": "其他第８４８１節所屬之貨品",
+     "en": "Other articles of heading 84.81",
+     "duty": "4%",
+     "rules": [
+      "C02"
+     ],
+     "reason": "節溫器為依水溫自動控制冷卻水路的恆溫控制閥，歸列第8481節，並以其他第8481節所屬貨品之稅號歸類。",
+     "confidence": "medium",
+     "alternatives": [
+      {
+       "code": "87089990903",
+       "formatted": "8708.99.90.90-3",
+       "zh": "其他機動車輛之零件及附件",
+       "en": "Parts and accessories for other motor vehicles",
+       "duty": "15%"
+      },
+      {
+       "code": "84819090004",
+       "formatted": "8481.90.90.00-4",
+       "zh": "其他第８４８１節所屬貨品之零件",
+       "en": "Other parts of articles of heading 84.81",
+       "duty": "3%"
+      }
+     ],
+     "similar": [
+      {
+       "id": "102BA173",
+       "name": "\"TRANE\"CenTraVac Liquid chillers單冷定頻離心式主機，型號:CVHF-1300， 冷卻能力(Cooling Capacity):1250RT(蒸發器進/出水溫度:13℃/7℃、冷凝器進/出水溫度:32℃/37℃) 冷卻能力(Cooling Capacity):1250RT",
+       "code": "84186910006",
+       "date": "2013-07-23",
+       "why": "本案貨品依檢附資料，係用於空調系統之冰水主機（chillers），歸列貨品分類號列第8418.69.10.00-6號項下。",
+       "codeEn": "Refrigerating machines of electricity, for central system"
+      },
+      {
+       "id": "101AA0827",
+       "name": "Spring Element/KY-R233",
+       "code": "86080019009",
+       "date": "2012-10-24",
+       "why": "本案貨品依檢附資料說明及圖片，為裝置於捷運軌道浮動式道床上之彈簧隔振器，其功用係作為支承及緩衝以降低電聯車通過時所引起之振動干擾，類似電車軌道之固定裝置及配件，依據HS註解對稅則第8608節詮釋並參考歐盟海關分類意見及總局101年10月5日台總局稅字第1011022343號函說明，本案貨品宜歸列貨品分類號列8608.00.19.00-9「其他鐵路或電車道軌道固定裝置及其零配件」項下。",
+       "codeEn": "Other railway and tramway track fixtures and fittings and parts thereof"
+      },
+      {
+       "id": "101AA0826",
+       "name": "Spring Element/GSI-R21",
+       "code": "86080019009",
+       "date": "2012-10-24",
+       "why": "本案貨品依檢附資料說明及圖片，為裝置於捷運軌道浮動式道床上之彈簧隔振器，其功用係作為支承及緩衝以降低電聯車通過時所引起之振動干擾，類似電車軌道之固定裝置及配件，依據HS註解對稅則第8608節詮釋並參考歐盟海關分類意見及總局101年10月5日台總局稅字第1011022343號函說明，本案貨品宜歸列貨品分類號列8608.00.19.00-9「其他鐵路或電車道軌道固定裝置及其零配件」項下。",
+       "codeEn": "Other railway and tramway track fixtures and fittings and parts thereof"
+      },
+      {
+       "id": "101AA0828",
+       "name": "Spring Element/GSIF-R21",
+       "code": "86080019009",
+       "date": "2012-10-24",
+       "why": "本案貨品依檢附資料說明及圖片，為裝置於捷運軌道浮動式道床上之彈簧隔振器，其功用係作為支承及緩衝以降低電聯車通過時所引起之振動干擾，類似電車軌道之固定裝置及配件，依據HS註解對稅則第8608節詮釋並參考歐盟海關分類意見及總局101年10月5日台總局稅字第1011022343號函說明，本案貨品宜歸列貨品分類號列8608.00.19.00-9「其他鐵路或電車道軌道固定裝置及其零配件」項下。",
+       "codeEn": "Other railway and tramway track fixtures and fittings and parts thereof"
+      },
+      {
+       "id": "101AA0829",
+       "name": "Spring Element/KY-R222",
+       "code": "86080019009",
+       "date": "2012-10-24",
+       "why": "本案貨品依檢附資料說明及圖片，為裝置於捷運軌道浮動式道床上之彈簧隔振器，其功用係作為支承及緩衝以降低電聯車通過時所引起之振動干擾，類似電車軌道之固定裝置及配件，依據HS註解對稅則第8608節詮釋並參考歐盟海關分類意見及總局101年10月5日台總局稅字第1011022343號函說明，本案貨品宜歸列貨品分類號列8608.00.19.00-9「其他鐵路或電車道軌道固定裝置及其零配件」項下。",
+       "codeEn": "Other railway and tramway track fixtures and fittings and parts thereof"
+      },
+      {
+       "id": "106BA0015",
+       "name": "名稱:RST-CECB-333K Circuit Breaker; 型號: DB3202BH ；規格:DC150A",
+       "code": "85362049006",
+       "date": "2017-01-24",
+       "why": "本案貨品依檢附之資料說明，係為無熔絲斷路器，使用電壓未超過1000伏特，參據H.S.註解對稅則第8536節之詮釋，宜歸列貨品分類號列8536.20.49.00-6號。",
+       "codeEn": "Other no fuse breakers, for a voltage not exceeding 1,000 V"
+      },
+      {
+       "id": "103CA0209",
+       "name": "K&S Wedge Bonding（WB）Controller Board，Model:72-34738，Specifications:The part is a Printed Circuit Board Assembly（PCBA).It consist of a Freescale QorIQ processor,1GB DDR,industrial VME bus …詳見申請書",
+       "code": "85371010002",
+       "date": "2014-12-26",
+       "why": "本案貨品「K&S Wedge Bonding（WB）Controller Board 」，依檢附資料說明，係為使用於Wedge Bonding Machine之控制板，具有處理器、記憶體、VME bus interface、I/O ports，另有預錄之程式（但不可修改），可接受黏合位置、強度、電壓電流等指令，參據H.S中文註解對稅則第8537節「可程式控制器」之詮釋，宜歸列貨品分類號列第8537.10.10.00-2號「專供配合機器使用之電子控制設備（包括數值、程式、電腦及其他類似控制設備），電壓未超過",
+       "codeEn": "Electronics control apparatus (including digital controllers, programmed controllers, microprocessors and other similar control apparatus) exclusively for use with machineries, for a voltage not exceeding 1,000 V"
+      },
+      {
+       "id": "104CA0229",
+       "name": "不鏽鋼手鍊(STAINLESS STEEL BRACELET)名稱:王者之風，型號:S016，規格:23節數 20.5公分 10MM",
+       "code": "71171900005",
+       "date": "2015-10-20",
+       "why": "本案貨物為不鏽鋼手鍊，用於配帶裝飾，參考HS註解中文版對稅則第7117節詮釋及本關（092）北預字第103號稅則預先審核案例，案內貨物宜依功能與用途歸列貨品分類號列第7117.19.00.00-5號「其他卑金屬製仿首飾，不論是否鍍貴金屬」項下。",
+       "codeEn": "Other imitation jewellery, of base metal, whether or not plated with precious metal"
+      },
+      {
+       "id": "102AA0682",
+       "name": "車充插座 型號：KSO-33(ABT535) 規格：2-hole car socket with charger,socket and charger are linked by cable,Input：DC 12-24V,Output：DC 12-24V for hole,DC 5V 2.1A in total for 2 USB ports.",
+       "code": "85044099900",
+       "date": "2013-08-08",
+       "why": "本案貨品依檢附之資料說明，為2 Port USB & Dual Socket之Car adaptor，將DC 12/24V轉換成DC 5V做為USB輸出用，屬8504節變流器範疇，參據(01)基預字0222稅則預審案例，宜歸列貨品分類號列8504.40.99.90-0(其他靜電式變流器)。",
+       "codeEn": "Other static converter"
+      },
+      {
+       "id": "104CA0024",
+       "name": "Ray-on towel cabinet，FMC-8LF，Spec.Dual mode function:Hot and Cool",
+       "code": "84198990004",
+       "date": "2015-03-04",
+       "why": "本案貨品根據申請人檢附文件說明為毛巾冷卻及加熱處理機，主要用於美髮美容店、咖啡店及旅館，參據H.S.註解第8418節（冷卻設備）、第8419節（加熱設備）之詮釋，並依HS貨品分類制度解釋準則三（丙）解釋，宜歸列貨品分類號列第8419.89.90.00-4號「其他機器，工廠及實驗室設備」項下。",
+       "codeEn": "Other machinery, plant or laboratory equipment."
+      }
+     ],
+     "source": "llm+rulings"
+    },
+    "BR-CV-5521": {
+     "code": "87089983001",
+     "formatted": "8708.99.83.00-1",
+     "zh": "十字接頭、三叉式等速接頭",
+     "en": "Journal cross joint, tripod type constant velocity joint",
+     "duty": "5%",
+     "rules": [],
+     "reason": "本貨品為前輪驅動小客車傳動軸用之外側等速萬向接頭（含防塵套），屬機動車輛零件，依稅則第8708節及其8708.99.83目「等速接頭」列為本號。",
+     "confidence": "medium",
+     "alternatives": [
+      {
+       "code": "87089982002",
+       "formatted": "8708.99.82.00-2",
+       "zh": "十字接頭式傳動軸、等速接頭式傳動軸",
+       "en": "Transmission shafts, journal cross type and constant velocity type",
+       "duty": "15%"
+      },
+      {
+       "code": "87089990903",
+       "formatted": "8708.99.90.90-3",
+       "zh": "其他機動車輛之零件及附件",
+       "en": "Parts and accessories for other motor vehicles",
+       "duty": "15%"
+      }
+     ],
+     "similar": [
+      {
+       "id": "101AA0590",
+       "name": "MAX Ⅱ,Two passenger 型號：MAX Ⅱ-500T 規格：6-wheel drive amphibious vehicles",
+       "code": "87032190108",
+       "date": "2012-07-27",
+       "why": "本案貨品依檢附資料及說明，為MAX Ⅱ,Two passenger水陸兩用救難車輛，參據H.S.中文版註解對稅則第8703節之詮釋，宜歸列貨品分類號列8703.21.90.10-8。",
+       "codeEn": "All terrain vehicle"
+      },
+      {
+       "id": "104AA0249",
+       "name": "純棉織物休閒鞋-童 22216 KIDS CASUAL SHOES WITH OUTER SOLES OF RUBBER AND UPPERS OF TEXTILE",
+       "code": "64041900713",
+       "date": "2015-04-20",
+       "why": "本案貨品依檢附樣品及資料說明，係鞋面為紡織物、鞋底以橡膠為主體之兒童鞋，宜歸列貨品分類號列6404.19.00.71-3。",
+       "codeEn": "Children's shoes (other than children's sports shoes), with outer soles of rubber or plastics and uppers of textile materials"
+      },
+      {
+       "id": "104AA0263",
+       "name": "純棉織物休閒鞋-女 22215(鞋面材質：100%棉) CASUAL SHOES WITH OUTER SOLES OF RUBBER AND UPPERS OF TEXTILE",
+       "code": "64041900401",
+       "date": "2015-04-27",
+       "why": "本案貨品依檢附樣品及資料說明，係鞋面以紡織物及鞋底以橡膠製之休閒鞋，參據(104)基預字第0134號進口貨物稅則預核案例，宜歸列貨品分類號列6404.19.00.40-1。",
+       "codeEn": "Casual shoes, with outer soles of rubber or plastics and uppers of textile materials"
+      },
+      {
+       "id": "104AA0264",
+       "name": "純聚酯纖維織物休閒鞋-女 23273(鞋面材質：100%聚酯纖維) CASUAL SHOES WITH OUTER SOLES OF RUBBER AND UPPERS OF TEXTILE",
+       "code": "64041900401",
+       "date": "2015-04-27",
+       "why": "本案貨品依檢附樣品及資料說明，係鞋面以紡織物及鞋底以橡膠製之休閒鞋，參據(104)基預字第0134號進口貨物稅則預核案例，宜歸列貨品分類號列6404.19.00.40-1。",
+       "codeEn": "Casual shoes, with outer soles of rubber or plastics and uppers of textile materials"
+      },
+      {
+       "id": "097AA0347",
+       "name": "已使用過(勘用)小客車各式輪胎，未含鋁圈",
+       "code": "40122010002",
+       "date": "2008-06-02",
+       "why": "本案貨品為機動車輛用已使用橡膠氣胎(非屬翻修輪胎)，宜歸列貨品分類號列第4012.20.10.00-2號。",
+       "codeEn": "Used pneumatic tyres, of rubber, for motor vehicles"
+      },
+      {
+       "id": "106BA0188",
+       "name": "鍛造合金鋼製條及桿（FORGED ALLOY STEEL BAR）、 型號(材質)： 1.2738、 厚度200mm~800mm、寬度 800mm~1600mm、長度2000mm~6000mm。",
+       "code": "72286000009",
+       "date": "2017-11-17",
+       "why": "本案貨品依檢附資料說明，符合H.S.中文註解第72章章註1(f)、(m)其他合金鋼及其他條及桿之定義，其加工製程係將鋼錠加熱再經鍛造（鍛造比4：1）後另經熱處理製程，屬「進一步加工」條及桿。參據H.S.中文版對稅則第7214及7228節之詮釋，宜歸列貨品分類號列第7228.60.00.00-9「其他合金鋼製條及桿」項下。",
+       "codeEn": "Other bars and rods, of alloy steel"
+      },
+      {
+       "id": "100AA0164",
+       "name": "汽車傳動 螺帽 材質：鐵",
+       "code": "73181600005",
+       "date": "2011-02-18",
+       "why": "本案貨品根據所附實物樣品及設計圖之說明，功能用途供汽車傳動零件使用，宜歸列貨品分類號列7318.16.00.00-5。",
+       "codeEn": "Nuts, of iron or steel"
+      },
+      {
+       "id": "106BA0187",
+       "name": "鍛造合金鋼製條及桿（FORGED ALLOY STEEL BAR）、 型號(材質)：1.2311、 厚度200mm~800mm、寬度 800mm~1600mm、長度2000mm~6000mm。",
+       "code": "72286000009",
+       "date": "2017-11-17",
+       "why": "本案貨品依檢附資料說明，符合H.S.中文註解第72章章註1(f)、(m)其他合金鋼及其他條及桿之定義，其加工製程係將鋼錠加熱再經鍛造（鍛造比4：1）後另經熱處理製程，屬「進一步加工」條及桿。參據H.S.中文版對稅則第7214及7228節之詮釋，宜歸列貨品分類號列第7228.60.00.00-9「其他合金鋼製條及桿」項下。",
+       "codeEn": "Other bars and rods, of alloy steel"
+      },
+      {
+       "id": "106BA0190",
+       "name": "鍛造合金鋼製條及桿（FORGED ALLOY STEEL BAR）、 型號(材質)：S55C+Cr 厚度200mm~800mm、寬度 800mm~1600mm、長度2000mm~6000mm。",
+       "code": "72286000009",
+       "date": "2017-11-17",
+       "why": "本案貨品依檢附資料說明，符合H.S.中文註解第72章章註1(f)、(m)其他合金鋼及其他條及桿之定義，其加工製程係將鋼錠加熱再經鍛造（鍛造比4：1）後另經熱處理製程，屬「進一步加工」條及桿。參據H.S.中文版對稅則第7214及7228節之詮釋，宜歸列貨品分類號列第7228.60.00.00-9「其他合金鋼製條及桿」項下。",
+       "codeEn": "Other bars and rods, of alloy steel"
+      },
+      {
+       "id": "106BA0189",
+       "name": "鍛造合金鋼製條及桿（FORGED ALLOY STEEL BAR）、 型號(材質)：P20、 厚度厚度200mm~800mm、寬度 800mm~1600mm、長度2000mm~6000mm。",
+       "code": "72286000009",
+       "date": "2017-11-17",
+       "why": "本案貨品依檢附資料說明，符合H.S.中文註解第72章章註1(f)、(m)其他合金鋼及其他條及桿之定義，其加工製程係將鋼錠加熱再經鍛造（鍛造比4：1）後另經熱處理製程，屬「進一步加工」條及桿。參據H.S.中文版對稅則第7214及7228節之詮釋，宜歸列貨品分類號列第7228.60.00.00-9「其他合金鋼製條及桿」項下。",
+       "codeEn": "Other bars and rods, of alloy steel"
+      }
+     ],
+     "source": "llm+rulings"
+    }
+   },
+   "llm": true
+  }
+ },
+ "guess": {
+  "en": {
+   "meaning": "Possibly a ball joint or tie rod end, unverified",
+   "confidence": "low",
+   "usedModel": true
+  },
+  "zh": {
+   "meaning": "可能是球頭或轉向零件（推測）",
+   "confidence": "low",
+   "usedModel": true
+  }
+ }
+}

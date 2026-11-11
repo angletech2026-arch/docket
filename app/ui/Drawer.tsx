@@ -4,6 +4,7 @@ import { useEffect, useState, type Dispatch } from "react";
 import type { Action, Card, State } from "@/lib/engine/types";
 import { nt, pct } from "@/lib/fmt";
 import { inquiry, invoice, literal, stock, USD_TWD, type InvoiceLine } from "@/lib/sample/auto";
+import recorded from "@/lib/sample/recorded.json";
 
 type Suggestion = {
   code: string;
@@ -256,6 +257,13 @@ function Assistant({ card, state }: { card: Card; state: State }) {
 /* ------------------------------------------------------------------ */
 
 const cccCache = new Map<string, { byLine: Record<string, Suggestion>; llm: boolean }>();
+// The sample invoice never changes, so the model's answers for it were recorded once from a live run
+// (scripts/record-demo.mjs) and ship with the app. The card opens with them and does not call the model
+// again unless someone presses "Ask the model again".
+for (const lang of ["en", "zh"] as const) {
+  cccCache.set(`a4:${lang}`, recorded.classify[lang] as unknown as { byLine: Record<string, Suggestion>; llm: boolean });
+}
+const recordedOn = recorded.recordedAt.slice(0, 16).replace("T", " ");
 
 function CccPanel({ card, state, dispatch, onClose }: Props) {
   const t = tr(state);
@@ -533,6 +541,24 @@ function CccPanel({ card, state, dispatch, onClose }: Props) {
         </tbody>
       </table>
 
+      {llm && run === 0 && res && (
+        <p className="note">
+          {t(
+            `The three suggestions are the model's answers from a live run recorded ${recordedOn} UTC.`,
+            `這三個建議是 ${recordedOn} UTC 那次實際問模型錄下來的答案。`,
+          )}{" "}
+          <button
+            className="btn small"
+            onClick={() => {
+              setErr(null);
+              setRes(null);
+              setRun((n) => n + 1);
+            }}
+          >
+            {t("Ask the model again", "重新問模型")}
+          </button>
+        </p>
+      )}
       {spread !== null && spread > 0 && (
         <p className="note">
           <b className="num">{nt(spread)}</b>{" "}
@@ -619,6 +645,7 @@ function fmt(code: string) {
 
 type Guess = { meaning: string; confidence: string; usedModel: boolean } | null;
 const guessCache = new Map<string, Guess>();
+for (const lang of ["en", "zh"] as const) guessCache.set(`a0:${lang}`, recorded.guess[lang] as Guess);
 
 /**
  * Ask the model for the customs codes and the slang guess ahead of time, so the two cards open
