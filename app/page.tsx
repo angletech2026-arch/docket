@@ -80,10 +80,10 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
     run: (c) => c.dispatch({ type: "quit", personId: "jr1" }),
   },
   {
-    say: "Today this runs on Claude. Next, it runs on a model inside the company, trained on its own cards. The know-how stays in the building.",
+    say: "Today this runs on Claude. Next, a model inside the company, trained on its own cards.",
   },
   {
-    say: "Chang Chun, a grain importer in Taiwan, asked me to build this. The US is next.",
+    say: "The same cards run a grain importer: food inspection, expiry dates, repacking. Chang Chun, a grain importer in Taiwan, asked me to build this. The US is next.",
     run: (c) => {
       c.setOpenId(null);
       c.setView("wall");
