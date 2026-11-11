@@ -39,7 +39,6 @@ const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
     tag: "The idea",
     say: "So I broke the company’s work down into cards. One shipment is ten cards, from reordering to logistics (trucks and forklifts).",
   },
-  { tag: "The idea", say: "AI does most of the work on each card, and a person makes the decision." },
   {
     tag: "Does it work?",
     say: "Every imported item needs a customs code. The first six digits are the same in the US.",
