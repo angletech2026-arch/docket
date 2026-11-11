@@ -1,0 +1,3620 @@
+{
+ "ranAt": "2026-11-11T11:03:37.492Z",
+ "model": "meta-llama/Llama-3.3-70B-Instruct",
+ "models": {},
+ "n": 300,
+ "protocol": "Time split. Reference pool: 12711 Taiwan Customs advance rulings dated before 2018-01-01. Test set: 300 rulings from 2018 (random sample, seed 20261111) whose ruled code still exists in the current tariff. Truth is the code Customs ruled. Scores are exact prefix matches at 4, 6, 8 and all 11 digits.",
+ "modes": {
+  "nearest": {
+   "d4": 107,
+   "d6": 74,
+   "d8": 69,
+   "d11": 68,
+   "invalid": 0,
+   "errors": 0,
+   "n": 300
+  }
+ },
+ "items": [
+  {
+   "id": "107AA0283",
+   "name": "感應式洗衣機用零組件-感應洗衣機運轉模組",
+   "truth": "85014090001",
+   "truthZh": "其他單相交流電動機",
+   "pred": {
+    "nearest": "84501120002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0044",
+   "name": "漏電流保護器 / PD20A / 電壓：220~250VAC",
+   "truth": "85362090004",
+   "truthZh": "其他自動斷路器，電壓未超過１０００伏特者",
+   "pred": {
+    "nearest": "85365090007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0038",
+   "name": "豪華型不鏽鋼電熱開水瓶 ML-15V 20L",
+   "truth": "85161000009",
+   "truthZh": "即熱式或儲存式之電熱水器及浸入式電熱水器",
+   "pred": {
+    "nearest": "85161000009"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0142",
+   "name": "電競耳機麥克風/ EHS951BKAA-IY /353g",
+   "truth": "85183032005",
+   "truthZh": "頭戴耳機及耳機，併裝有微音器",
+   "pred": {
+    "nearest": "84719090006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0100",
+   "name": "Part Number :XIRS-E100光學模組 Description : Iris (Image plane) with Kohler 100mm excitation condeser. For Free space Laser. C60-TUBE-100&C60-IRIS",
+   "truth": "90112000005",
+   "truthZh": "顯微鏡，供顯微照相、顯微攝影或顯微放映用者",
+   "pred": {
+    "nearest": "90314910006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0169",
+   "name": "電競桌Professional Gaming Desk/EGT002BKAA-IA/1250X625X808MM",
+   "truth": "94032000001",
+   "truthZh": "其他金屬製家具",
+   "pred": {
+    "nearest": "84716090903"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0157",
+   "name": "臨床牙科無碳刷電動馬達組(Dental Handpiece Air Motor) / ROSE 4000 / 內置式無刷電動馬達",
+   "truth": "90184100003",
+   "truthZh": "鑽牙機，不論是否單獨機座與其他牙科儀器連結者",
+   "pred": {
+    "nearest": "85011090007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0037",
+   "name": "聲波型鋁合金沖孔吸音板、Rippletone、0.35mm厚,寬度100cm。",
+   "truth": "76169990005",
+   "truthZh": "其他鋁製品",
+   "pred": {
+    "nearest": "76109000009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0080",
+   "name": "寵物用品（塑料製餵食器型號：TPM-YE82508 產品規格:6*15公分",
+   "truth": "39269090908",
+   "truthZh": "其他塑膠製品及第３９０１至３９１４節之材料製成品",
+   "pred": {
+    "nearest": "85098090004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0095",
+   "name": "葛花 原料",
+   "truth": "12119091923",
+   "truthZh": "其他乾燥藥用植物及植物之一部份（包括種子及果實），不論是否已切割壓碎或製粉",
+   "pred": {
+    "nearest": "30049069009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0185",
+   "name": "Dried Dear Pizzle and Testicle Powder",
+   "truth": "30039079008",
+   "truthZh": "其他中藥製劑",
+   "pred": {
+    "nearest": "11063090006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0073",
+   "name": "1：12本田重機模型 尺寸：20.5*6.5*11公分",
+   "truth": "95030093903",
+   "truthZh": "其他玩具",
+   "pred": {
+    "nearest": "95030093903"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107BA0055",
+   "name": "NEW TYPE OF ECO-FRIENDLY PLASTICIZER J108(EPOXY SOYBEAN ESTER) 環氧豆油酯 分子式:C17~19H32~36O3 分子量: 約312",
+   "truth": "38122000008",
+   "truthZh": "橡膠或塑膠用複合可塑劑",
+   "pred": {
+    "nearest": "38122000008"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0178",
+   "name": "NDC F 50 R",
+   "truth": "21069091108",
+   "truthZh": "咖啡乳劑",
+   "pred": {
+    "nearest": "21069099903"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0148",
+   "name": "貨品名稱: “南京微創”拋棄式熱活體組織夾 英文貨名:Disposable Hot Biopsy Forceps 型號: HBF-16/300 規格: Jaw Diameter(mm) 1.6 Working Length(mm) 300 Spike Without Coating With Jaws",
+   "truth": "90189080907",
+   "truthZh": "其他第９０１８節所屬之貨品",
+   "pred": {
+    "nearest": "90189080907"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0248",
+   "name": "無線串聯高音質藍牙喇叭 型號：if-TWS55 規格：電壓3.7V、電池1200mAh、藍牙V4.2",
+   "truth": "85271300003",
+   "truthZh": "其他不需外接電源之無線電廣播接收機，併裝有錄或放音器具者",
+   "pred": {
+    "nearest": "85271300003"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0021",
+   "name": "車用USB快速充電器 7AEC-XX 輸入電壓DC12V，輸出電壓DC5V、DC7V、DC9V",
+   "truth": "85044099900",
+   "truthZh": "其他靜電式變流器",
+   "pred": {
+    "nearest": "85044099900"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0129",
+   "name": "貨品名稱: “微創”斑馬導引線 型號: MTN-BM-53/12-A 規格: Diameter(in) 0.021 Working Length(mm) 1200 Tip Type Straight Color Yellow & Blue Shaft Type Normal Surface Ttpe Smooth",
+   "truth": "90183900908",
+   "truthZh": "其他導管、套管及類似品",
+   "pred": {
+    "nearest": "90183900908"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0005",
+   "name": "LT低溫冷凍壓縮機 型號：LT-S-20/10 規格：如附件",
+   "truth": "84143020004",
+   "truthZh": "其他製冷設備用之壓縮機",
+   "pred": {
+    "nearest": "84143020004"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0045",
+   "name": "保鮮杜比亞蟑螂 1盒=20包x5隻以上產品,為一箱=24盒",
+   "truth": "05119999248",
+   "truthZh": "蟲餌（熱帶魚飼餌）",
+   "pred": {
+    "nearest": "29231010006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0003",
+   "name": "Energy Booster 700g",
+   "truth": "23091000002",
+   "truthZh": "供零售用之貓狗食品",
+   "pred": {
+    "nearest": "21069099903"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0006",
+   "name": "恐龍搖擺機",
+   "truth": "95043010005",
+   "truthZh": "遊藝場、桌上或室內遊戲用品，以硬幣、鈔票、金融卡、代幣或其他付款方式操作者，保齡球自動球道設備除外",
+   "pred": {
+    "nearest": "85312000115"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0181",
+   "name": "訂製雙層玻璃窗 最大尺寸：2700mm×3700mm 最小尺寸：350mm×180mm",
+   "truth": "76109000009",
+   "truthZh": "其他已完成之鋁製構架及其零件",
+   "pred": {
+    "nearest": "76042100001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0005",
+   "name": "貨品名稱：Motion Sensor 型號： IH D200 規格：2.4G 偵測視野、偵測距離:3M 偵測精確度:<2mm",
+   "truth": "90314910006",
+   "truthZh": "其他光學儀器及用具，以電氣操作者",
+   "pred": {
+    "nearest": "85269290009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0160",
+   "name": "妙笔涂鴉/DLTY-TY-4201/長*寬*高：1250*750*440mm/N.W：23.6kg",
+   "truth": "95045000903",
+   "truthZh": "其他影像遊戲機，第950430目者除外",
+   "pred": {
+    "nearest": "85098090004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0023",
+   "name": "鋁合金空心型材/6063-T5/ 1000mmX25mmX76mmX厚度1.2mm",
+   "truth": "76042100001",
+   "truthZh": "鋁合金空心型材",
+   "pred": {
+    "nearest": "76042920009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0364",
+   "name": "EV969231,4FC-S CART (4FC-S濾芯，不含黑色濾頭)",
+   "truth": "84212190001",
+   "truthZh": "其他水過濾或淨化機具",
+   "pred": {
+    "nearest": "73089090007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0145",
+   "name": "ev Series Reader 、RED MINI-MAG Edition 、0G04559 、132.08*84.07*16.00MM 、 連接埠規格 : USB3.0",
+   "truth": "84717090000",
+   "truthZh": "其他儲存單元",
+   "pred": {
+    "nearest": "84719090006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0339",
+   "name": "理想全息能量養生桶(遠紅外線電熱足桶)、輕巧便利型、型號：ZY-002 電壓：AC220V/50HZ、功率：320W、尺寸：48cm*38cm*68cm",
+   "truth": "85167900007",
+   "truthZh": "其他電熱器具",
+   "pred": {
+    "nearest": "90191019008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0032",
+   "name": "浴室用單門櫃 SINGLE DOOR CABINET、W60*D12*H98cm",
+   "truth": "94037000000",
+   "truthZh": "塑膠製家具",
+   "pred": {
+    "nearest": "94037000000"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0017",
+   "name": "遙控器/型號：D32004/FSK：頻移鍵控技術、發射頻率868MHz",
+   "truth": "85269290009",
+   "truthZh": "其他無線電遙控器具",
+   "pred": {
+    "nearest": "85269290009"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0056",
+   "name": "WHITE FISH PROTEIN CONCENTRATE，規格如附件說明書",
+   "truth": "23099010003",
+   "truthZh": "魚溶漿",
+   "pred": {
+    "nearest": "23099010003"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107BA0098",
+   "name": "恆溫恆濕機TEMP. & HUMI. CHAMBER 型號: EC-86MHPE",
+   "truth": "84198990004",
+   "truthZh": "其他機器，工廠及實驗室設備",
+   "pred": {
+    "nearest": "84158100005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0111",
+   "name": "Hydrolyzed chicken peptides",
+   "truth": "35040019004",
+   "truthZh": "其他蛋白質及其衍生物",
+   "pred": {
+    "nearest": "17029020006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0366",
+   "name": "剝漆爐(吊具清潔爐，Burn-Off Oven) 型號：667BA-C",
+   "truth": "84178090005",
+   "truthZh": "其他非電熱式工業或實驗室用爐及烘烤箱",
+   "pred": {
+    "nearest": "85437099906"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0089",
+   "name": "卡夾暗架式鋁合金塊狀天花板 Tile Ceiling：Swing-Down 300*300*30*0.7mm/300*600*30*0.7mm/300*900*30*0.7mm/300*1200*30*0.7mm 300*1500*30*0.7mm/600*600*30*0.7mm/625*625*30*0.7mm/600*1200*30*0.7mm",
+   "truth": "76169990005",
+   "truthZh": "其他鋁製品",
+   "pred": {
+    "nearest": "76109000009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0012",
+   "name": "58吋液晶黑板、WIB5803、L1280mm×W1105mm×T85mm/13.3Kg",
+   "truth": "85437099906",
+   "truthZh": "其他電機及器具",
+   "pred": {
+    "nearest": "85389020002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0376",
+   "name": "88002 Power Functions Train Motor",
+   "truth": "95030039009",
+   "truthZh": "電動玩具火車之零件；軌道、號誌及其他附件",
+   "pred": {
+    "nearest": "85044099107"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0063",
+   "name": "4K2K HDMI+USB 4Port 切換器(KVM Switch), CD-104H",
+   "truth": "84718000007",
+   "truthZh": "其他自動資料處理機單元",
+   "pred": {
+    "nearest": "84718000007"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0167",
+   "name": "陽普安全持針器(IMPROVE safety tube holder)/582010",
+   "truth": "39269016909",
+   "truthZh": "其他塑膠製實驗室、衛生及醫療用之物品",
+   "pred": {
+    "nearest": "90183900908"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0080",
+   "name": "人工飼養活體軸孔珊瑚TS4524 L(12-19cm)Acropora formosa",
+   "truth": "03089019900",
+   "truthZh": "其他活、生鮮或冷藏水產無脊椎動物",
+   "pred": {
+    "nearest": "12119016006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0296",
+   "name": "真空貼合機 ZKTH-S9060M-A 1300*1400*1600mm",
+   "truth": "84798999994",
+   "truthZh": "其他第８４７９節所屬之機械",
+   "pred": {
+    "nearest": "85299090008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0109",
+   "name": "沉水式低溫泵零件 Submerged Cryo.Pump parts：Bushing,Shaft 型號：part no.0004293-02 for pump type 4ECC-158",
+   "truth": "84833020000",
+   "truthZh": "平軸承",
+   "pred": {
+    "nearest": "84831090009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0365",
+   "name": "洗脫烘三機一體滾筒式洗衣機(Automatic washer dryer) 型號：WDU28560TC 規格：220V,10A,60Hz,2050W,洗衣之乾衣容量10.1公斤,烘衣之乾衣容量6公斤",
+   "truth": "84502000005",
+   "truthZh": "洗衣機，包括洗衣、脫水兩用機，其容量為乾衣超過１０公斤者",
+   "pred": {
+    "nearest": "84501120002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0082",
+   "name": "鼻氧管(Nasal Cannula) 規格：032-10-125",
+   "truth": "90181990002",
+   "truthZh": "其他電氣診斷器具",
+   "pred": {
+    "nearest": "90192090008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0122",
+   "name": "Upsalite®抑菌爽身噴霧粉 規格：50mL、100mL、150mL/支",
+   "truth": "33049120003",
+   "truthZh": "痱子粉及爽身粉",
+   "pred": {
+    "nearest": "33074900007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "106AA0169",
+   "name": "Cap Bendera Palm Oil 48-51、16KG",
+   "truth": "15119000001",
+   "truthZh": "精製棕櫚油及其餾分物",
+   "pred": {
+    "nearest": "20083000002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0023",
+   "name": "Dental Handpiece（牙科用雕刻機） T-L-M4 4孔",
+   "truth": "90184100003",
+   "truthZh": "鑽牙機，不論是否單獨機座與其他牙科儀器連結者",
+   "pred": {
+    "nearest": "90184910904"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0092",
+   "name": "玻璃鋼可拆卸穹頂活動房、規格(尺寸)：底部為直徑6米的圓形，高度為3.57米的穹頂形房屋",
+   "truth": "94069000003",
+   "truthZh": "其他組合式建築物",
+   "pred": {
+    "nearest": "72159000008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0101",
+   "name": "Part Number : MIM4-OSXXX 機構 Description : MIM backbone with automated cube slider,automated focus w/LS-50 stage. Provides>15mm focus travel. Includes C60-RA_OBJ_FC_MNT,C60-OBJ_RMS.",
+   "truth": "90112000005",
+   "truthZh": "顯微鏡，供顯微照相、顯微攝影或顯微放映用者",
+   "pred": {
+    "nearest": "90314910006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0254",
+   "name": "白雪肌數位魔鏡膚質檢測系統、NHB-CS210、規格如附件",
+   "truth": "90314910006",
+   "truthZh": "其他光學儀器及用具，以電氣操作者",
+   "pred": {
+    "nearest": "85044094004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0043",
+   "name": "經鼻氧氣套管、1163000、彎式鼻插+兒童經鼻氧氣套管 2.1公尺",
+   "truth": "90192090008",
+   "truthZh": "其他治療用呼吸器具",
+   "pred": {
+    "nearest": "90192090008"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0118",
+   "name": "鐵氧體 Ferrite Tile 型號：3R2B-52 規格：100mm*100mm*5.2mm",
+   "truth": "69091920005",
+   "truthZh": "實驗室用陶質製品",
+   "pred": {
+    "nearest": "85045019003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0045",
+   "name": "磁子裝配爐(全彈裝配機)乙套-1 set of Loading machine for ammunition 9×19mm Dragon and accessories",
+   "truth": "84798999994",
+   "truthZh": "其他第８４７９節所屬之機械",
+   "pred": {
+    "nearest": "84652000008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0161",
+   "name": "滑鼠墊/ EMP011BK /800X300X3mm 430g",
+   "truth": "40161000002",
+   "truthZh": "多孔性橡膠製品",
+   "pred": {
+    "nearest": "40161000002"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0161",
+   "name": "油煙淨化一體機 型號：KSB-yyJH-0020 風量：4000(m3/h) 尺寸(mm)：面寬2000、高度1200、深度950 油煙淨化率：99% 設備阻力：410(pa) 入口油煙濃度：<10(mg/m3) 單套重量：265kg 功率：420(w)",
+   "truth": "84148090008",
+   "truthZh": "其他第８４１４節所屬之貨品",
+   "pred": {
+    "nearest": "84213990001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0114",
+   "name": "貨品名稱：マスチゲンBBゼリー錠(英文品名：Mastigen BB Jelly Tablets、中文品名：增美滋源® BB果凍錠) 型號：N/A 規格：每顆1090毫克。",
+   "truth": "17049000909",
+   "truthZh": "其他糖食（包括白色巧克力），不含可可者",
+   "pred": {
+    "nearest": "90189080907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0076",
+   "name": "透明網格背包 型號：A507",
+   "truth": "42029290918",
+   "truthZh": "其他類似容器，外層為塑膠布者",
+   "pred": {
+    "nearest": "39219090002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0029",
+   "name": "熱作模具鋼 型號：NOS®415 規格：厚度為130mm~380mm，寬度小於600mm",
+   "truth": "72286000009",
+   "truthZh": "其他合金鋼製條及桿",
+   "pred": {
+    "nearest": "72286000009"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0231",
+   "name": "美容儀 TD-1801",
+   "truth": "90189080104",
+   "truthZh": "其他第９０１８節所屬之貨品，具低週波、高週波、超音波、超短波功能者",
+   "pred": {
+    "nearest": "85167900007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0072",
+   "name": "貨品名稱：Opsite Post Op Transparent Waterproof Dressing with Absorbent Pad 型號：66000716 規格: 35cm x 10cm",
+   "truth": "30051090909",
+   "truthZh": "其他粘敷料和其他具有粘層之物品",
+   "pred": {
+    "nearest": "39269016909"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0199",
+   "name": "I/O 繼電器端子台、G7TC系列、G7TC-ID16",
+   "truth": "85364990001",
+   "truthZh": "其他電驛（繼電器），電壓超過６０伏特，但未超過１０００伏特者",
+   "pred": {
+    "nearest": "85176200005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0244",
+   "name": "塗布機 型號：KLC300-4",
+   "truth": "84798999994",
+   "truthZh": "其他第８４７９節所屬之機械",
+   "pred": {
+    "nearest": "74081900904"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0228",
+   "name": "接線盒、Cover A、Cover B、Cover C",
+   "truth": "85369090009",
+   "truthZh": "其他第８５３６節所屬之貨品",
+   "pred": {
+    "nearest": "85444290909"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0214",
+   "name": "酚醛板/FZ系列/37\"*49\"、41\"*49\"、43\"*49\"或以訂單實際尺寸為準",
+   "truth": "39219090002",
+   "truthZh": "其他塑膠製板、片、薄膜、箔及扁條",
+   "pred": {
+    "nearest": "76071990003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0049",
+   "name": "保鮮螞蚱 (蚱蜢)1盒=20包x8隻以上產品,為一箱=24盒",
+   "truth": "05119999248",
+   "truthZh": "蟲餌（熱帶魚飼餌）",
+   "pred": {
+    "nearest": "23099090907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0234",
+   "name": "Romesco sauce/Tomato sauce with nutty flavor",
+   "truth": "21032000008",
+   "truthZh": "番茄醬及其他番茄調味醬",
+   "pred": {
+    "nearest": "21032000008"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0318",
+   "name": "T4 原蟲水質處理劑(Protozoan Herbal Water Conditioner) 120ml、250ml",
+   "truth": "38089420001",
+   "truthZh": "消毒劑成品",
+   "pred": {
+    "nearest": "23099090907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0051",
+   "name": "離岸貨櫃吊索(Off Shore Container Sling)(鋼索：配合離岸貨櫃所使用的) 型式：20FT CLOSED(TALURIT)",
+   "truth": "73129000000",
+   "truthZh": "鋼鐵製編帶、吊索及類似品，非電氣絕緣者",
+   "pred": {
+    "nearest": "85371010002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0073",
+   "name": "貨品名稱：馬桶/管線強力疏通器 型號：HX-004 規格： 1.尺寸：80mm*140mm*56mm 2.重量：約565g 3.加壓壓力：MAX 0.65Mpa",
+   "truth": "84142000000",
+   "truthZh": "手或腳操作之空氣泵",
+   "pred": {
+    "nearest": "84716090903"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0212",
+   "name": "冷沖板/LC-110/37\"*49\"、41\"*49\"、43\"*49\"或以訂單實際尺寸為準",
+   "truth": "39219090002",
+   "truthZh": "其他塑膠製板、片、薄膜、箔及扁條",
+   "pred": {
+    "nearest": "76071990003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0079",
+   "name": "人工飼養活體軸孔珊瑚TS4524 M(6-11cm)Acropora formosa",
+   "truth": "03089019900",
+   "truthZh": "其他活、生鮮或冷藏水產無脊椎動物",
+   "pred": {
+    "nearest": "12119016006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0343",
+   "name": "必帝矽化物塗層真空採血管(紅蓋)",
+   "truth": "90183900908",
+   "truthZh": "其他導管、套管及類似品",
+   "pred": {
+    "nearest": "90183200004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0011",
+   "name": "(桌上型)超小型射出成形機(Tabletop Type Ultra Compact Injection Molding Machine)/HM7 TYPE",
+   "truth": "84771000907",
+   "truthZh": "其他射出成型機",
+   "pred": {
+    "nearest": "85219090006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0221",
+   "name": "\"陽普\"持針器(未滅菌)(\"IMPROVE\"Needle Holder (Non-Sterile)/582010",
+   "truth": "39269016909",
+   "truthZh": "其他塑膠製實驗室、衛生及醫療用之物品",
+   "pred": {
+    "nearest": "90183900908"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0379",
+   "name": "電動推桿-TA23-2L-183370-27123-01216-MT-0-Model 馬達規格：45W、DC24V",
+   "truth": "85013119000",
+   "truthZh": "其他直流電動機，輸出超過３７．５瓦，但未超過７５０瓦者",
+   "pred": {
+    "nearest": "85013119000"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0051",
+   "name": "無接頭電線(UL Style 2651 flat cable) 300V，無插接器 UL WIRE 規格編號：SZ-B2651-114(1A/300V/3C/26AWG/105℃)",
+   "truth": "85444990001",
+   "truthZh": "其他電導體，未裝有插接器，電壓不超過１０００伏特者",
+   "pred": {
+    "nearest": "85444990001"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0058",
+   "name": "冷凍水煮海參 Apostichopus japonicus(仿刺參)",
+   "truth": "16056100101",
+   "truthZh": "已調製或保藏之海參，冷凍者",
+   "pred": {
+    "nearest": "03061700903"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0163",
+   "name": "飾有反光條及口袋之長袖上衣(全開襟並以拉鍊及魔鬼氈以左上右下方式閉合)及長褲(以拉鍊及魔鬼氈以左上右下方式閉合)且尚未縫合內層之半成品 型號：FM02 規格：1.布料顏色及組織：深藍色、梭織布 2.領子內層材料組織：針扎不織布貼合PTFE膜 3.進口時上衣及長褲的尺寸搭配成套",
+   "truth": "62032300006",
+   "truthZh": "合成纖維製男用或男童用搭配式套裝",
+   "pred": {
+    "nearest": "56039390000"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0071",
+   "name": "貨品名稱：Primapore Adhesive Wound Dressing 型號：7139 規格: 35cm x 12cm",
+   "truth": "30051090909",
+   "truthZh": "其他粘敷料和其他具有粘層之物品",
+   "pred": {
+    "nearest": "30051090909"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0351",
+   "name": "交流變直流變流器(AC to DC Converter) ADS-28-200TG，容量：6kW 電壓：380VAC to 28VDC",
+   "truth": "85044091007",
+   "truthZh": "其他切換式電源供應器",
+   "pred": {
+    "nearest": "85044099900"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0007",
+   "name": "馬達用軸心",
+   "truth": "84831090009",
+   "truthZh": "其他傳動軸及曲柄",
+   "pred": {
+    "nearest": "73043990005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0280",
+   "name": "高錳鋼板(鋼號：Mn13) 形狀：平板 規格：10m/m×2米×6.25米",
+   "truth": "72254000908",
+   "truthZh": "其他合金鋼扁軋製品，非捲盤狀，熱軋後未進一步加工，寬度６００公厘及以上者",
+   "pred": {
+    "nearest": "72254000908"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0238",
+   "name": "急速冷卻冷凍烹飪機/MF130.2/1600mm×1425mm×2350mm,商標 MultiFresh®",
+   "truth": "84198100001",
+   "truthZh": "製造熱飲、熱食或烹調用之機器、工廠或設備",
+   "pred": {
+    "nearest": "84186950007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0192",
+   "name": "Cooking Master 型號：ALLDA-1000 規格：110V/60HZ/1500W",
+   "truth": "85166090009",
+   "truthZh": "其他烤箱；炊具、炊盤、煮環、烤器、烘焙器",
+   "pred": {
+    "nearest": "85098090004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0048",
+   "name": "SYS-3011注射幫浦（Syringe pump）",
+   "truth": "90189080907",
+   "truthZh": "其他第９０１８節所屬之貨品",
+   "pred": {
+    "nearest": "90189080907"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0110",
+   "name": "沉水式低溫泵零件 Submerged Cryo.Pump parts：Liner,Bearing,6314 型號：part no.0040020-15 for pump type 4ECC-158 規格：為4ECC-158泵專用，for Ball bearing 6314(O.D.150mm)",
+   "truth": "84839090002",
+   "truthZh": "其他齒輪、鏈輪及其他傳動元件，單獨呈現者；及第８４８３節所屬貨品之零件",
+   "pred": {
+    "nearest": "84829990004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0068",
+   "name": "自動進樣器 AUTO SAMPLER SIL-20A",
+   "truth": "84798999994",
+   "truthZh": "其他第８４７９節所屬之機械",
+   "pred": {
+    "nearest": "90279090003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0083",
+   "name": "鋁合金管/6063-T5/GAA002/6000mmX25.4mmX50.8mmX厚度1.2mm",
+   "truth": "76082010006",
+   "truthZh": "鋁合金管",
+   "pred": {
+    "nearest": "76082010006"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107BA0010",
+   "name": "枸杞濃縮汁",
+   "truth": "20089991901",
+   "truthZh": "未列名經其他方式調製或保藏之果實及植物其他可食之部分，不論是否加糖或含其他甜味料",
+   "pred": {
+    "nearest": "17049000909"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0018",
+   "name": "空氣製水機 型號：P50常溫水 規格：KLR-50LA 總功率：900W，製水功率：800W 110V-60Hz R22",
+   "truth": "84798999994",
+   "truthZh": "其他第８４７９節所屬之機械",
+   "pred": {
+    "nearest": "85098090004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0112",
+   "name": "恆溫控制器PAU-300S/冷卻方式: 空冷式、冷卻能力（W） 230／280、 加熱能力(W） 600、設定温度範圍（℃) 20～30（壓縮機停止時：20～40)、使用周圍温度(℃) 20～35 、處理風量（m3/min） 0.8／10 定格電壓（V） 單相AC100 、消費電流（A）3.5／3.0（MIN）8.2／8.0（MAX)、消費電力（W） 280／290（MIN）820／850（MAX",
+   "truth": "84158200004",
+   "truthZh": "具有製冷裝置之空氣調節器",
+   "pred": {
+    "nearest": "84185090000"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0308",
+   "name": "急速冷卻冷凍機(Icy blast chiller)/ICY M/765mm×884mm×1568mm",
+   "truth": "84186990009",
+   "truthZh": "其他冷藏或冷凍設備",
+   "pred": {
+    "nearest": "84186950007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0050",
+   "name": "保鮮大麥蟲 1盒=20包x20克以上產品,為一箱=24盒",
+   "truth": "05119999248",
+   "truthZh": "蟲餌（熱帶魚飼餌）",
+   "pred": {
+    "nearest": "35040019004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0203",
+   "name": "Airnergy Professional Plus",
+   "truth": "84213910008",
+   "truthZh": "電動空氣過濾器及電動空氣清潔器",
+   "pred": {
+    "nearest": "84798910008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0052",
+   "name": "貨品名稱: Tuk Tuk 型號: Classic 規格: 汽油三輪車(無引擎)/排氣量:350cc/型式年份:1990/座位數:3人/新舊:舊車 /重量:300kg/可前進倒退/商標(牌名): Montree Motor (จำหน่ายรถสามล้อร้านมนตรี มอเตอร์ )",
+   "truth": "87032190901",
+   "truthZh": "其他小客車，汽缸容量不超過１０００立方公分者",
+   "pred": {
+    "nearest": "85022010001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0186",
+   "name": "幼兒食物剪 / J101",
+   "truth": "39241000906",
+   "truthZh": "其他塑膠製餐桌用餐具及廚房用具",
+   "pred": {
+    "nearest": "85098040005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0090",
+   "name": "變頻調速三相非同步馬達, type: YPT200L-4, 輸出功率: 30kW, 相位: 3∮, 額定電壓值: 380V, 額定電流: 58.9A, 轉速: 1470rpm, 極數: 4P",
+   "truth": "85015290006",
+   "truthZh": "其他多相交流電動機，輸出超過７５０瓦，但未超過７５瓩者",
+   "pred": {
+    "nearest": "85015190007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0065",
+   "name": "阻尼螺栓、LGAE009、5*5*6mm",
+   "truth": "73269090906",
+   "truthZh": "其他鋼鐵製品",
+   "pred": {
+    "nearest": "90189090905"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0083",
+   "name": "LEFT SIDE HEATSINK, TYPE A,NEW PLATFORM P/N.13-004-0664",
+   "truth": "85229029902",
+   "truthZh": "其他錄放音機之零件及附件",
+   "pred": {
+    "nearest": "84195090009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0135",
+   "name": "工業電腦平台NY系列IPC機器控制器、NY512-1500-1XX21391X",
+   "truth": "85371010002",
+   "truthZh": "專供配合機器使用之電子控制設備（包括數值、程式、電腦及其他類似控制設備），電壓未超過１０００伏特者",
+   "pred": {
+    "nearest": "84719090006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0010",
+   "name": "貨品名稱：塑膠油箱 型號規格：DS-1.5L-120 / 1.5L 尺寸：L×W×H（mm）： 140×135×140，口徑：φ120",
+   "truth": "39269090908",
+   "truthZh": "其他塑膠製品及第３９０１至３９１４節之材料製成品",
+   "pred": {
+    "nearest": "85044099107"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0287",
+   "name": "Display Bracket 展示支架 Makeup Kiosk 9.7\"",
+   "truth": "76169990005",
+   "truthZh": "其他鋁製品",
+   "pred": {
+    "nearest": "84733000006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0020",
+   "name": "熱軋合金鋼圓棒 直徑Φ18mm*長度2000~3000mm",
+   "truth": "72283000907",
+   "truthZh": "其他合金鋼條及桿，熱軋、熱抽或擠製後未進一步加工者",
+   "pred": {
+    "nearest": "72283000907"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0056",
+   "name": "1.名稱:彩色多普勒超音波診斷儀器2.型號:SS-1000 3.規格:顯示器15\"LCD液晶顯示器,外型尺寸:400mm*394mm*172mm重量約8.5kg",
+   "truth": "90181200008",
+   "truthZh": "超音波掃瞄器具",
+   "pred": {
+    "nearest": "85285910005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0177",
+   "name": "V400m刷卡機上殼模組",
+   "truth": "84705000004",
+   "truthZh": "收銀機",
+   "pred": {
+    "nearest": "85044099900"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0133",
+   "name": "NY系列IPC可程式多軸運動控制器、NY512-A600-1XX21391X",
+   "truth": "85371010002",
+   "truthZh": "專供配合機器使用之電子控制設備（包括數值、程式、電腦及其他類似控制設備），電壓未超過１０００伏特者",
+   "pred": {
+    "nearest": "85371010002"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0035",
+   "name": "乾海帶(學名：Laminaria Spp.) 150g/6kg",
+   "truth": "12122111200",
+   "truthZh": "乾海帶（昆布）",
+   "pred": {
+    "nearest": "12122911006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0261",
+   "name": "護面鋁扁條(Clad aluminum strip) 厚度最大處2~3公釐，寬度約85公釐，產品有數種顏色可選擇 又稱\"發光字鋁邊條/鋁邊帶/鋁邊料\"",
+   "truth": "76041020000",
+   "truthZh": "鋁型材",
+   "pred": {
+    "nearest": "76041020000"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0377",
+   "name": "Downdraft extractor 型號：CSDA7000FL 規格：230V/50-60HZ/4400W",
+   "truth": "84213910008",
+   "truthZh": "電動空氣過濾器及電動空氣清潔器",
+   "pred": {
+    "nearest": "84146000001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0155",
+   "name": "信息化診斷系統、YS-121H",
+   "truth": "90181990002",
+   "truthZh": "其他電氣診斷器具",
+   "pred": {
+    "nearest": "90181990002"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0037",
+   "name": "鋁合金圓型管4分-鉻，DN6724，厚度0.7mm×長度609.6mm，（附件五）",
+   "truth": "76082010006",
+   "truthZh": "鋁合金管",
+   "pred": {
+    "nearest": "83024900002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0073",
+   "name": "蒸氣加熱攪拌罐 (規格:1000L)",
+   "truth": "84198990004",
+   "truthZh": "其他機器，工廠及實驗室設備",
+   "pred": {
+    "nearest": "69022000003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0159",
+   "name": "滑鼠墊/EMP004/ S-280*225MM",
+   "truth": "40161000002",
+   "truthZh": "多孔性橡膠製品",
+   "pred": {
+    "nearest": "40161000002"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0058",
+   "name": "8人座電動遊園車(老爺車款)、CTNT-LY8、8人座",
+   "truth": "87031000002",
+   "truthZh": "特別設計之雪地旅行車；高爾夫球車及類似車輛",
+   "pred": {
+    "nearest": "87031000002"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0099",
+   "name": "Part Number :T100D-MMC光學模組 Description : 100mm Dual Achromatic Tube lens and C60-3060 C-mount C60-3060-C&C60-TUBE-100D",
+   "truth": "90112000005",
+   "truthZh": "顯微鏡，供顯微照相、顯微攝影或顯微放映用者",
+   "pred": {
+    "nearest": "90314910006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0260",
+   "name": "DDS-III 上下射砂全自動造型機",
+   "truth": "84748000004",
+   "truthZh": "固體礦物燃料、陶土漿、濕水泥、粉刷材料或其他粉狀、糊狀礦產品用之混凝、造模或造型機器及鑄造用砂模製造機器",
+   "pred": {
+    "nearest": "84798999994"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0093",
+   "name": "\"泰利福\"硬式喉頭鏡 (未滅菌)(Laryngoscope) 型號:Dispoled",
+   "truth": "90189080907",
+   "truthZh": "其他第９０１８節所屬之貨品",
+   "pred": {
+    "nearest": "90183900908"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0370",
+   "name": "8PT 低壓系統盤 型號：825KVA BACKUP UPS 規格：2200*1600*1200 輸入和輸出電壓和電源為480V交流",
+   "truth": "85371090005",
+   "truthZh": "其他控電或配電用器具，電壓未超過１０００伏特者",
+   "pred": {
+    "nearest": "85044099900"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0072",
+   "name": "蒸氣電加熱罐 ( 規格700L)",
+   "truth": "84198990004",
+   "truthZh": "其他機器，工廠及實驗室設備",
+   "pred": {
+    "nearest": "23099090907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0195",
+   "name": "CHIPSI Climate Floor M、L、XL 小動物專用軟墊",
+   "truth": "56021000000",
+   "truthZh": "針軋氈呢及經針縫纖維製之織物，不論是否經浸漬、塗佈、被覆或黏合者",
+   "pred": {
+    "nearest": "23021000009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0078",
+   "name": "水煮筊白筍/筊白筍整條",
+   "truth": "20059990914",
+   "truthZh": "其他酸漬除外之調製或保藏蔬菜罐頭，第２００６節之產品除外",
+   "pred": {
+    "nearest": "21069099903"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0007",
+   "name": "貨品名稱：Camera Control Box(相機訊號控制盒)型號：CCB-WD1",
+   "truth": "85176200005",
+   "truthZh": "接收、轉換及傳輸或再生聲音、圖像或其他資料之機器，包括交換器及路由器",
+   "pred": {
+    "nearest": "85286200208"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0218",
+   "name": "Aptonia 低糖運動飲料-西柚口味 規格：500毫升",
+   "truth": "22029990997",
+   "truthZh": "其他未含酒精飲料水，含糖或其他甜味料或香料者（不含乳製品）",
+   "pred": {
+    "nearest": "21069010008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0120",
+   "name": "\"雃博\"加濕化器 英文品名：\"APEX\"Humidifier 規格：如附件中文說明書",
+   "truth": "90192090008",
+   "truthZh": "其他治療用呼吸器具",
+   "pred": {
+    "nearest": "84198990004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0344",
+   "name": "必帝乙二胺四乙酸真空採血管(紫蓋 EDTA)",
+   "truth": "90183900908",
+   "truthZh": "其他導管、套管及類似品",
+   "pred": {
+    "nearest": "90183200004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0063",
+   "name": "彈簧臂管軸、MGAL022、ø11.9*76mm",
+   "truth": "73269090906",
+   "truthZh": "其他鋼鐵製品",
+   "pred": {
+    "nearest": "90189090905"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0224",
+   "name": "能量果糕-草莓覆盆子口味",
+   "truth": "17049000909",
+   "truthZh": "其他糖食（包括白色巧克力），不含可可者",
+   "pred": {
+    "nearest": "22029990997"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0097",
+   "name": "冷熱衝擊機THERMAL SHOCK CHAMBER 型 號: ES-1006LH",
+   "truth": "84198990004",
+   "truthZh": "其他機器，工廠及實驗室設備",
+   "pred": {
+    "nearest": "84158100005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0164",
+   "name": "LASER MARKER ML-Z系列",
+   "truth": "84561190001",
+   "truthZh": "其他以雷射加工之工具機",
+   "pred": {
+    "nearest": "90189080907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0020",
+   "name": "高雅牛肝小餅（貓用）Cat Purrfect Beef Liver，90g/包",
+   "truth": "23091000002",
+   "truthZh": "供零售用之貓狗食品",
+   "pred": {
+    "nearest": "23099090907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0002",
+   "name": "Herbal Elixir Breathe 500ml",
+   "truth": "23091000002",
+   "truthZh": "供零售用之貓狗食品",
+   "pred": {
+    "nearest": "23091000002"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0146",
+   "name": "ev Series Reader 、CFast 2.0 Edition 、 0G05222 、130*84*16MM 、 連接埠規格 : USB3.0",
+   "truth": "84717090000",
+   "truthZh": "其他儲存單元",
+   "pred": {
+    "nearest": "85219090006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0299",
+   "name": "旺旺老翁大口爽爽喉茶草本植物飲料 PET250ml",
+   "truth": "22029990997",
+   "truthZh": "其他未含酒精飲料水，含糖或其他甜味料或香料者（不含乳製品）",
+   "pred": {
+    "nearest": "21069099903"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0157",
+   "name": "JSC980YL 冷軋高張力材料 規格：1.4×1219×C",
+   "truth": "72255000004",
+   "truthZh": "其他合金鋼扁軋製品，冷軋（冷延）後未進一步加工，寬度６００公厘及以上者",
+   "pred": {
+    "nearest": "39119010001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0337",
+   "name": "生物填料(彈性填料) 長3500mm，單根纖維直徑0.05cm",
+   "truth": "59119090000",
+   "truthZh": "其他工業用之紡織產品或製品",
+   "pred": {
+    "nearest": "73269090906"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0194",
+   "name": "即熱純淨水壺 (Water Purification Boil) 型號：GA4522W 規格：電壓：110V/60Hz 功率：1600W",
+   "truth": "85161000009",
+   "truthZh": "即熱式或儲存式之電熱水器及浸入式電熱水器",
+   "pred": {
+    "nearest": "85167900007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0204",
+   "name": "Ecoloblue 30系列(如附件) 型號：30X",
+   "truth": "84798999994",
+   "truthZh": "其他第８４７９節所屬之機械",
+   "pred": {
+    "nearest": "49019990005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0086",
+   "name": "EndoClot®Polysaccharide Hemostatic System (EndoClot®PHS)、EPK1801(止血粉1g、導管1800mm)",
+   "truth": "30061039001",
+   "truthZh": "已消毒外科用或牙科用，具吸收性之止血物質，其他材料製",
+   "pred": {
+    "nearest": "90189080907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0040",
+   "name": "椰殼置物容器(如裝糖包)",
+   "truth": "96020012000",
+   "truthZh": "植物雕刻材料之製品",
+   "pred": {
+    "nearest": "90189090905"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0055",
+   "name": "華陀牌真空拔罐器12杯組",
+   "truth": "84141090003",
+   "truthZh": "其他真空泵",
+   "pred": {
+    "nearest": "85184090002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0172",
+   "name": "AC Power Cable、代表型號04118-000、200-240V / 10A",
+   "truth": "85444290909",
+   "truthZh": "其他電導體，裝有插接器，電壓不超過１０００伏特者",
+   "pred": {
+    "nearest": "90191019008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0042",
+   "name": "Bra 背心，女用，針織，款號：34834",
+   "truth": "61091000006",
+   "truthZh": "棉製Ｔ恤衫、汗衫及其他背心，針織或鈎針織者",
+   "pred": {
+    "nearest": "61099020005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0289",
+   "name": "鮑魚精粉 ZR-120/Abalone Extract Powder ZR-120 (品種為九孔螺 Haliotis Diversicolor)",
+   "truth": "21069099903",
+   "truthZh": "其他未列名食物調製品",
+   "pred": {
+    "nearest": "16023220909"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0250",
+   "name": "Casall U-Shape (Casall U型板-木紋) L：92cm W：33cm H：20cm",
+   "truth": "95069100001",
+   "truthZh": "一般體能運動、體操或競技比賽用物品及設備",
+   "pred": {
+    "nearest": "39269090908"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0094",
+   "name": "化妝棉/壓大圓點圓片/直徑6cm",
+   "truth": "56012190009",
+   "truthZh": "棉胎製品",
+   "pred": {
+    "nearest": "95069900904"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0012",
+   "name": "馬達/N30090/功率：48W，輸入電壓：AC100-240V，單相馬達",
+   "truth": "85014090001",
+   "truthZh": "其他單相交流電動機",
+   "pred": {
+    "nearest": "85014090001"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0009",
+   "name": "貨品名稱：數位/類比訊號截取盒 型號： D720 規格： HDMI /AV capture 英文貨名：HD60 Video Recorder",
+   "truth": "85219090006",
+   "truthZh": "其他錄放影機",
+   "pred": {
+    "nearest": "85219090006"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107BA0071",
+   "name": "可傾式夾層鍋 ( 規格500L 工業用)",
+   "truth": "84198990004",
+   "truthZh": "其他機器，工廠及實驗室設備",
+   "pred": {
+    "nearest": "69022000003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0070",
+   "name": "FLAMEX SI EN 50382-2，1800V 120℃",
+   "truth": "85446090005",
+   "truthZh": "其他電導體，電壓超過１０００伏特者",
+   "pred": {
+    "nearest": "85444990001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0380",
+   "name": "WL-007/拋棄式靜電消除腕帶(Disposable Static Dissipative Wrist Strap)",
+   "truth": "39269090908",
+   "truthZh": "其他塑膠製品及第３９０１至３９１４節之材料製成品",
+   "pred": {
+    "nearest": "64029990327"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0262",
+   "name": "女用，針織，型號：37941，吸排運動緊身長褲 40丹尼",
+   "truth": "61046310005",
+   "truthZh": "合成纖維製女用或女童用長褲、膝褲及短褲，針織或鈎針織者",
+   "pred": {
+    "nearest": "61034310001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0059",
+   "name": "醫用分子篩製氧/霧化機、LP-5L-1Y、5L",
+   "truth": "90192090008",
+   "truthZh": "其他治療用呼吸器具",
+   "pred": {
+    "nearest": "90192090008"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0047",
+   "name": "電動車輛驅動用之三相交流電動機；EM2311；額定輸出功率15kW",
+   "truth": "85015290006",
+   "truthZh": "其他多相交流電動機，輸出超過７５０瓦，但未超過７５瓩者",
+   "pred": {
+    "nearest": "85015290006"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0179",
+   "name": "香蕈菌絲體發酵萃取物 AHCC-Standard-FG",
+   "truth": "21069099903",
+   "truthZh": "其他未列名食物調製品",
+   "pred": {
+    "nearest": "19019011006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0290",
+   "name": "Casall Yoga wheel cork (Casall 瑜珈環)",
+   "truth": "95069100001",
+   "truthZh": "一般體能運動、體操或競技比賽用物品及設備",
+   "pred": {
+    "nearest": "45041000001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0133",
+   "name": "茶碗蒸冷凍蛋液(3倍濃縮)(1KG/瓶)",
+   "truth": "21069099903",
+   "truthZh": "其他未列名食物調製品",
+   "pred": {
+    "nearest": "21041029006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0162",
+   "name": "飾有反光條及口袋之長袖上衣(全開襟並以拉鍊及魔鬼氈以左上右下方式閉合)及長褲(以拉鍊及魔鬼氈以左上右下方式閉合)且尚未縫合內層之半成品 型號：AD02RP 規格：1.布料顏色及組織：深藍色、梭織布 2.領子內層材料組織：針扎不織布貼合PTFE膜 3.進口時上衣及長褲的尺寸搭配成套",
+   "truth": "62032300006",
+   "truthZh": "合成纖維製男用或男童用搭配式套裝",
+   "pred": {
+    "nearest": "56039390000"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0113",
+   "name": "沉水式低溫泵零件 Submerged Cryo.Pump parts：Bushing,Shaft 型號：part no.4000153-04 for pump 6ECC-15 規格：為6ECC-15專用",
+   "truth": "84833020000",
+   "truthZh": "平軸承",
+   "pred": {
+    "nearest": "84831090009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0027",
+   "name": "IXPE（地膜），OYX，厚×寬×長：2mm × 1.1m × 50m",
+   "truth": "39189090007",
+   "truthZh": "其他塑膠製成捲或磚形之地面覆蓋物，不論是否為自粘性；如本章註九定義之其他塑膠製牆或天花板覆蓋物",
+   "pred": {
+    "nearest": "40051000005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0302",
+   "name": "T13/T15 Coupler for strand 鋼絞線連接頭",
+   "truth": "73269090906",
+   "truthZh": "其他鋼鐵製品",
+   "pred": {
+    "nearest": "73269090906"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0001",
+   "name": "線路阻抗穩定網路 NSLK8128/RC",
+   "truth": "90309090008",
+   "truthZh": "其他第９０３０節所屬物品之零件及附件",
+   "pred": {
+    "nearest": "85044020003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0066",
+   "name": "公仔小汽車手電筒玩具",
+   "truth": "85131090003",
+   "truthZh": "其他手提電燈",
+   "pred": {
+    "nearest": "95030062009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0190",
+   "name": "玻璃視窗/228039950G/81.5cm*49.5cm*0.5cm",
+   "truth": "70071900008",
+   "truthZh": "其他強化安全玻璃",
+   "pred": {
+    "nearest": "70200019001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0141",
+   "name": "松原鍋爐 M100G 、 瓦斯蒸汽鍋爐 、 100kg/hr",
+   "truth": "84021200004",
+   "truthZh": "水蒸汽產生量每小時不超過４５噸之水管式鍋爐",
+   "pred": {
+    "nearest": "85161000009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0072",
+   "name": "FLAMEX EN 50306-2，300V",
+   "truth": "85444990001",
+   "truthZh": "其他電導體，未裝有插接器，電壓不超過１０００伏特者",
+   "pred": {
+    "nearest": "85444990001"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0175",
+   "name": "直頂電動推桿(Direct-drive linear actuator)、YLSZ08-2411-270/390、DC24V/2A 、額定輸出功率/50W",
+   "truth": "85013119000",
+   "truthZh": "其他直流電動機，輸出超過３７．５瓦，但未超過７５０瓦者",
+   "pred": {
+    "nearest": "85013119000"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107BA0077",
+   "name": "添加食用色素之飼料用乳粉（不得供人食用）；馬來西亞Milk Preparation for Feed (Dairy Preparation for Feed)",
+   "truth": "23099090104",
+   "truthZh": "調製單味飼料",
+   "pred": {
+    "nearest": "04022100900"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0132",
+   "name": "Miier網路多媒體播放器、Miier-SA01、規格如附件",
+   "truth": "85219090006",
+   "truthZh": "其他錄放影機",
+   "pred": {
+    "nearest": "85219090006"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0173",
+   "name": "PBT FIBER 細度×長度為1.4d × 38MM及2d ×51MM",
+   "truth": "55032000008",
+   "truthZh": "聚酯纖維棉，未初梳、未精梳或未另行處理以供紡製用者",
+   "pred": {
+    "nearest": "64039190002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0091",
+   "name": "極細同軸線(Micro coaxial cable)/QD16992-19 REV A-VA/電壓不超過30V",
+   "truth": "85442010001",
+   "truthZh": "同軸電纜",
+   "pred": {
+    "nearest": "85442010001"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0140",
+   "name": "發光滑鼠墊/ EMP013BKAA-IU/365X265X5mm 560g",
+   "truth": "39269090908",
+   "truthZh": "其他塑膠製品及第３９０１至３９１４節之材料製成品",
+   "pred": {
+    "nearest": "39269090908"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0282",
+   "name": "變頻式洗衣機用零組件-洗衣機運轉模組",
+   "truth": "85015190007",
+   "truthZh": "其他多相交流電動機，輸出超過３７．５瓦，但未超過７５０瓦者",
+   "pred": {
+    "nearest": "84501120002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0160",
+   "name": "滑鼠墊/ EMP005/S-280*225MM",
+   "truth": "40161000002",
+   "truthZh": "多孔性橡膠製品",
+   "pred": {
+    "nearest": "40161000002"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107BA0056",
+   "name": "ENVIRONMENTALLY FRIENDLY PLASTICIZER 化學改性油酯(JEG3-33)分子式: C37H72O7 分子量: 約628",
+   "truth": "15180090004",
+   "truthZh": "其他沸製、氧化、脫水、硫化、吹製，在真空中或惰性氣體中行聚合化或經其他化學方法改質之動植物或微生物油脂及其餾分物，但不包括第１５１６節所列產品",
+   "pred": {
+    "nearest": "54024900908"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0018",
+   "name": "智能鎖/TWX5G02/188×150×78",
+   "truth": "83015000009",
+   "truthZh": "附有鎖之釦及帶釦之框，卑金屬製",
+   "pred": {
+    "nearest": "76169990005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0041",
+   "name": "Bra 短版交叉細肩帶，女用，針織，款號：34830",
+   "truth": "62121090001",
+   "truthZh": "其他紡織材料製胸罩，不論是否針織或鈎針織者",
+   "pred": {
+    "nearest": "62121090001"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107BA0075",
+   "name": "Liquid Bulk Salt, 275 gal/tank",
+   "truth": "21069099903",
+   "truthZh": "其他未列名食物調製品",
+   "pred": {
+    "nearest": "21039090905"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0347",
+   "name": "必帝血清真空採血管(金黃頭蓋)",
+   "truth": "90183900908",
+   "truthZh": "其他導管、套管及類似品",
+   "pred": {
+    "nearest": "90183200004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0320",
+   "name": "龍魚'O'全效性水質處理劑('O' Arowana Care Water Conditioner) 120ml、250ml",
+   "truth": "38089420001",
+   "truthZh": "消毒劑成品",
+   "pred": {
+    "nearest": "23099090907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0085",
+   "name": "馬口鐵氣霧罐(Aerosol can)/規格：Φ52mm 空罐(500ml以下)",
+   "truth": "73102910006",
+   "truthZh": "其他馬口鐵製容器，容量小於５０公升者",
+   "pred": {
+    "nearest": "73102910006"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0054",
+   "name": "發現黃金趣味磚/ 型號：NC471813",
+   "truth": "95030091905",
+   "truthZh": "其他玩具，成組或成套者",
+   "pred": {
+    "nearest": "21050010008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0168",
+   "name": "TORCH LANE TARGETING LIGHT (TORCH.火炬對準系統) 型號：157-8800",
+   "truth": "95049010002",
+   "truthZh": "保齡球道設備（包括保齡球）",
+   "pred": {
+    "nearest": "85123000009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0369",
+   "name": "8PT 低壓系統盤 型號：825KVA CCD UPS 規格：2200*1600*1200 輸入和輸出電壓和電源為480V交流",
+   "truth": "85371090005",
+   "truthZh": "其他控電或配電用器具，電壓未超過１０００伏特者",
+   "pred": {
+    "nearest": "85044099900"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0038",
+   "name": "款號：34756，針織，兒童用，包臀連身衣，尺寸：90CM",
+   "truth": "61142000007",
+   "truthZh": "棉製其他衣服，針織或鈎針織者",
+   "pred": {
+    "nearest": "61044200003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0349",
+   "name": "必帝檸檬酸鈉真空採血管(藍蓋)",
+   "truth": "90183900908",
+   "truthZh": "其他導管、套管及類似品",
+   "pred": {
+    "nearest": "90183200004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0022",
+   "name": "5’photo Amidite T、HB-PD4-004",
+   "truth": "29349990901",
+   "truthZh": "其他雜環化合物",
+   "pred": {
+    "nearest": "29349990901"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0106",
+   "name": "#201、不銹鋼鋼捲、鋼捲規格為：0.2~0.4mm厚×寬度15~50mm",
+   "truth": "72202090203",
+   "truthZh": "ＳＵＳ２００系列之冷軋不銹鋼扁軋製品，寬度小於６００公厘者",
+   "pred": {
+    "nearest": "72202090123"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0087",
+   "name": "Enclosures,GUBW4",
+   "truth": "76169990005",
+   "truthZh": "其他鋁製品",
+   "pred": {
+    "nearest": "87149200304"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0305",
+   "name": "F系列蒸氣加熱HS型吸收式冷凍機、QEW-HS630FS",
+   "truth": "84186990009",
+   "truthZh": "其他冷藏或冷凍設備",
+   "pred": {
+    "nearest": "85365019005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0061",
+   "name": "食物蔬果咬咬樂 K103",
+   "truth": "39249000909",
+   "truthZh": "其他塑膠製家庭用製品及衛生保健或盥洗用具",
+   "pred": {
+    "nearest": "84351090008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0162",
+   "name": "滑鼠墊/ EMP014BK-M/365*265*3MM200G",
+   "truth": "40161000002",
+   "truthZh": "多孔性橡膠製品",
+   "pred": {
+    "nearest": "40161000002"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0026",
+   "name": "貨品名稱：Inconel 718 Ring（英高鎳合金718環） Hardness：HRC38-40（硬度38-40） 數量： 1PC 尺寸：OD430mm（+/-1mm）×ID365（+/-1mm）×H127mm（+1/-0mm）",
+   "truth": "75089090005",
+   "truthZh": "其他鎳製品",
+   "pred": {
+    "nearest": "74091910000"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0272",
+   "name": "電子控制開關 型號：SW-688A29 規格：二段式 三段式 四段式",
+   "truth": "85371090005",
+   "truthZh": "其他控電或配電用器具，電壓未超過１０００伏特者",
+   "pred": {
+    "nearest": "85364990001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0081",
+   "name": "貨品名稱：Intrasite Gel Hydrogel Wound Dressing 型號：7308 規格: 8g",
+   "truth": "30059090001",
+   "truthZh": "其他屬第３００５節之貨品",
+   "pred": {
+    "nearest": "30051090909"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0034",
+   "name": "鋁合金圓型管4分-沙鎳 ，DN6724 / 厚度0.7mm×長度609.6mm，（附件五）",
+   "truth": "76082010006",
+   "truthZh": "鋁合金管",
+   "pred": {
+    "nearest": "83024900002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0025",
+   "name": "NPPOC-dT RayDite™、T111N8-HH",
+   "truth": "29349990901",
+   "truthZh": "其他雜環化合物",
+   "pred": {
+    "nearest": "27111400206"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0074",
+   "name": "棉球/克重:0.5g",
+   "truth": "56012110006",
+   "truthZh": "棉胎",
+   "pred": {
+    "nearest": "95069900904"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0107",
+   "name": "沉水式低溫泵零件 Submerged Cryo.Pump parts：Washer,Lock,Hel Sp,Rglr. 型號：part no.1919-1125X-00000 for pump 4ECC-158",
+   "truth": "73182100008",
+   "truthZh": "鋼鐵製彈簧墊圈及其他鎖緊墊圈",
+   "pred": {
+    "nearest": "84831090009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0220",
+   "name": "LEED輕質石材保溫裝飾板 60×90cm",
+   "truth": "68069000005",
+   "truthZh": "具有隔熱、隔音或吸音作用之礦物混合物製品，但第６８１１或６８１２節或第六十九章所列物品除外",
+   "pred": {
+    "nearest": "68118200008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0048",
+   "name": "水素水壺 HAQUA(Portable Hydrogen water generator) 型號：HQ-01、容量：330CC",
+   "truth": "85433090003",
+   "truthZh": "其他電鍍、電解或電泳機器及器具",
+   "pred": {
+    "nearest": "85433090003"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107BA0081",
+   "name": "鋁合金管/6063-T5/GAA005/1000mmX25.4mmX101.6mmX厚度1.25mm",
+   "truth": "76082010006",
+   "truthZh": "鋁合金管",
+   "pred": {
+    "nearest": "76082010006"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0165",
+   "name": "衣物護理機、RQ-60、680*320*320mm / 容量 ：35L / 額定電壓 ：220V / 額定輸入功率 ：820W / 紫外線殺菌燈功率：6W",
+   "truth": "85167900007",
+   "truthZh": "其他電熱器具",
+   "pred": {
+    "nearest": "85437099906"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0127",
+   "name": "中文：XYZprinting PartPro350 xBC 3D 列印機 英文：XYZprinting PartPro350 xBC 3D printer 型號：P3PP0A",
+   "truth": "84748000004",
+   "truthZh": "固體礦物燃料、陶土漿、濕水泥、粉刷材料或其他粉狀、糊狀礦產品用之混凝、造模或造型機器及鑄造用砂模製造機器",
+   "pred": {
+    "nearest": "84775900008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0179",
+   "name": "ALMIC-CAN/型號：AM110GNFTE/規格(容量110cc,口徑85mm,高度36mm)",
+   "truth": "39239090108",
+   "truthZh": "一次使用包裝食品塑膠杯",
+   "pred": {
+    "nearest": "39232990300"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0045",
+   "name": "4.4MVA Solar Ware Station (AC Station) Input side(DC):1000V 1687A Output side(AC):22KV 115A",
+   "truth": "85044099900",
+   "truthZh": "其他靜電式變流器",
+   "pred": {
+    "nearest": "85167900007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0026",
+   "name": "備電模組(Backup Power Module) 型號：AR-PM4 規格：如附件說明",
+   "truth": "85044092006",
+   "truthZh": "其他不斷電式電源供應器，容量未超過１０仟伏安者",
+   "pred": {
+    "nearest": "85044020003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0028",
+   "name": "電動機車用車身配件(外殼塑膠製,未含前,後輪,充電器,電動馬達,電瓶,車頭,座墊)",
+   "truth": "87141090000",
+   "truthZh": "其他機器腳踏車之零件及附件",
+   "pred": {
+    "nearest": "87141090000"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0003",
+   "name": "貨品名稱：數位訊號截取棒 英文貨名：D320 UVC Dongle Live-Streamer 型號： D320 規格： HDMI to USB3.0",
+   "truth": "85176200005",
+   "truthZh": "接收、轉換及傳輸或再生聲音、圖像或其他資料之機器，包括交換器及路由器",
+   "pred": {
+    "nearest": "85176200005"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0070",
+   "name": "iFi Audio AC iPurifier",
+   "truth": "85437099906",
+   "truthZh": "其他電機及器具",
+   "pred": {
+    "nearest": "85044091007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0013",
+   "name": "科福萊-水質淨化、無型號、 20KG/包或25KG/包",
+   "truth": "14049091902",
+   "truthZh": "其他微生物產品",
+   "pred": {
+    "nearest": "14049091902"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0032",
+   "name": "CVD SiC Satellite 碳化矽 衛星轉盤",
+   "truth": "84869000106",
+   "truthZh": "生產半導體用化學蒸著沈積器具之零件",
+   "pred": {
+    "nearest": "70200019001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0164",
+   "name": "防水透濕層 型號：CH100SLPTFE 規格：1.顏色：膜面白色/布面淡黃色 2.款式：中央開口式長袖上衣及長褲型式，不上衣領，邊緣不摺邊",
+   "truth": "62179090009",
+   "truthZh": "其他紡織材料製衣服或服飾附屬品之零件",
+   "pred": {
+    "nearest": "56039390000"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0006",
+   "name": "貨品名稱：\"戴聞\"下肢壓縮循環系統 型號：ArterioFlow 7500 規格：系統由儀器與加壓腳套(橡膠套)組成，規格:尺寸:2”(W)X12”(D)X4.5”(H)重量11磅/電源:120VAC,60HZ 100VA最大，額定保險:250VAC1.0AMP,SLO-BLO/適用類型:B型/防觸電等級:I級/運行模式:機器按壓可調控為持續或間歇兩種載入模式充氣按壓/防水等級:IPXO",
+   "truth": "90189080907",
+   "truthZh": "其他第９０１８節所屬之貨品",
+   "pred": {
+    "nearest": "85015190007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0247",
+   "name": "爆米花機(家用機) 型號：PM-001 規格：額定電壓AC 110V/60Hz，額定功率800W，淨重881克，外觀尺寸380*210*142(mm)",
+   "truth": "85167900007",
+   "truthZh": "其他電熱器具",
+   "pred": {
+    "nearest": "85166090009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0315",
+   "name": "T1 細菌水質處理劑(Bacteria Herbal Water Conditioner) 120ml、250ml",
+   "truth": "38089420001",
+   "truthZh": "消毒劑成品",
+   "pred": {
+    "nearest": "23099090907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0019",
+   "name": "0524卡布奇諾提拉米蘇(Cappuccino Tiramisu)",
+   "truth": "18069099007",
+   "truthZh": "其他第１８０６節所屬之貨品",
+   "pred": {
+    "nearest": "18063100007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0035",
+   "name": "BIOZYME-IS",
+   "truth": "35079000003",
+   "truthZh": "其他酵素及調製酵素",
+   "pred": {
+    "nearest": "23099090907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0385",
+   "name": "彈性布料 型號：AQA2150WF 幅寬：1m",
+   "truth": "60041090003",
+   "truthZh": "其他紡織材料製針織品或鈎針織品，寬度超過３０公分且含彈性紗重量在５％及以上，但不含橡膠線者，第６００１節除外",
+   "pred": {
+    "nearest": "60033000009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0180",
+   "name": "SUPER GREEN TEA POWDER/500g",
+   "truth": "21012000000",
+   "truthZh": "茶或馬黛茶之萃取物、精、濃縮物及以茶、馬黛茶之萃取物、精、濃縮物或以茶、馬黛茶為主要成分之調製品",
+   "pred": {
+    "nearest": "16042010119"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0036",
+   "name": "RING CARRIER（R2002-30007 140.3*116.5*18.75、R2002-32061 112.5*92.0*7.90、 R2002-20042 105.4*85.8*7.1、R2002-32078 119.8*98.75*8.3、R6002-66010 120.5*98.8*9.1、R2002-08052 105.0*85.0*7.6）",
+   "truth": "84099990004",
+   "truthZh": "其他專用或主要用於壓縮點火內燃活塞引擎之零件",
+   "pred": {
+    "nearest": "72230000908"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0342",
+   "name": "ESHMUNO® Q 10 ML/Eshmuno Q 離子交換樹脂 型號：1.20079.0010 規格：詳附件",
+   "truth": "39140000009",
+   "truthZh": "以第３９０１至３９１３節之聚合物為基料之離子交換樹脂，初級狀態",
+   "pred": {
+    "nearest": "22089010005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0060",
+   "name": "貨品名稱：Laser Diode Bank 型號：NUBMOA 規格：38W/3A",
+   "truth": "90132000003",
+   "truthZh": "雷射，雷射二極體除外",
+   "pred": {
+    "nearest": "85437099906"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0003",
+   "name": "貨品名稱：我的糖果在哪裡？ 型號：遊戲書B014 規格（mm）：196 × 198 × 14",
+   "truth": "49030010008",
+   "truthZh": "兒童圖畫書",
+   "pred": {
+    "nearest": "95030093903"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0089",
+   "name": "變頻調速三相非同步馬達, type: YPT132M-4, 輸出功率: 7.5kW, 相位: 3∮, 額定電壓值: 380V, 額定電流: 15.8A, 轉速: 1440rpm, 極數: 4P",
+   "truth": "85015290006",
+   "truthZh": "其他多相交流電動機，輸出超過７５０瓦，但未超過７５瓩者",
+   "pred": {
+    "nearest": "85011090007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0049",
+   "name": "非合金鋼桿(non-alloy rod) 直徑16mm 長度:3~5.8M",
+   "truth": "72159000008",
+   "truthZh": "其他鐵或非合金鋼條及桿",
+   "pred": {
+    "nearest": "72279000905"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0341",
+   "name": "Cramer Non-Tear Stretch Tape、CR284300、7.5cm×4.5m",
+   "truth": "30051090909",
+   "truthZh": "其他粘敷料和其他具有粘層之物品",
+   "pred": {
+    "nearest": "59061010001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0099",
+   "name": "Anti-penetration strobel SSI 1700 (鞋用防穿刺中底布，型號：SSI 1700)",
+   "truth": "54071000908",
+   "truthZh": "其他高強力尼龍或其他聚醯胺或聚酯紗製之梭織物",
+   "pred": {
+    "nearest": "56039490009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0356",
+   "name": "折疊式電動履帶爬梯機/DW-ST003A/尺寸：125*55*163CM 45KG",
+   "truth": "84289000009",
+   "truthZh": "其他升降、搬運、裝卸機器",
+   "pred": {
+    "nearest": "84289000009"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0025",
+   "name": "貨品名稱：Inconel 718 Ring（英高鎳合金718環） Hardness：HRC38-40（硬度38-40） 數量： 2PCs 尺寸：OD375mm（+/-1mm）×ID315（+/-1mm）×H127mm（+1/-0mm）",
+   "truth": "75089090005",
+   "truthZh": "其他鎳製品",
+   "pred": {
+    "nearest": "74091910000"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0029",
+   "name": "DELICIOUS ACID樂味酸/類白色粉末、酸香氣味濃郁",
+   "truth": "38089420001",
+   "truthZh": "消毒劑成品",
+   "pred": {
+    "nearest": "38089420001"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0104",
+   "name": "Hydrophilic Angiographic Catheter 親水性血管造影導管 型號: 11411012 外徑4Fr, 導管有效長度110cm, 導管外徑1.43mm, 導管內徑1.05mm, 側孔數目6尺寸0.7mm。遠端彎型PIG",
+   "truth": "90183900908",
+   "truthZh": "其他導管、套管及類似品",
+   "pred": {
+    "nearest": "90183200004"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0128",
+   "name": "貽貝粘蛋白創面修復敷料 型號、規格：0.5mg/mL×0.2mL、0.5mg/mL×0.5mL、0.5mg/mL×1mL、0.5mg/mL×3mL、0.5mg/mL×5mL 0.5mg/mL×10mL、0.5mg/mL×15mL、0.5mg/mL×20mL、1.5mg/mL×0.2mL、1.5mg/mL×0.5mL 1.5mg/mL×3mL、……、1.5mg/mL×20mL等(詳附件)",
+   "truth": "30049099904",
+   "truthZh": "其他醫藥製劑〈不包括第３００２、３００５或３００６節所列者〉包含經混合或未混合產品供治療或預防疾病用，具有劑量（包括經皮給藥形態者）或零售包裝式樣者",
+   "pred": {
+    "nearest": "90183100005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0233",
+   "name": "胡椒傑克起司調味醬",
+   "truth": "21039090905",
+   "truthZh": "其他第２１０３節所屬之貨品",
+   "pred": {
+    "nearest": "21039090905"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0126",
+   "name": "乙腈含0.1%三氟醋酸 for liquid chromatography LiChrosolv® 型號：480448 規格：液相層析級(liquid chromatography LiChrosolv®)",
+   "truth": "38249999903",
+   "truthZh": "其他化學或相關工業之未列名化學品及化學製品（包括天然產品混合物）",
+   "pred": {
+    "nearest": "90279090003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0023",
+   "name": "Theragun G2PRO以及零件",
+   "truth": "90191019008",
+   "truthZh": "其他理療按摩器具",
+   "pred": {
+    "nearest": "61046310005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0371",
+   "name": "8PT 低壓系統盤 型號：450KVA TOOL UPS 規格：2200*1000*1000 輸入和輸出電壓和電源為480V交流",
+   "truth": "85371090005",
+   "truthZh": "其他控電或配電用器具，電壓未超過１０００伏特者",
+   "pred": {
+    "nearest": "85044099900"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0043",
+   "name": "ALPHA PRO(酸性蛋白酶)，淺黃棕色粉末，25KG/包。",
+   "truth": "35079000003",
+   "truthZh": "其他酵素及調製酵素",
+   "pred": {
+    "nearest": "35079000003"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0047",
+   "name": "鋁合金方型管-亮銀，BH2918 厚度0.7mm 長度383.2mm",
+   "truth": "76082010006",
+   "truthZh": "鋁合金管",
+   "pred": {
+    "nearest": "76042920009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0138",
+   "name": "POS Tower 150 CINEO with a vertical scan module 自助結帳機",
+   "truth": "84705000004",
+   "truthZh": "收銀機",
+   "pred": {
+    "nearest": "73089090007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0324",
+   "name": "YAMAHA發電機組 型號：EF2000iSv2 穩壓型式：變頻、電壓：120V/60Hz、最大輸出：2.0KVA、額定輸出：1.6KVA、DC輸出：12V、8.3A 引擎型式：MZ80四行程汽油引擎、排氣量：79cc、燃料：92/95#無鉛汽油、啟動方式：手動(輕拉) 引擎機油容量：0.4公升、汽油箱容量：4.2公升、尺寸(L×W×H)：490×280×445(mm)、淨重：20KG",
+   "truth": "85022010001",
+   "truthZh": "發電機組以火花點火活塞內燃機組成，輸出未超過９３０仟伏安者",
+   "pred": {
+    "nearest": "85022010001"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0064",
+   "name": "造型風扇",
+   "truth": "84145100002",
+   "truthZh": "桌扇、立扇、壁扇、窗扇、吊扇或屋頂通風扇，本身裝有輸出功率不超過１２５瓦之電動機者",
+   "pred": {
+    "nearest": "85176200005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0242",
+   "name": "複合1類木質地板 規格：21mm*240mm*2200mm",
+   "truth": "44123310003",
+   "truthZh": "其他素面合板（未含有竹製單板者），至少有一外層屬榿木類、梣木類、山毛櫸類、樺木類、櫻桃木類、栗木類、榆木類、桉樹類、山核桃類、七葉樹類、椴木類、槭木類、橡木類、懸鈴木類、楊樹類及白楊樹類、刺槐類、鵝掌楸類或胡桃木類等非針葉樹類製成，每層厚度不超過６公厘者",
+   "pred": {
+    "nearest": "44123120003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0020",
+   "name": "Lakanto White 3g×60 sticks 型號：27624 規格：一包內有60條(3g/條)",
+   "truth": "21069099903",
+   "truthZh": "其他未列名食物調製品",
+   "pred": {
+    "nearest": "21069099903"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0173",
+   "name": "貨品名稱：迷你便攜式蒸汽掛燙機(Mini Portable Steam Iron) 型號：JK-9518 規格：1.樣式:手持式 2.供電電壓:110V 3.功率:800W 4.重量約584g 5.尺寸：320mm*80mm*115mm 6.調節方式:旋鈕",
+   "truth": "85164000003",
+   "truthZh": "電熨斗",
+   "pred": {
+    "nearest": "85167900007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0265",
+   "name": "動益加Aptonia 動益加-舒緩按摩膏 RELAX GEL 規格：100毫升",
+   "truth": "38249999903",
+   "truthZh": "其他化學或相關工業之未列名化學品及化學製品（包括天然產品混合物）",
+   "pred": {
+    "nearest": "33079090907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0147",
+   "name": "松原鍋爐 M500K 、 柴油蒸汽鍋爐 、 500kg/hr",
+   "truth": "84021200004",
+   "truthZh": "水蒸汽產生量每小時不超過４５噸之水管式鍋爐",
+   "pred": {
+    "nearest": "85161000009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0027",
+   "name": "電動腳踏車用車身(金屬架構,未含前,後輪,充電器,電動馬達,電瓶,電機啟動器)",
+   "truth": "87116020007",
+   "truthZh": "腳踏車，裝有電動機動力者",
+   "pred": {
+    "nearest": "87141090000"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0378",
+   "name": "電動推桿-TA16-2K-700860-33131-0515-1T-Model 馬達規格：MAX 80W、DC24V",
+   "truth": "85013119000",
+   "truthZh": "其他直流電動機，輸出超過３７．５瓦，但未超過７５０瓦者",
+   "pred": {
+    "nearest": "85013119000"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0149",
+   "name": "互連條(RIBBON) 型号、規格0.25*1.1mm、0.25*0.9mm",
+   "truth": "74081900904",
+   "truthZh": "其他精煉銅線，最大橫斷面尺寸不超過６公厘者",
+   "pred": {
+    "nearest": "74081900904"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0232",
+   "name": "Chipotle BBQ sauce,Burger sauce,Chipotle hot flavor is added to base BBQ sauce.",
+   "truth": "21039090905",
+   "truthZh": "其他第２１０３節所屬之貨品",
+   "pred": {
+    "nearest": "21032000008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0121",
+   "name": "貨品名稱: “微創”一次性使用注射針 型號: IN12-254231802 規格: 針頭直徑(D) 25G - 0.5±0.02 針頭長度(L1)(mm) 4±1 套管直徑(d)(mm) 2.3±0.2 外管長度(L2)(mm) 1800±50 處置孔直徑(mm) ≥2.8",
+   "truth": "90183200004",
+   "truthZh": "管狀金屬針及縫合針",
+   "pred": {
+    "nearest": "90183200004"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0030",
+   "name": "貨品名稱：藍玻璃濾光片 型號:E02 規格:77mm*77mm*0.21mm/T50%=642±5nm/拋光片",
+   "truth": "70052100006",
+   "truthZh": "浮式平板玻璃及表面經研磨或拋光之平板玻璃，不含金屬線，整塊著色玻璃（整體著色者）、不透明、閃爍或僅經表面研磨者",
+   "pred": {
+    "nearest": "70060000000"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0246",
+   "name": "Data compression Transmitter 型號：VCT-RIX 規格：ARM Dual Core+4G×3 RAM+USB2.0×2+RJ45×2+wifi 802.11b/g",
+   "truth": "85176200005",
+   "truthZh": "接收、轉換及傳輸或再生聲音、圖像或其他資料之機器，包括交換器及路由器",
+   "pred": {
+    "nearest": "85044099900"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0038",
+   "name": "木屑Sawdust (Acacia，Rubber，Cashew，Melaleuca，and Mixed)",
+   "truth": "44013900912",
+   "truthZh": "其他鋸屑、廢材（料）及殘屑材，壓縮成棍、球或類似形狀者",
+   "pred": {
+    "nearest": "23021000009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0048",
+   "name": "保鮮蟋蟀 1盒=20包x20克以上產品,為一箱=24盒",
+   "truth": "05119999248",
+   "truthZh": "蟲餌（熱帶魚飼餌）",
+   "pred": {
+    "nearest": "23099090907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0088",
+   "name": "貨品名稱：VIZIO SmartCast™ P-Series™ 55” Class Ultra HD HDR XLED Pro™ Display 型號：P55-E1 規格：55寸4K顯示器",
+   "truth": "85285200004",
+   "truthZh": "能直接連接第８４７１節「自動資料處理系統」以及設計與其配合使用之其他監視器",
+   "pred": {
+    "nearest": "85285910005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0285",
+   "name": "Motion Bed / HB31H09EBN/EE / W900*D2000*H300",
+   "truth": "94032000001",
+   "truthZh": "其他金屬製家具",
+   "pred": {
+    "nearest": "63079090901"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0213",
+   "name": "酚醛板/TY-100/37\"*49\"、41\"*49\"、43\"*49\"或以訂單實際尺寸為準",
+   "truth": "39219090002",
+   "truthZh": "其他塑膠製板、片、薄膜、箔及扁條",
+   "pred": {
+    "nearest": "76071990003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0154",
+   "name": "高溫高壓消毒鍋ICANCLAVE D223、23LITERS",
+   "truth": "84192000005",
+   "truthZh": "內、外科或實驗室用消毒器",
+   "pred": {
+    "nearest": "76169990005"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0074",
+   "name": "1：24本田重機模型、Honda VFR750 RC30、87MM*34MM*49MM",
+   "truth": "95030093903",
+   "truthZh": "其他玩具",
+   "pred": {
+    "nearest": "95030093903"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0005",
+   "name": "貨品名稱：洗刷洗刷 在洗澡王國玩 型號：遊戲書B016 規格（mm）：196 × 198 × 11",
+   "truth": "49030010008",
+   "truthZh": "兒童圖畫書",
+   "pred": {
+    "nearest": "49030020006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0153",
+   "name": "智能行動支付販賣機台 型號：AEGIS-055-001 規格：高1992.9MM、寬1050MM、厚176.5MM",
+   "truth": "84705000004",
+   "truthZh": "收銀機",
+   "pred": {
+    "nearest": "84433200001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0039",
+   "name": "款號：34775，針織，兒童用，針織包臀褲，尺寸：90CM",
+   "truth": "61046210006",
+   "truthZh": "棉製女用或女童用長褲、膝褲及短褲，針織或鈎針織者",
+   "pred": {
+    "nearest": "61152990008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0084",
+   "name": "LEFT SIDE HEATSINK, TYPE C, NEW PLATFORM P/N. 13-004-0667",
+   "truth": "85229029902",
+   "truthZh": "其他錄放音機之零件及附件",
+   "pred": {
+    "nearest": "84195090009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0275",
+   "name": "AutoFry MTI-5 全自動無煙型商業電油炸機",
+   "truth": "84198100001",
+   "truthZh": "製造熱飲、熱食或烹調用之機器、工廠或設備",
+   "pred": {
+    "nearest": "20049090200"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0009",
+   "name": "大蒜頭玉米粒混合調製品",
+   "truth": "20059931907",
+   "truthZh": "其他酸漬除外之調製或保藏蔬菜混合品，第２００６節之產品除外，每包重量在１８公斤及以上者",
+   "pred": {
+    "nearest": "20059931907"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0119",
+   "name": "貨品名稱: “微創”三段擴張氣球導管 型號: MBD-AM-BB-2 規格: 氣球直徑(unit;mm) 6-7-8 氣球長度(unit;mm) 55 導管直徑(unit;Fr) 7 導管長度(unit;mm) 2300 擴張壓力(unit;atm) 3-6-10 最大擴張壓力(unit;atm) 11 通道直徑(mm) ≧2.8 導線(in) 0.035",
+   "truth": "90183900908",
+   "truthZh": "其他導管、套管及類似品",
+   "pred": {
+    "nearest": "90183900908"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0041",
+   "name": "貨品名稱：電子手寫板 Writing Pad 型號：HSD1200 規格：尺寸：280mm*185mm*4.6mm 重量：約188g",
+   "truth": "85437099906",
+   "truthZh": "其他電機及器具",
+   "pred": {
+    "nearest": "84716090903"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0362",
+   "name": "趣岳-戶外防護隨行盒 Quechua Outdoor Protection Displler (含戶外防護隨行盒及芯片，具驅蚊功能)",
+   "truth": "38089190009",
+   "truthZh": "其他殺蟲劑成品",
+   "pred": {
+    "nearest": "38089190009"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0011",
+   "name": "馬達/N30018/功率：48W，輸入電壓：AC100-240V，單相馬達",
+   "truth": "85014090001",
+   "truthZh": "其他單相交流電動機",
+   "pred": {
+    "nearest": "85014090001"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107DA0029",
+   "name": "吊環鋼鐵鑄件毛胚",
+   "truth": "73181300008",
+   "truthZh": "鋼鐵製螺旋鈎及螺旋圈",
+   "pred": {
+    "nearest": "73181900002"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0158",
+   "name": "割草機 型號：S10 規格：動力來自曳引機的PTO(90Hp,1000rpm)液壓驅動，鼓風機風量390m3/min，儲存箱容積13yd3(10m3)，輪胎尺寸500/50R17，割草刀蓋子寬度7'(2.1m)，割草刀蓋子動力方式：機械式或液壓式，剎車系統：液壓剎車",
+   "truth": "84332000007",
+   "truthZh": "其他割草機，包括牽引車裝置之切割棒",
+   "pred": {
+    "nearest": "85365090007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0176",
+   "name": "商用鍵盤的盤芯、BP-PART-PKB-111-KEY-PCBA-B-V1、如型錄",
+   "truth": "84732900009",
+   "truthZh": "其他第８４７０節所屬機器之零件及附件",
+   "pred": {
+    "nearest": "84733000006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "106AA0170",
+   "name": "Cap Bendera Palm Oil 46-49、16KG",
+   "truth": "15119000001",
+   "truthZh": "精製棕櫚油及其餾分物",
+   "pred": {
+    "nearest": "15119000001"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "106AA0245",
+   "name": "SOCFAT 40 NV 精製棕櫚油",
+   "truth": "15119000001",
+   "truthZh": "精製棕櫚油及其餾分物",
+   "pred": {
+    "nearest": "23099090907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0177",
+   "name": "Hiruscar Silicone Pro(non-sterile) 喜療疤 疤痕護理矽凝膠(未滅菌)",
+   "truth": "30049099904",
+   "truthZh": "其他醫藥製劑〈不包括第３００２、３００５或３００６節所列者〉包含經混合或未混合產品供治療或預防疾病用，具有劑量（包括經皮給藥形態者）或零售包裝式樣者",
+   "pred": {
+    "nearest": "39269016909"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0264",
+   "name": "乳清蛋白固體飲料 - 巧克力口味",
+   "truth": "18069099007",
+   "truthZh": "其他第１８０６節所屬之貨品",
+   "pred": {
+    "nearest": "21069099903"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0319",
+   "name": "魚'O'全效性水質處理劑('O' Fish Care Water Conditioner) 120ml、250ml",
+   "truth": "38089420001",
+   "truthZh": "消毒劑成品",
+   "pred": {
+    "nearest": "23099090907"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0141",
+   "name": "電競耳機麥克風/ EHS950BKAA-IU 332g",
+   "truth": "85183032005",
+   "truthZh": "頭戴耳機及耳機，併裝有微音器",
+   "pred": {
+    "nearest": "84719090006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0016",
+   "name": "支柱高度調整環（鑄鐵）",
+   "truth": "73089090007",
+   "truthZh": "其他屬第７３０８節之貨品",
+   "pred": {
+    "nearest": "72072000290"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0037",
+   "name": "Bra 細肩帶，女用，針織，款號：34831",
+   "truth": "61091000006",
+   "truthZh": "棉製Ｔ恤衫、汗衫及其他背心，針織或鈎針織者",
+   "pred": {
+    "nearest": "62121090001"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0301",
+   "name": "複合木質地板(合板) 型號：CKFLAKI-1501C/15×215×1820mm",
+   "truth": "44123320001",
+   "truthZh": "其他加工合板（未含有竹製單板者），至少有一外層屬榿木類、梣木類、山毛櫸類、樺木類、櫻桃木類、栗木類、榆木類、桉樹類、山核桃類、七葉樹類、椴木類、槭木類、橡木類、懸鈴木類、楊樹類及白楊樹類、刺槐類、鵝掌楸類或胡桃木類等非針葉樹類製成，每層厚度不超過６公厘者",
+   "pred": {
+    "nearest": "44123120003"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0062",
+   "name": "彈簧槓杆軸、MGAL009、ø12*51mm",
+   "truth": "73269090906",
+   "truthZh": "其他鋼鐵製品",
+   "pred": {
+    "nearest": "90189090905"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0172",
+   "name": "兒童液晶手寫板(Writing Tablet) ASYW1085A",
+   "truth": "85437099906",
+   "truthZh": "其他電機及器具",
+   "pred": {
+    "nearest": "85437099906"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0241",
+   "name": "100% Acrylic Short-staple multiple yarn(100% 壓克力短纖多股紗) 無型號/規格：異色紗、20s/2雙股、短纖",
+   "truth": "55093200008",
+   "truthZh": "多股（合股）或粗股紗，含聚丙烯腈或改質聚丙烯腈纖維棉重量在８５％及以上，非供零售用者",
+   "pred": {
+    "nearest": "55093200008"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0352",
+   "name": "SatieTein™",
+   "truth": "21061020003",
+   "truthZh": "濃縮蛋白質及組織化蛋白質，蛋白質含量５０％及以上者",
+   "pred": {
+    "nearest": "04041000297"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0243",
+   "name": "立卜能 L (LIPMAX L) 5公斤、50公斤、200公斤/(桶)",
+   "truth": "23099090907",
+   "truthZh": "其他調製動物飼料",
+   "pred": {
+    "nearest": "38249951008"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0096",
+   "name": "M8*P1.25 埋入式螺帽(Embedded Nut)；規格尺寸詳如附件二",
+   "truth": "73181600005",
+   "truthZh": "鋼鐵螺絲帽",
+   "pred": {
+    "nearest": "73181600005"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107AA0063",
+   "name": "公仔造型風扇",
+   "truth": "84145100002",
+   "truthZh": "桌扇、立扇、壁扇、窗扇、吊扇或屋頂通風扇，本身裝有輸出功率不超過１２５瓦之電動機者",
+   "pred": {
+    "nearest": "95030021009"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0095",
+   "name": "28英吋電極棒接續機Jointer for electrode Dia.28”(dia. 711 mm)",
+   "truth": "84798999994",
+   "truthZh": "其他第８４７９節所屬之機械",
+   "pred": {
+    "nearest": "90189090905"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0062",
+   "name": "倒車雷達感測器之固定座",
+   "truth": "39263000009",
+   "truthZh": "塑膠製家具、車輛或類似品之配件",
+   "pred": {
+    "nearest": "83016000007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0075",
+   "name": "貨品名稱：Melolin Low-Adherent Wound Dressing 型號：66974939 規格: 20cm x 10cm",
+   "truth": "30059090001",
+   "truthZh": "其他屬第３００５節之貨品",
+   "pred": {
+    "nearest": "30051090909"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0273",
+   "name": "電器安裝導軌 鋼軌 1M、鋼軌 2M",
+   "truth": "73269090906",
+   "truthZh": "其他鋼鐵製品",
+   "pred": {
+    "nearest": "73089090007"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107BA0005",
+   "name": "水上光伏智能匯流箱、PVS-8M/16M-W、730*500*170MM、電壓200-1000伏特",
+   "truth": "85371090005",
+   "truthZh": "其他控電或配電用器具，電壓未超過１０００伏特者",
+   "pred": {
+    "nearest": "85044099900"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0140",
+   "name": "パストリーゼ 77 (Pateuriser 77) / 500ml",
+   "truth": "38089420001",
+   "truthZh": "消毒劑成品",
+   "pred": {
+    "nearest": "38089420001"
+   },
+   "ok8": {
+    "nearest": true
+   }
+  },
+  {
+   "id": "107CA0008",
+   "name": "三相感應電動機(3 PHASE INDUCTION MOTOR )/M1-1.5-30/AC220V輸出功率:1.5Kw",
+   "truth": "85015290006",
+   "truthZh": "其他多相交流電動機，輸出超過７５０瓦，但未超過７５瓩者",
+   "pred": {
+    "nearest": "85014020006"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107AA0062",
+   "name": "香蕉固齒器 B801",
+   "truth": "39269016909",
+   "truthZh": "其他塑膠製實驗室、衛生及醫療用之物品",
+   "pred": {
+    "nearest": "20089991901"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107DA0050",
+   "name": "HEAT-INSULATION PLATE、型號3.5CM、規格60*45*3.5CM",
+   "truth": "68101990008",
+   "truthZh": "其他瓦、石板、磚及其類似品，水泥製、混凝土或人造石料製，不論是否加強者均在內",
+   "pred": {
+    "nearest": "19022090102"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  },
+  {
+   "id": "107CA0166",
+   "name": "金箔筷（食品添加物 金箔製劑）",
+   "truth": "71081310000",
+   "truthZh": "金箔，非貨幣用",
+   "pred": {
+    "nearest": "21069099903"
+   },
+   "ok8": {
+    "nearest": false
+   }
+  }
+ ]
+}
