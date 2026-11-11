@@ -1,7 +1,10 @@
 {
- "ranAt": "2026-11-11T11:24:30.635Z",
- "model": "meta-llama/Llama-3.3-70B-Instruct",
- "models": {},
+ "ranAt": "2026-11-11T11:46:00.862Z",
+ "model": "claude-haiku-5-5",
+ "models": {
+  "llm": "claude-haiku-5-5",
+  "rag": "claude-haiku-5-5"
+ },
  "n": 300,
  "protocol": "Time split. Reference pool: 12711 Taiwan Customs advance rulings dated before 2018-01-01. Test set: 300 rulings from 2018 (random sample, seed 20261111) whose ruled code still exists in the current tariff. Truth is the code Customs ruled. Scores are exact prefix matches at 4, 6, 8 and all 11 digits.",
  "modes": {
@@ -10,6 +13,24 @@
    "d6": 74,
    "d8": 69,
    "d11": 68,
+   "invalid": 0,
+   "errors": 0,
+   "n": 300
+  },
+  "llm": {
+   "d4": 184,
+   "d6": 147,
+   "d8": 56,
+   "d11": 0,
+   "invalid": 297,
+   "errors": 0,
+   "n": 300
+  },
+  "rag": {
+   "d4": 198,
+   "d6": 174,
+   "d8": 170,
+   "d11": 166,
    "invalid": 0,
    "errors": 0,
    "n": 300
@@ -22,10 +43,14 @@
    "truth": "85014090001",
    "truthZh": "其他單相交流電動機",
    "pred": {
-    "nearest": "84501120002"
+    "nearest": "84501120002",
+    "llm": "84509000900",
+    "rag": "84509000000"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -34,10 +59,14 @@
    "truth": "85362090004",
    "truthZh": "其他自動斷路器，電壓未超過１０００伏特者",
    "pred": {
-    "nearest": "85365090007"
+    "nearest": "85365090007",
+    "llm": "85362090100",
+    "rag": "85362090004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -46,10 +75,14 @@
    "truth": "85161000009",
    "truthZh": "即熱式或儲存式之電熱水器及浸入式電熱水器",
    "pred": {
-    "nearest": "85161000009"
+    "nearest": "85161000009",
+    "llm": "85161020000",
+    "rag": "85161000009"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -58,10 +91,14 @@
    "truth": "85183032005",
    "truthZh": "頭戴耳機及耳機，併裝有微音器",
    "pred": {
-    "nearest": "84719090006"
+    "nearest": "84719090006",
+    "llm": "85183010009",
+    "rag": "85183032005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -70,10 +107,14 @@
    "truth": "90112000005",
    "truthZh": "顯微鏡，供顯微照相、顯微攝影或顯微放映用者",
    "pred": {
-    "nearest": "90314910006"
+    "nearest": "90314910006",
+    "llm": "90139090901",
+    "rag": "90029090002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -82,10 +123,14 @@
    "truth": "94032000001",
    "truthZh": "其他金屬製家具",
    "pred": {
-    "nearest": "84716090903"
+    "nearest": "84716090903",
+    "llm": "94032000100",
+    "rag": "94032000001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -94,10 +139,14 @@
    "truth": "90184100003",
    "truthZh": "鑽牙機，不論是否單獨機座與其他牙科儀器連結者",
    "pred": {
-    "nearest": "85011090007"
+    "nearest": "85011090007",
+    "llm": "90189010009",
+    "rag": "90184100003"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -106,10 +155,14 @@
    "truth": "76169990005",
    "truthZh": "其他鋁製品",
    "pred": {
-    "nearest": "76109000009"
+    "nearest": "76109000009",
+    "llm": "76109000000",
+    "rag": "76169990005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -118,10 +171,14 @@
    "truth": "39269090908",
    "truthZh": "其他塑膠製品及第３９０１至３９１４節之材料製成品",
    "pred": {
-    "nearest": "85098090004"
+    "nearest": "85098090004",
+    "llm": "39241000100",
+    "rag": "39249000909"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -130,10 +187,14 @@
    "truth": "12119091923",
    "truthZh": "其他乾燥藥用植物及植物之一部份（包括種子及果實），不論是否已切割壓碎或製粉",
    "pred": {
-    "nearest": "30049069009"
+    "nearest": "30049069009",
+    "llm": "12119090000",
+    "rag": "12129990906"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -142,10 +203,14 @@
    "truth": "30039079008",
    "truthZh": "其他中藥製劑",
    "pred": {
-    "nearest": "11063090006"
+    "nearest": "11063090006",
+    "llm": "05100000000",
+    "rag": "05100049006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -154,10 +219,14 @@
    "truth": "95030093903",
    "truthZh": "其他玩具",
    "pred": {
-    "nearest": "95030093903"
+    "nearest": "95030093903",
+    "llm": "95030022001",
+    "rag": "95030093903"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -166,10 +235,14 @@
    "truth": "38122000008",
    "truthZh": "橡膠或塑膠用複合可塑劑",
    "pred": {
-    "nearest": "38122000008"
+    "nearest": "38122000008",
+    "llm": "38123000000",
+    "rag": "38122000008"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -178,10 +251,14 @@
    "truth": "21069091108",
    "truthZh": "咖啡乳劑",
    "pred": {
-    "nearest": "21069099903"
+    "nearest": "21069099903",
+    "llm": "21069090001",
+    "rag": "21069091108"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -190,10 +267,14 @@
    "truth": "90189080907",
    "truthZh": "其他第９０１８節所屬之貨品",
    "pred": {
-    "nearest": "90189080907"
+    "nearest": "90189080907",
+    "llm": "90189090100",
+    "rag": "90189080907"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -202,10 +283,14 @@
    "truth": "85271300003",
    "truthZh": "其他不需外接電源之無線電廣播接收機，併裝有錄或放音器具者",
    "pred": {
-    "nearest": "85271300003"
+    "nearest": "85271300003",
+    "llm": "85182100100",
+    "rag": "85271300003"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -214,10 +299,14 @@
    "truth": "85044099900",
    "truthZh": "其他靜電式變流器",
    "pred": {
-    "nearest": "85044099900"
+    "nearest": "85044099900",
+    "llm": "85044090901",
+    "rag": "85044099900"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -226,10 +315,14 @@
    "truth": "90183900908",
    "truthZh": "其他導管、套管及類似品",
    "pred": {
-    "nearest": "90183900908"
+    "nearest": "90183900908",
+    "llm": "90183920001",
+    "rag": "90183900908"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -238,10 +331,14 @@
    "truth": "84143020004",
    "truthZh": "其他製冷設備用之壓縮機",
    "pred": {
-    "nearest": "84143020004"
+    "nearest": "84143020004",
+    "llm": "84143020003",
+    "rag": "84143020004"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -250,10 +347,14 @@
    "truth": "05119999248",
    "truthZh": "蟲餌（熱帶魚飼餌）",
    "pred": {
-    "nearest": "29231010006"
+    "nearest": "29231010006",
+    "llm": "05119900900",
+    "rag": "05119999248"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -262,10 +363,14 @@
    "truth": "23091000002",
    "truthZh": "供零售用之貓狗食品",
    "pred": {
-    "nearest": "21069099903"
+    "nearest": "21069099903",
+    "llm": "23099090000",
+    "rag": "23091000002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -274,10 +379,14 @@
    "truth": "95043010005",
    "truthZh": "遊藝場、桌上或室內遊戲用品，以硬幣、鈔票、金融卡、代幣或其他付款方式操作者，保齡球自動球道設備除外",
    "pred": {
-    "nearest": "85312000115"
+    "nearest": "85312000115",
+    "llm": "95043000000",
+    "rag": "95043090008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -286,10 +395,14 @@
    "truth": "76109000009",
    "truthZh": "其他已完成之鋁製構架及其零件",
    "pred": {
-    "nearest": "76042100001"
+    "nearest": "76042100001",
+    "llm": "76101000100",
+    "rag": "76101000006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -298,10 +411,14 @@
    "truth": "90314910006",
    "truthZh": "其他光學儀器及用具，以電氣操作者",
    "pred": {
-    "nearest": "85269290009"
+    "nearest": "85269290009",
+    "llm": "90318090009",
+    "rag": "85269290009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -310,10 +427,14 @@
    "truth": "95045000903",
    "truthZh": "其他影像遊戲機，第950430目者除外",
    "pred": {
-    "nearest": "85098090004"
+    "nearest": "85098090004",
+    "llm": "95049090900",
+    "rag": "84714900007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -322,10 +443,14 @@
    "truth": "76042100001",
    "truthZh": "鋁合金空心型材",
    "pred": {
-    "nearest": "76042920009"
+    "nearest": "76042920009",
+    "llm": "76042100103",
+    "rag": "76042100001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -334,10 +459,14 @@
    "truth": "84212190001",
    "truthZh": "其他水過濾或淨化機具",
    "pred": {
-    "nearest": "73089090007"
+    "nearest": "73089090007",
+    "llm": "84219900900",
+    "rag": "84219910005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -346,10 +475,14 @@
    "truth": "84717090000",
    "truthZh": "其他儲存單元",
    "pred": {
-    "nearest": "84719090006"
+    "nearest": "84719090006",
+    "llm": "84716090001",
+    "rag": "84719090006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -358,10 +491,14 @@
    "truth": "85167900007",
    "truthZh": "其他電熱器具",
    "pred": {
-    "nearest": "90191019008"
+    "nearest": "90191019008",
+    "llm": "85167900000",
+    "rag": "85167900007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -370,10 +507,14 @@
    "truth": "94037000000",
    "truthZh": "塑膠製家具",
    "pred": {
-    "nearest": "94037000000"
+    "nearest": "94037000000",
+    "llm": "94037000100",
+    "rag": "94037000000"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -382,10 +523,14 @@
    "truth": "85269290009",
    "truthZh": "其他無線電遙控器具",
    "pred": {
-    "nearest": "85269290009"
+    "nearest": "85269290009",
+    "llm": "85269200101",
+    "rag": "85269290009"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -394,10 +539,14 @@
    "truth": "23099010003",
    "truthZh": "魚溶漿",
    "pred": {
-    "nearest": "23099010003"
+    "nearest": "23099010003",
+    "llm": "23012000100",
+    "rag": "23099010003"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -406,10 +555,14 @@
    "truth": "84198990004",
    "truthZh": "其他機器，工廠及實驗室設備",
    "pred": {
-    "nearest": "84158100005"
+    "nearest": "84158100005",
+    "llm": "84198990001",
+    "rag": "84198990004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -418,10 +571,14 @@
    "truth": "35040019004",
    "truthZh": "其他蛋白質及其衍生物",
    "pred": {
-    "nearest": "17029020006"
+    "nearest": "17029020006",
+    "llm": "35040090000",
+    "rag": "21069095006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -430,10 +587,14 @@
    "truth": "84178090005",
    "truthZh": "其他非電熱式工業或實驗室用爐及烘烤箱",
    "pred": {
-    "nearest": "85437099906"
+    "nearest": "85437099906",
+    "llm": "85143000000",
+    "rag": "84178090005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -442,10 +603,14 @@
    "truth": "76169990005",
    "truthZh": "其他鋁製品",
    "pred": {
-    "nearest": "76109000009"
+    "nearest": "76109000009",
+    "llm": "76109000001",
+    "rag": "76109000009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -454,10 +619,14 @@
    "truth": "85437099906",
    "truthZh": "其他電機及器具",
    "pred": {
-    "nearest": "85389020002"
+    "nearest": "85389020002",
+    "llm": "90138090000",
+    "rag": "85437099906"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -466,10 +635,14 @@
    "truth": "95030039009",
    "truthZh": "電動玩具火車之零件；軌道、號誌及其他附件",
    "pred": {
-    "nearest": "85044099107"
+    "nearest": "85044099107",
+    "llm": "95039000001",
+    "rag": "85011090007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -478,10 +651,14 @@
    "truth": "84718000007",
    "truthZh": "其他自動資料處理機單元",
    "pred": {
-    "nearest": "84718000007"
+    "nearest": "84718000007",
+    "llm": "84716090100",
+    "rag": "84718000007"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -490,10 +667,14 @@
    "truth": "39269016909",
    "truthZh": "其他塑膠製實驗室、衛生及醫療用之物品",
    "pred": {
-    "nearest": "90183900908"
+    "nearest": "90183900908",
+    "llm": "90189090000",
+    "rag": "90183900908"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -502,10 +683,14 @@
    "truth": "03089019900",
    "truthZh": "其他活、生鮮或冷藏水產無脊椎動物",
    "pred": {
-    "nearest": "12119016006"
+    "nearest": "12119016006",
+    "llm": "01069000900",
+    "rag": "03089019214"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -514,10 +699,14 @@
    "truth": "84798999994",
    "truthZh": "其他第８４７９節所屬之機械",
    "pred": {
-    "nearest": "85299090008"
+    "nearest": "85299090008",
+    "llm": "84798990000",
+    "rag": "84798999994"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -526,10 +715,14 @@
    "truth": "84833020000",
    "truthZh": "平軸承",
    "pred": {
-    "nearest": "84831090009"
+    "nearest": "84831090009",
+    "llm": "84139190100",
+    "rag": "84831090009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -538,10 +731,14 @@
    "truth": "84502000005",
    "truthZh": "洗衣機，包括洗衣、脫水兩用機，其容量為乾衣超過１０公斤者",
    "pred": {
-    "nearest": "84501120002"
+    "nearest": "84501120002",
+    "llm": "84502000100",
+    "rag": "84502000005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -550,10 +747,14 @@
    "truth": "90181990002",
    "truthZh": "其他電氣診斷器具",
    "pred": {
-    "nearest": "90192090008"
+    "nearest": "90192090008",
+    "llm": "90189090900",
+    "rag": "90181990002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -562,10 +763,14 @@
    "truth": "33049120003",
    "truthZh": "痱子粉及爽身粉",
    "pred": {
-    "nearest": "33074900007"
+    "nearest": "33074900007",
+    "llm": "33072000100",
+    "rag": "33072000000"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -574,10 +779,14 @@
    "truth": "15119000001",
    "truthZh": "精製棕櫚油及其餾分物",
    "pred": {
-    "nearest": "20083000002"
+    "nearest": "20083000002",
+    "llm": "15119010000",
+    "rag": "15119000001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -586,10 +795,14 @@
    "truth": "90184100003",
    "truthZh": "鑽牙機，不論是否單獨機座與其他牙科儀器連結者",
    "pred": {
-    "nearest": "90184910904"
+    "nearest": "90184910904",
+    "llm": "90184900100",
+    "rag": "90184100003"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -598,10 +811,14 @@
    "truth": "94069000003",
    "truthZh": "其他組合式建築物",
    "pred": {
-    "nearest": "72159000008"
+    "nearest": "72159000008",
+    "llm": "94069090000",
+    "rag": "94069000003"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -610,10 +827,14 @@
    "truth": "90112000005",
    "truthZh": "顯微鏡，供顯微照相、顯微攝影或顯微放映用者",
    "pred": {
-    "nearest": "90314910006"
+    "nearest": "90314910006",
+    "llm": "90119100100",
+    "rag": "90319090007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -622,10 +843,14 @@
    "truth": "90314910006",
    "truthZh": "其他光學儀器及用具，以電氣操作者",
    "pred": {
-    "nearest": "85044094004"
+    "nearest": "85044094004",
+    "llm": "90278090901",
+    "rag": "90314910006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -634,10 +859,14 @@
    "truth": "90192090008",
    "truthZh": "其他治療用呼吸器具",
    "pred": {
-    "nearest": "90192090008"
+    "nearest": "90192090008",
+    "llm": "90189090900",
+    "rag": "90192090008"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -646,10 +875,14 @@
    "truth": "69091920005",
    "truthZh": "實驗室用陶質製品",
    "pred": {
-    "nearest": "85045019003"
+    "nearest": "85045019003",
+    "llm": "69091900000",
+    "rag": "68159920001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -658,10 +891,14 @@
    "truth": "84798999994",
    "truthZh": "其他第８４７９節所屬之機械",
    "pred": {
-    "nearest": "84652000008"
+    "nearest": "84652000008",
+    "llm": "84798990002",
+    "rag": "84798999994"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -670,10 +907,14 @@
    "truth": "40161000002",
    "truthZh": "多孔性橡膠製品",
    "pred": {
-    "nearest": "40161000002"
+    "nearest": "40161000002",
+    "llm": "40169990000",
+    "rag": "40161000002"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -682,10 +923,14 @@
    "truth": "84148090008",
    "truthZh": "其他第８４１４節所屬之貨品",
    "pred": {
-    "nearest": "84213990001"
+    "nearest": "84213990001",
+    "llm": "84213990000",
+    "rag": "84213990001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -694,10 +939,14 @@
    "truth": "17049000909",
    "truthZh": "其他糖食（包括白色巧克力），不含可可者",
    "pred": {
-    "nearest": "90189080907"
+    "nearest": "90189080907",
+    "llm": "17049090000",
+    "rag": "21069099208"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -706,10 +955,14 @@
    "truth": "42029290918",
    "truthZh": "其他類似容器，外層為塑膠布者",
    "pred": {
-    "nearest": "39219090002"
+    "nearest": "39219090002",
+    "llm": "42029210001",
+    "rag": "42021200102"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -718,10 +971,14 @@
    "truth": "72286000009",
    "truthZh": "其他合金鋼製條及桿",
    "pred": {
-    "nearest": "72286000009"
+    "nearest": "72286000009",
+    "llm": "72269110001",
+    "rag": "72249000917"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -730,10 +987,14 @@
    "truth": "90189080104",
    "truthZh": "其他第９０１８節所屬之貨品，具低週波、高週波、超音波、超短波功能者",
    "pred": {
-    "nearest": "85167900007"
+    "nearest": "85167900007",
+    "llm": "85437090000",
+    "rag": "90189080104"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -742,10 +1003,14 @@
    "truth": "30051090909",
    "truthZh": "其他粘敷料和其他具有粘層之物品",
    "pred": {
-    "nearest": "39269016909"
+    "nearest": "39269016909",
+    "llm": "30051000100",
+    "rag": "30051090909"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -754,10 +1019,14 @@
    "truth": "85364990001",
    "truthZh": "其他電驛（繼電器），電壓超過６０伏特，但未超過１０００伏特者",
    "pred": {
-    "nearest": "85176200005"
+    "nearest": "85176200005",
+    "llm": "85364900001",
+    "rag": "85369090009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -766,10 +1035,14 @@
    "truth": "84798999994",
    "truthZh": "其他第８４７９節所屬之機械",
    "pred": {
-    "nearest": "74081900904"
+    "nearest": "74081900904",
+    "llm": "84798990001",
+    "rag": "84798999994"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -778,10 +1051,14 @@
    "truth": "85369090009",
    "truthZh": "其他第８５３６節所屬之貨品",
    "pred": {
-    "nearest": "85444290909"
+    "nearest": "85444290909",
+    "llm": "85389090000",
+    "rag": "85444290909"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -790,10 +1067,14 @@
    "truth": "39219090002",
    "truthZh": "其他塑膠製板、片、薄膜、箔及扁條",
    "pred": {
-    "nearest": "76071990003"
+    "nearest": "76071990003",
+    "llm": "39211900900",
+    "rag": "39219090002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -802,10 +1083,14 @@
    "truth": "05119999248",
    "truthZh": "蟲餌（熱帶魚飼餌）",
    "pred": {
-    "nearest": "23099090907"
+    "nearest": "23099090907",
+    "llm": "05119990100",
+    "rag": "05119999248"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -814,10 +1099,14 @@
    "truth": "21032000008",
    "truthZh": "番茄醬及其他番茄調味醬",
    "pred": {
-    "nearest": "21032000008"
+    "nearest": "21032000008",
+    "llm": "21032090001",
+    "rag": "21032000008"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -826,10 +1115,14 @@
    "truth": "38089420001",
    "truthZh": "消毒劑成品",
    "pred": {
-    "nearest": "23099090907"
+    "nearest": "23099090907",
+    "llm": "38249990900",
+    "rag": "14049099904"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -838,10 +1131,14 @@
    "truth": "73129000000",
    "truthZh": "鋼鐵製編帶、吊索及類似品，非電氣絕緣者",
    "pred": {
-    "nearest": "85371010002"
+    "nearest": "85371010002",
+    "llm": "73121000010",
+    "rag": "73129000000"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -850,10 +1147,14 @@
    "truth": "84142000000",
    "truthZh": "手或腳操作之空氣泵",
    "pred": {
-    "nearest": "84716090903"
+    "nearest": "84716090903",
+    "llm": "84248990001",
+    "rag": "84142000000"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -862,10 +1163,14 @@
    "truth": "39219090002",
    "truthZh": "其他塑膠製板、片、薄膜、箔及扁條",
    "pred": {
-    "nearest": "76071990003"
+    "nearest": "76071990003",
+    "llm": "48239090000",
+    "rag": "48115900001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -874,10 +1179,14 @@
    "truth": "03089019900",
    "truthZh": "其他活、生鮮或冷藏水產無脊椎動物",
    "pred": {
-    "nearest": "12119016006"
+    "nearest": "12119016006",
+    "llm": "05080000100",
+    "rag": "03089019214"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -886,10 +1195,14 @@
    "truth": "90183900908",
    "truthZh": "其他導管、套管及類似品",
    "pred": {
-    "nearest": "90183200004"
+    "nearest": "90183200004",
+    "llm": "38220090009",
+    "rag": "90183900908"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -898,10 +1211,14 @@
    "truth": "84771000907",
    "truthZh": "其他射出成型機",
    "pred": {
-    "nearest": "85219090006"
+    "nearest": "85219090006",
+    "llm": "84771010001",
+    "rag": "84771000907"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -910,10 +1227,14 @@
    "truth": "39269016909",
    "truthZh": "其他塑膠製實驗室、衛生及醫療用之物品",
    "pred": {
-    "nearest": "90183900908"
+    "nearest": "90183900908",
+    "llm": "90189090900",
+    "rag": "90183900908"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -922,10 +1243,14 @@
    "truth": "85013119000",
    "truthZh": "其他直流電動機，輸出超過３７．５瓦，但未超過７５０瓦者",
    "pred": {
-    "nearest": "85013119000"
+    "nearest": "85013119000",
+    "llm": "84128090001",
+    "rag": "85013119000"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -934,10 +1259,14 @@
    "truth": "85444990001",
    "truthZh": "其他電導體，未裝有插接器，電壓不超過１０００伏特者",
    "pred": {
-    "nearest": "85444990001"
+    "nearest": "85444990001",
+    "llm": "85444990100",
+    "rag": "85444990001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -946,10 +1275,14 @@
    "truth": "16056100101",
    "truthZh": "已調製或保藏之海參，冷凍者",
    "pred": {
-    "nearest": "03061700903"
+    "nearest": "03061700903",
+    "llm": "03081910100",
+    "rag": "03081200005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -958,10 +1291,14 @@
    "truth": "62032300006",
    "truthZh": "合成纖維製男用或男童用搭配式套裝",
    "pred": {
-    "nearest": "56039390000"
+    "nearest": "56039390000",
+    "llm": "62113300100",
+    "rag": "62032300006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -970,10 +1307,14 @@
    "truth": "30051090909",
    "truthZh": "其他粘敷料和其他具有粘層之物品",
    "pred": {
-    "nearest": "30051090909"
+    "nearest": "30051090909",
+    "llm": "30051010001",
+    "rag": "30051090909"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -982,10 +1323,14 @@
    "truth": "85044091007",
    "truthZh": "其他切換式電源供應器",
    "pred": {
-    "nearest": "85044099900"
+    "nearest": "85044099900",
+    "llm": "85044090900",
+    "rag": "85044091007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -994,10 +1339,14 @@
    "truth": "84831090009",
    "truthZh": "其他傳動軸及曲柄",
    "pred": {
-    "nearest": "73043990005"
+    "nearest": "73043990005",
+    "llm": "85030090900",
+    "rag": "85030090908"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1006,10 +1355,14 @@
    "truth": "72254000908",
    "truthZh": "其他合金鋼扁軋製品，非捲盤狀，熱軋後未進一步加工，寬度６００公厘及以上者",
    "pred": {
-    "nearest": "72254000908"
+    "nearest": "72254000908",
+    "llm": "72254000000",
+    "rag": "72254000908"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1018,10 +1371,14 @@
    "truth": "84198100001",
    "truthZh": "製造熱飲、熱食或烹調用之機器、工廠或設備",
    "pred": {
-    "nearest": "84186950007"
+    "nearest": "84186950007",
+    "llm": "84186990100",
+    "rag": "84186990009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1030,10 +1387,14 @@
    "truth": "85166090009",
    "truthZh": "其他烤箱；炊具、炊盤、煮環、烤器、烘焙器",
    "pred": {
-    "nearest": "85098090004"
+    "nearest": "85098090004",
+    "llm": "85094000100",
+    "rag": "85167900007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1042,10 +1403,14 @@
    "truth": "90189080907",
    "truthZh": "其他第９０１８節所屬之貨品",
    "pred": {
-    "nearest": "90189080907"
+    "nearest": "90189080907",
+    "llm": "90189010009",
+    "rag": "90189080907"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1054,10 +1419,14 @@
    "truth": "84839090002",
    "truthZh": "其他齒輪、鏈輪及其他傳動元件，單獨呈現者；及第８４８３節所屬貨品之零件",
    "pred": {
-    "nearest": "84829990004"
+    "nearest": "84829990004",
+    "llm": "84139190900",
+    "rag": "84829990004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1066,10 +1435,14 @@
    "truth": "84798999994",
    "truthZh": "其他第８４７９節所屬之機械",
    "pred": {
-    "nearest": "90279090003"
+    "nearest": "90279090003",
+    "llm": "90279000005",
+    "rag": "90279090003"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1078,10 +1451,14 @@
    "truth": "76082010006",
    "truthZh": "鋁合金管",
    "pred": {
-    "nearest": "76082010006"
+    "nearest": "76082010006",
+    "llm": "76042100900",
+    "rag": "76042100001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1090,10 +1467,14 @@
    "truth": "20089991901",
    "truthZh": "未列名經其他方式調製或保藏之果實及植物其他可食之部分，不論是否加糖或含其他甜味料",
    "pred": {
-    "nearest": "17049000909"
+    "nearest": "17049000909",
+    "llm": "20098910100",
+    "rag": "20098990002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1102,10 +1483,14 @@
    "truth": "84798999994",
    "truthZh": "其他第８４７９節所屬之機械",
    "pred": {
-    "nearest": "85098090004"
+    "nearest": "85098090004",
+    "llm": "84186990000",
+    "rag": "84212190001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1114,10 +1499,14 @@
    "truth": "84158200004",
    "truthZh": "具有製冷裝置之空氣調節器",
    "pred": {
-    "nearest": "84185090000"
+    "nearest": "84185090000",
+    "llm": "84186990000",
+    "rag": "84186990009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1126,10 +1515,14 @@
    "truth": "84186990009",
    "truthZh": "其他冷藏或冷凍設備",
    "pred": {
-    "nearest": "84186950007"
+    "nearest": "84186950007",
+    "llm": "84186900103",
+    "rag": "84186990009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1138,10 +1531,14 @@
    "truth": "05119999248",
    "truthZh": "蟲餌（熱帶魚飼餌）",
    "pred": {
-    "nearest": "35040019004"
+    "nearest": "35040019004",
+    "llm": "23099090901",
+    "rag": "05119999248"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1150,10 +1547,14 @@
    "truth": "84213910008",
    "truthZh": "電動空氣過濾器及電動空氣清潔器",
    "pred": {
-    "nearest": "84798910008"
+    "nearest": "84798910008",
+    "llm": "84213900100",
+    "rag": "84213910008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1162,10 +1563,14 @@
    "truth": "87032190901",
    "truthZh": "其他小客車，汽缸容量不超過１０００立方公分者",
    "pred": {
-    "nearest": "85022010001"
+    "nearest": "85022010001",
+    "llm": "87113000100",
+    "rag": "87113000008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1174,10 +1579,14 @@
    "truth": "39241000906",
    "truthZh": "其他塑膠製餐桌用餐具及廚房用具",
    "pred": {
-    "nearest": "85098040005"
+    "nearest": "85098040005",
+    "llm": "39241000005",
+    "rag": "82055190006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": false
    }
   },
   {
@@ -1186,10 +1595,14 @@
    "truth": "85015290006",
    "truthZh": "其他多相交流電動機，輸出超過７５０瓦，但未超過７５瓩者",
    "pred": {
-    "nearest": "85015190007"
+    "nearest": "85015190007",
+    "llm": "85015290001",
+    "rag": "85015290006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1198,10 +1611,14 @@
    "truth": "73269090906",
    "truthZh": "其他鋼鐵製品",
    "pred": {
-    "nearest": "90189090905"
+    "nearest": "90189090905",
+    "llm": "94059900000",
+    "rag": "94059900005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1210,10 +1627,14 @@
    "truth": "85229029902",
    "truthZh": "其他錄放音機之零件及附件",
    "pred": {
-    "nearest": "84195090009"
+    "nearest": "84195090009",
+    "llm": "85189000900",
+    "rag": "85189090001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1222,10 +1643,14 @@
    "truth": "85371010002",
    "truthZh": "專供配合機器使用之電子控制設備（包括數值、程式、電腦及其他類似控制設備），電壓未超過１０００伏特者",
    "pred": {
-    "nearest": "84719090006"
+    "nearest": "84719090006",
+    "llm": "85371090001",
+    "rag": "85371010002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1234,10 +1659,14 @@
    "truth": "39269090908",
    "truthZh": "其他塑膠製品及第３９０１至３９１４節之材料製成品",
    "pred": {
-    "nearest": "85044099107"
+    "nearest": "85044099107",
+    "llm": "84139190100",
+    "rag": "84129000908"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1246,10 +1675,14 @@
    "truth": "76169990005",
    "truthZh": "其他鋁製品",
    "pred": {
-    "nearest": "84733000006"
+    "nearest": "84733000006",
+    "llm": "84733010009",
+    "rag": "84733000006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1258,10 +1691,14 @@
    "truth": "72283000907",
    "truthZh": "其他合金鋼條及桿，熱軋、熱抽或擠製後未進一步加工者",
    "pred": {
-    "nearest": "72283000907"
+    "nearest": "72283000907",
+    "llm": "72283020101",
+    "rag": "72283000907"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1270,10 +1707,14 @@
    "truth": "90181200008",
    "truthZh": "超音波掃瞄器具",
    "pred": {
-    "nearest": "85285910005"
+    "nearest": "85285910005",
+    "llm": "90181200001",
+    "rag": "90181200008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1282,10 +1723,14 @@
    "truth": "84705000004",
    "truthZh": "收銀機",
    "pred": {
-    "nearest": "85044099900"
+    "nearest": "85044099900",
+    "llm": "84733090900",
+    "rag": "84733000006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1294,10 +1739,14 @@
    "truth": "85371010002",
    "truthZh": "專供配合機器使用之電子控制設備（包括數值、程式、電腦及其他類似控制設備），電壓未超過１０００伏特者",
    "pred": {
-    "nearest": "85371010002"
+    "nearest": "85371010002",
+    "llm": "85371010000",
+    "rag": "85371010002"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1306,10 +1755,14 @@
    "truth": "12122111200",
    "truthZh": "乾海帶（昆布）",
    "pred": {
-    "nearest": "12122911006"
+    "nearest": "12122911006",
+    "llm": "12122100101",
+    "rag": "12122111200"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1318,10 +1771,14 @@
    "truth": "76041020000",
    "truthZh": "鋁型材",
    "pred": {
-    "nearest": "76041020000"
+    "nearest": "76041020000",
+    "llm": "76061110000",
+    "rag": "76061120007"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1330,10 +1787,14 @@
    "truth": "84213910008",
    "truthZh": "電動空氣過濾器及電動空氣清潔器",
    "pred": {
-    "nearest": "84146000001"
+    "nearest": "84146000001",
+    "llm": "84146000100",
+    "rag": "84146000001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1342,10 +1803,14 @@
    "truth": "90181990002",
    "truthZh": "其他電氣診斷器具",
    "pred": {
-    "nearest": "90181990002"
+    "nearest": "90181990002",
+    "llm": "90181990100",
+    "rag": "90181990002"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1354,10 +1819,14 @@
    "truth": "76082010006",
    "truthZh": "鋁合金管",
    "pred": {
-    "nearest": "83024900002"
+    "nearest": "83024900002",
+    "llm": "76082010000",
+    "rag": "76082010006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1366,10 +1835,14 @@
    "truth": "84198990004",
    "truthZh": "其他機器，工廠及實驗室設備",
    "pred": {
-    "nearest": "69022000003"
+    "nearest": "69022000003",
+    "llm": "84198990009",
+    "rag": "84198990004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1378,10 +1851,14 @@
    "truth": "40161000002",
    "truthZh": "多孔性橡膠製品",
    "pred": {
-    "nearest": "40161000002"
+    "nearest": "40161000002",
+    "llm": "40169990900",
+    "rag": "40169990007"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1390,10 +1867,14 @@
    "truth": "87031000002",
    "truthZh": "特別設計之雪地旅行車；高爾夫球車及類似車輛",
    "pred": {
-    "nearest": "87031000002"
+    "nearest": "87031000002",
+    "llm": "87031000101",
+    "rag": "87031000002"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1402,10 +1883,14 @@
    "truth": "90112000005",
    "truthZh": "顯微鏡，供顯微照相、顯微攝影或顯微放映用者",
    "pred": {
-    "nearest": "90314910006"
+    "nearest": "90314910006",
+    "llm": "90029090900",
+    "rag": "90029090002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1414,10 +1899,14 @@
    "truth": "84748000004",
    "truthZh": "固體礦物燃料、陶土漿、濕水泥、粉刷材料或其他粉狀、糊狀礦產品用之混凝、造模或造型機器及鑄造用砂模製造機器",
    "pred": {
-    "nearest": "84798999994"
+    "nearest": "84798999994",
+    "llm": "84543090001",
+    "rag": "84748000004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1426,10 +1915,14 @@
    "truth": "90189080907",
    "truthZh": "其他第９０１８節所屬之貨品",
    "pred": {
-    "nearest": "90183900908"
+    "nearest": "90183900908",
+    "llm": "90189090900",
+    "rag": "90189080907"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1438,10 +1931,14 @@
    "truth": "85371090005",
    "truthZh": "其他控電或配電用器具，電壓未超過１０００伏特者",
    "pred": {
-    "nearest": "85044099900"
+    "nearest": "85044099900",
+    "llm": "85381000100",
+    "rag": "85371090005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1450,10 +1947,14 @@
    "truth": "84198990004",
    "truthZh": "其他機器，工廠及實驗室設備",
    "pred": {
-    "nearest": "23099090907"
+    "nearest": "23099090907",
+    "llm": "84198990000",
+    "rag": "84198100001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": false
    }
   },
   {
@@ -1462,10 +1963,14 @@
    "truth": "56021000000",
    "truthZh": "針軋氈呢及經針縫纖維製之織物，不論是否經浸漬、塗佈、被覆或黏合者",
    "pred": {
-    "nearest": "23021000009"
+    "nearest": "23021000009",
+    "llm": "63079090005",
+    "rag": "63079090901"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1474,10 +1979,14 @@
    "truth": "20059990914",
    "truthZh": "其他酸漬除外之調製或保藏蔬菜罐頭，第２００６節之產品除外",
    "pred": {
-    "nearest": "21069099903"
+    "nearest": "21069099903",
+    "llm": "20059990001",
+    "rag": "20059990996"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1486,10 +1995,14 @@
    "truth": "85176200005",
    "truthZh": "接收、轉換及傳輸或再生聲音、圖像或其他資料之機器，包括交換器及路由器",
    "pred": {
-    "nearest": "85286200208"
+    "nearest": "85286200208",
+    "llm": "85176200901",
+    "rag": "85371010002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": false
    }
   },
   {
@@ -1498,10 +2011,14 @@
    "truth": "22029990997",
    "truthZh": "其他未含酒精飲料水，含糖或其他甜味料或香料者（不含乳製品）",
    "pred": {
-    "nearest": "21069010008"
+    "nearest": "21069010008",
+    "llm": "22029990102",
+    "rag": "22029990997"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1510,10 +2027,14 @@
    "truth": "90192090008",
    "truthZh": "其他治療用呼吸器具",
    "pred": {
-    "nearest": "84198990004"
+    "nearest": "84198990004",
+    "llm": "90192000101",
+    "rag": "90192090008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1522,10 +2043,14 @@
    "truth": "90183900908",
    "truthZh": "其他導管、套管及類似品",
    "pred": {
-    "nearest": "90183200004"
+    "nearest": "90183200004",
+    "llm": "38220090001",
+    "rag": "90183900908"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1534,10 +2059,14 @@
    "truth": "73269090906",
    "truthZh": "其他鋼鐵製品",
    "pred": {
-    "nearest": "90189090905"
+    "nearest": "90189090905",
+    "llm": "94059990001",
+    "rag": "94059900005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1546,10 +2075,14 @@
    "truth": "17049000909",
    "truthZh": "其他糖食（包括白色巧克力），不含可可者",
    "pred": {
-    "nearest": "22029990997"
+    "nearest": "22029990997",
+    "llm": "21069090001",
+    "rag": "21069099903"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1558,10 +2091,14 @@
    "truth": "84198990004",
    "truthZh": "其他機器，工廠及實驗室設備",
    "pred": {
-    "nearest": "84158100005"
+    "nearest": "84158100005",
+    "llm": "90328900009",
+    "rag": "90248000007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1570,10 +2107,14 @@
    "truth": "84561190001",
    "truthZh": "其他以雷射加工之工具機",
    "pred": {
-    "nearest": "90189080907"
+    "nearest": "90189080907",
+    "llm": "84561190000",
+    "rag": "84561190001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1582,10 +2123,14 @@
    "truth": "23091000002",
    "truthZh": "供零售用之貓狗食品",
    "pred": {
-    "nearest": "23099090907"
+    "nearest": "23099090907",
+    "llm": "23091000100",
+    "rag": "23091000002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1594,10 +2139,14 @@
    "truth": "23091000002",
    "truthZh": "供零售用之貓狗食品",
    "pred": {
-    "nearest": "23091000002"
+    "nearest": "23091000002",
+    "llm": "23099090900",
+    "rag": "23091000002"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1606,10 +2155,14 @@
    "truth": "84717090000",
    "truthZh": "其他儲存單元",
    "pred": {
-    "nearest": "85219090006"
+    "nearest": "85219090006",
+    "llm": "84716090000",
+    "rag": "84719090006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1618,10 +2171,14 @@
    "truth": "22029990997",
    "truthZh": "其他未含酒精飲料水，含糖或其他甜味料或香料者（不含乳製品）",
    "pred": {
-    "nearest": "21069099903"
+    "nearest": "21069099903",
+    "llm": "22029090001",
+    "rag": "21069099903"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1630,10 +2187,14 @@
    "truth": "72255000004",
    "truthZh": "其他合金鋼扁軋製品，冷軋（冷延）後未進一步加工，寬度６００公厘及以上者",
    "pred": {
-    "nearest": "39119010001"
+    "nearest": "39119010001",
+    "llm": "72255090000",
+    "rag": "72255000004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1642,10 +2203,14 @@
    "truth": "59119090000",
    "truthZh": "其他工業用之紡織產品或製品",
    "pred": {
-    "nearest": "73269090906"
+    "nearest": "73269090906",
+    "llm": "39269090000",
+    "rag": "39269039001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1654,10 +2219,14 @@
    "truth": "85161000009",
    "truthZh": "即熱式或儲存式之電熱水器及浸入式電熱水器",
    "pred": {
-    "nearest": "85167900007"
+    "nearest": "85167900007",
+    "llm": "85167900900",
+    "rag": "85161000009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1666,10 +2235,14 @@
    "truth": "84798999994",
    "truthZh": "其他第８４７９節所屬之機械",
    "pred": {
-    "nearest": "49019990005"
+    "nearest": "49019990005",
+    "llm": "84186900900",
+    "rag": "84212110008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1678,10 +2251,14 @@
    "truth": "30061039001",
    "truthZh": "已消毒外科用或牙科用，具吸收性之止血物質，其他材料製",
    "pred": {
-    "nearest": "90189080907"
+    "nearest": "90189080907",
+    "llm": "30061000900",
+    "rag": "30061039001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1690,10 +2267,14 @@
    "truth": "96020012000",
    "truthZh": "植物雕刻材料之製品",
    "pred": {
-    "nearest": "90189090905"
+    "nearest": "90189090905",
+    "llm": "96020000000",
+    "rag": "14049099904"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1702,10 +2283,14 @@
    "truth": "84141090003",
    "truthZh": "其他真空泵",
    "pred": {
-    "nearest": "85184090002"
+    "nearest": "85184090002",
+    "llm": "90191000000",
+    "rag": "90191019008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1714,10 +2299,14 @@
    "truth": "85444290909",
    "truthZh": "其他電導體，裝有插接器，電壓不超過１０００伏特者",
    "pred": {
-    "nearest": "90191019008"
+    "nearest": "90191019008",
+    "llm": "85444290101",
+    "rag": "85444290909"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1726,10 +2315,14 @@
    "truth": "61091000006",
    "truthZh": "棉製Ｔ恤衫、汗衫及其他背心，針織或鈎針織者",
    "pred": {
-    "nearest": "61099020005"
+    "nearest": "61099020005",
+    "llm": "62121010001",
+    "rag": "62121090001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1738,10 +2331,14 @@
    "truth": "21069099903",
    "truthZh": "其他未列名食物調製品",
    "pred": {
-    "nearest": "16023220909"
+    "nearest": "16023220909",
+    "llm": "21039090003",
+    "rag": "16030000009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1750,10 +2347,14 @@
    "truth": "95069100001",
    "truthZh": "一般體能運動、體操或競技比賽用物品及設備",
    "pred": {
-    "nearest": "39269090908"
+    "nearest": "39269090908",
+    "llm": "95069100000",
+    "rag": "95069100001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1762,10 +2363,14 @@
    "truth": "56012190009",
    "truthZh": "棉胎製品",
    "pred": {
-    "nearest": "95069900904"
+    "nearest": "95069900904",
+    "llm": "56012100006",
+    "rag": "56012190009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1774,10 +2379,14 @@
    "truth": "85014090001",
    "truthZh": "其他單相交流電動機",
    "pred": {
-    "nearest": "85014090001"
+    "nearest": "85014090001",
+    "llm": "85014010100",
+    "rag": "85014090001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1786,10 +2395,14 @@
    "truth": "85219090006",
    "truthZh": "其他錄放影機",
    "pred": {
-    "nearest": "85219090006"
+    "nearest": "85219090006",
+    "llm": "85219000900",
+    "rag": "85219090006"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1798,10 +2411,14 @@
    "truth": "84198990004",
    "truthZh": "其他機器，工廠及實驗室設備",
    "pred": {
-    "nearest": "69022000003"
+    "nearest": "69022000003",
+    "llm": "84198190900",
+    "rag": "84198100001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1810,10 +2427,14 @@
    "truth": "85446090005",
    "truthZh": "其他電導體，電壓超過１０００伏特者",
    "pred": {
-    "nearest": "85444990001"
+    "nearest": "85444990001",
+    "llm": "85446010000",
+    "rag": "85444990001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1822,10 +2443,14 @@
    "truth": "39269090908",
    "truthZh": "其他塑膠製品及第３９０１至３９１４節之材料製成品",
    "pred": {
-    "nearest": "64029990327"
+    "nearest": "64029990327",
+    "llm": "63079090900",
+    "rag": "63079090901"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1834,10 +2459,14 @@
    "truth": "61046310005",
    "truthZh": "合成纖維製女用或女童用長褲、膝褲及短褲，針織或鈎針織者",
    "pred": {
-    "nearest": "61034310001"
+    "nearest": "61034310001",
+    "llm": "61046310001",
+    "rag": "61046310005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1846,10 +2475,14 @@
    "truth": "90192090008",
    "truthZh": "其他治療用呼吸器具",
    "pred": {
-    "nearest": "90192090008"
+    "nearest": "90192090008",
+    "llm": "90192020000",
+    "rag": "90192090008"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1858,10 +2491,14 @@
    "truth": "85015290006",
    "truthZh": "其他多相交流電動機，輸出超過７５０瓦，但未超過７５瓩者",
    "pred": {
-    "nearest": "85015290006"
+    "nearest": "85015290006",
+    "llm": "85015200101",
+    "rag": "85015290006"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1870,10 +2507,14 @@
    "truth": "21069099903",
    "truthZh": "其他未列名食物調製品",
    "pred": {
-    "nearest": "19019011006"
+    "nearest": "19019011006",
+    "llm": "21069090005",
+    "rag": "21069051008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1882,10 +2523,14 @@
    "truth": "95069100001",
    "truthZh": "一般體能運動、體操或競技比賽用物品及設備",
    "pred": {
-    "nearest": "45041000001"
+    "nearest": "45041000001",
+    "llm": "95069100900",
+    "rag": "95069100001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -1894,10 +2539,14 @@
    "truth": "21069099903",
    "truthZh": "其他未列名食物調製品",
    "pred": {
-    "nearest": "21041029006"
+    "nearest": "21041029006",
+    "llm": "21039090900",
+    "rag": "21069099903"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1906,10 +2555,14 @@
    "truth": "62032300006",
    "truthZh": "合成纖維製男用或男童用搭配式套裝",
    "pred": {
-    "nearest": "56039390000"
+    "nearest": "56039390000",
+    "llm": "62104000109",
+    "rag": "62032300006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1918,10 +2571,14 @@
    "truth": "84833020000",
    "truthZh": "平軸承",
    "pred": {
-    "nearest": "84831090009"
+    "nearest": "84831090009",
+    "llm": "84139190000",
+    "rag": "84833020000"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1930,10 +2587,14 @@
    "truth": "39189090007",
    "truthZh": "其他塑膠製成捲或磚形之地面覆蓋物，不論是否為自粘性；如本章註九定義之其他塑膠製牆或天花板覆蓋物",
    "pred": {
-    "nearest": "40051000005"
+    "nearest": "40051000005",
+    "llm": "39211990900",
+    "rag": "39189090007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -1942,10 +2603,14 @@
    "truth": "73269090906",
    "truthZh": "其他鋼鐵製品",
    "pred": {
-    "nearest": "73269090906"
+    "nearest": "73269090906",
+    "llm": "73269090009",
+    "rag": "73089090007"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": false
    }
   },
   {
@@ -1954,10 +2619,14 @@
    "truth": "90309090008",
    "truthZh": "其他第９０３０節所屬物品之零件及附件",
    "pred": {
-    "nearest": "85044020003"
+    "nearest": "85044020003",
+    "llm": "90308900901",
+    "rag": "90308900000"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1966,10 +2635,14 @@
    "truth": "85131090003",
    "truthZh": "其他手提電燈",
    "pred": {
-    "nearest": "95030062009"
+    "nearest": "95030062009",
+    "llm": "95030090000",
+    "rag": "95030093903"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1978,10 +2651,14 @@
    "truth": "70071900008",
    "truthZh": "其他強化安全玻璃",
    "pred": {
-    "nearest": "70200019001"
+    "nearest": "70200019001",
+    "llm": "84569900101",
+    "rag": "84669390108"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -1990,10 +2667,14 @@
    "truth": "84021200004",
    "truthZh": "水蒸汽產生量每小時不超過４５噸之水管式鍋爐",
    "pred": {
-    "nearest": "85161000009"
+    "nearest": "85161000009",
+    "llm": "84021900001",
+    "rag": "84021990008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2002,10 +2683,14 @@
    "truth": "85444990001",
    "truthZh": "其他電導體，未裝有插接器，電壓不超過１０００伏特者",
    "pred": {
-    "nearest": "85444990001"
+    "nearest": "85444990001",
+    "llm": "85444990101",
+    "rag": "85444990001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2014,10 +2699,14 @@
    "truth": "85013119000",
    "truthZh": "其他直流電動機，輸出超過３７．５瓦，但未超過７５０瓦者",
    "pred": {
-    "nearest": "85013119000"
+    "nearest": "85013119000",
+    "llm": "84128090900",
+    "rag": "85013119000"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2026,10 +2715,14 @@
    "truth": "23099090104",
    "truthZh": "調製單味飼料",
    "pred": {
-    "nearest": "04022100900"
+    "nearest": "04022100900",
+    "llm": "23099000100",
+    "rag": "04022100900"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2038,10 +2731,14 @@
    "truth": "85219090006",
    "truthZh": "其他錄放影機",
    "pred": {
-    "nearest": "85219090006"
+    "nearest": "85219090006",
+    "llm": "85287190009",
+    "rag": "85219090006"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2050,10 +2747,14 @@
    "truth": "55032000008",
    "truthZh": "聚酯纖維棉，未初梳、未精梳或未另行處理以供紡製用者",
    "pred": {
-    "nearest": "64039190002"
+    "nearest": "64039190002",
+    "llm": "55032000100",
+    "rag": "55032000008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2062,10 +2763,14 @@
    "truth": "85442010001",
    "truthZh": "同軸電纜",
    "pred": {
-    "nearest": "85442010001"
+    "nearest": "85442010001",
+    "llm": "85442010100",
+    "rag": "85442010001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2074,10 +2779,14 @@
    "truth": "39269090908",
    "truthZh": "其他塑膠製品及第３９０１至３９１４節之材料製成品",
    "pred": {
-    "nearest": "39269090908"
+    "nearest": "39269090908",
+    "llm": "39269090900",
+    "rag": "39269090908"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2086,10 +2795,14 @@
    "truth": "85015190007",
    "truthZh": "其他多相交流電動機，輸出超過３７．５瓦，但未超過７５０瓦者",
    "pred": {
-    "nearest": "84501120002"
+    "nearest": "84501120002",
+    "llm": "84509010000",
+    "rag": "84509000000"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2098,10 +2811,14 @@
    "truth": "40161000002",
    "truthZh": "多孔性橡膠製品",
    "pred": {
-    "nearest": "40161000002"
+    "nearest": "40161000002",
+    "llm": "40169990001",
+    "rag": "40169990007"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2110,10 +2827,14 @@
    "truth": "15180090004",
    "truthZh": "其他沸製、氧化、脫水、硫化、吹製，在真空中或惰性氣體中行聚合化或經其他化學方法改質之動植物或微生物油脂及其餾分物，但不包括第１５１６節所列產品",
    "pred": {
-    "nearest": "54024900908"
+    "nearest": "54024900908",
+    "llm": "38122000000",
+    "rag": "15180090004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2122,10 +2843,14 @@
    "truth": "83015000009",
    "truthZh": "附有鎖之釦及帶釦之框，卑金屬製",
    "pred": {
-    "nearest": "76169990005"
+    "nearest": "76169990005",
+    "llm": "83014000001",
+    "rag": "83014000002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2134,10 +2859,14 @@
    "truth": "62121090001",
    "truthZh": "其他紡織材料製胸罩，不論是否針織或鈎針織者",
    "pred": {
-    "nearest": "62121090001"
+    "nearest": "62121090001",
+    "llm": "62121000100",
+    "rag": "62121090001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2146,10 +2875,14 @@
    "truth": "21069099903",
    "truthZh": "其他未列名食物調製品",
    "pred": {
-    "nearest": "21039090905"
+    "nearest": "21039090905",
+    "llm": "25010010000",
+    "rag": "25010090001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2158,10 +2891,14 @@
    "truth": "90183900908",
    "truthZh": "其他導管、套管及類似品",
    "pred": {
-    "nearest": "90183200004"
+    "nearest": "90183200004",
+    "llm": "90183900900",
+    "rag": "90183900908"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2170,10 +2907,14 @@
    "truth": "38089420001",
    "truthZh": "消毒劑成品",
    "pred": {
-    "nearest": "23099090907"
+    "nearest": "23099090907",
+    "llm": "38249990900",
+    "rag": "14049099904"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2182,10 +2923,14 @@
    "truth": "73102910006",
    "truthZh": "其他馬口鐵製容器，容量小於５０公升者",
    "pred": {
-    "nearest": "73102910006"
+    "nearest": "73102910006",
+    "llm": "73102900100",
+    "rag": "73102910006"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2194,10 +2939,14 @@
    "truth": "95030091905",
    "truthZh": "其他玩具，成組或成套者",
    "pred": {
-    "nearest": "21050010008"
+    "nearest": "21050010008",
+    "llm": "95030090100",
+    "rag": "34070010001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2206,10 +2955,14 @@
    "truth": "95049010002",
    "truthZh": "保齡球道設備（包括保齡球）",
    "pred": {
-    "nearest": "85123000009"
+    "nearest": "85123000009",
+    "llm": "95069990008",
+    "rag": "95049010002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2218,10 +2971,14 @@
    "truth": "85371090005",
    "truthZh": "其他控電或配電用器具，電壓未超過１０００伏特者",
    "pred": {
-    "nearest": "85044099900"
+    "nearest": "85044099900",
+    "llm": "85371090001",
+    "rag": "85371090005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2230,10 +2987,14 @@
    "truth": "61142000007",
    "truthZh": "棉製其他衣服，針織或鈎針織者",
    "pred": {
-    "nearest": "61044200003"
+    "nearest": "61044200003",
+    "llm": "61112090100",
+    "rag": "61142000007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2242,10 +3003,14 @@
    "truth": "90183900908",
    "truthZh": "其他導管、套管及類似品",
    "pred": {
-    "nearest": "90183200004"
+    "nearest": "90183200004",
+    "llm": "90183900100",
+    "rag": "90183900908"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2254,10 +3019,14 @@
    "truth": "29349990901",
    "truthZh": "其他雜環化合物",
    "pred": {
-    "nearest": "29349990901"
+    "nearest": "29349990901",
+    "llm": "29349990000",
+    "rag": "29349990901"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2266,10 +3035,14 @@
    "truth": "72202090203",
    "truthZh": "ＳＵＳ２００系列之冷軋不銹鋼扁軋製品，寬度小於６００公厘者",
    "pred": {
-    "nearest": "72202090123"
+    "nearest": "72202090123",
+    "llm": "72209010100",
+    "rag": "72202090203"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2278,10 +3051,14 @@
    "truth": "76169990005",
    "truthZh": "其他鋁製品",
    "pred": {
-    "nearest": "87149200304"
+    "nearest": "87149200304",
+    "llm": "85389000000",
+    "rag": "85389090007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2290,10 +3067,14 @@
    "truth": "84186990009",
    "truthZh": "其他冷藏或冷凍設備",
    "pred": {
-    "nearest": "85365019005"
+    "nearest": "85365019005",
+    "llm": "84186900901",
+    "rag": "84186930002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2302,10 +3083,14 @@
    "truth": "39249000909",
    "truthZh": "其他塑膠製家庭用製品及衛生保健或盥洗用具",
    "pred": {
-    "nearest": "84351090008"
+    "nearest": "84351090008",
+    "llm": "95030090000",
+    "rag": "39269016909"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2314,10 +3099,14 @@
    "truth": "40161000002",
    "truthZh": "多孔性橡膠製品",
    "pred": {
-    "nearest": "40161000002"
+    "nearest": "40161000002",
+    "llm": "40169900000",
+    "rag": "40169990007"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2326,10 +3115,14 @@
    "truth": "75089090005",
    "truthZh": "其他鎳製品",
    "pred": {
-    "nearest": "74091910000"
+    "nearest": "74091910000",
+    "llm": "75089000001",
+    "rag": "75089090005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2338,10 +3131,14 @@
    "truth": "85371090005",
    "truthZh": "其他控電或配電用器具，電壓未超過１０００伏特者",
    "pred": {
-    "nearest": "85364990001"
+    "nearest": "85364990001",
+    "llm": "85371090000",
+    "rag": "85371090005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2350,10 +3147,14 @@
    "truth": "30059090001",
    "truthZh": "其他屬第３００５節之貨品",
    "pred": {
-    "nearest": "30051090909"
+    "nearest": "30051090909",
+    "llm": "30059000000",
+    "rag": "30059090001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2362,10 +3163,14 @@
    "truth": "76082010006",
    "truthZh": "鋁合金管",
    "pred": {
-    "nearest": "83024900002"
+    "nearest": "83024900002",
+    "llm": "76082010009",
+    "rag": "83024900002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": false
    }
   },
   {
@@ -2374,10 +3179,14 @@
    "truth": "29349990901",
    "truthZh": "其他雜環化合物",
    "pred": {
-    "nearest": "27111400206"
+    "nearest": "27111400206",
+    "llm": "29349990000",
+    "rag": "29349990901"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2386,10 +3195,14 @@
    "truth": "56012110006",
    "truthZh": "棉胎",
    "pred": {
-    "nearest": "95069900904"
+    "nearest": "95069900904",
+    "llm": "56012100901",
+    "rag": "56012110006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2398,10 +3211,14 @@
    "truth": "73182100008",
    "truthZh": "鋼鐵製彈簧墊圈及其他鎖緊墊圈",
    "pred": {
-    "nearest": "84831090009"
+    "nearest": "84831090009",
+    "llm": "73182110100",
+    "rag": "73182100008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2410,10 +3227,14 @@
    "truth": "68069000005",
    "truthZh": "具有隔熱、隔音或吸音作用之礦物混合物製品，但第６８１１或６８１２節或第六十九章所列物品除外",
    "pred": {
-    "nearest": "68118200008"
+    "nearest": "68118200008",
+    "llm": "68109900000",
+    "rag": "68069000005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2422,10 +3243,14 @@
    "truth": "85433090003",
    "truthZh": "其他電鍍、電解或電泳機器及器具",
    "pred": {
-    "nearest": "85433090003"
+    "nearest": "85433090003",
+    "llm": "85437090901",
+    "rag": "85433090003"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2434,10 +3259,14 @@
    "truth": "76082010006",
    "truthZh": "鋁合金管",
    "pred": {
-    "nearest": "76082010006"
+    "nearest": "76082010006",
+    "llm": "76082000100",
+    "rag": "76042100001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2446,10 +3275,14 @@
    "truth": "85167900007",
    "truthZh": "其他電熱器具",
    "pred": {
-    "nearest": "85437099906"
+    "nearest": "85437099906",
+    "llm": "84512900001",
+    "rag": "85437099906"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2458,10 +3291,14 @@
    "truth": "84748000004",
    "truthZh": "固體礦物燃料、陶土漿、濕水泥、粉刷材料或其他粉狀、糊狀礦產品用之混凝、造模或造型機器及鑄造用砂模製造機器",
    "pred": {
-    "nearest": "84775900008"
+    "nearest": "84775900008",
+    "llm": "84858000004",
+    "rag": "84858000001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2470,10 +3307,14 @@
    "truth": "39239090108",
    "truthZh": "一次使用包裝食品塑膠杯",
    "pred": {
-    "nearest": "39232990300"
+    "nearest": "39232990300",
+    "llm": "39232990000",
+    "rag": "39239090108"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2482,10 +3323,14 @@
    "truth": "85044099900",
    "truthZh": "其他靜電式變流器",
    "pred": {
-    "nearest": "85167900007"
+    "nearest": "85167900007",
+    "llm": "85044090900",
+    "rag": "85044099401"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2494,10 +3339,14 @@
    "truth": "85044092006",
    "truthZh": "其他不斷電式電源供應器，容量未超過１０仟伏安者",
    "pred": {
-    "nearest": "85044020003"
+    "nearest": "85044020003",
+    "llm": "85044090900",
+    "rag": "85044092006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2506,10 +3355,14 @@
    "truth": "87141090000",
    "truthZh": "其他機器腳踏車之零件及附件",
    "pred": {
-    "nearest": "87141090000"
+    "nearest": "87141090000",
+    "llm": "87141090900",
+    "rag": "87141090000"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2518,10 +3371,14 @@
    "truth": "85176200005",
    "truthZh": "接收、轉換及傳輸或再生聲音、圖像或其他資料之機器，包括交換器及路由器",
    "pred": {
-    "nearest": "85176200005"
+    "nearest": "85176200005",
+    "llm": "84718000900",
+    "rag": "84718000007"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2530,10 +3387,14 @@
    "truth": "85437099906",
    "truthZh": "其他電機及器具",
    "pred": {
-    "nearest": "85044091007"
+    "nearest": "85044091007",
+    "llm": "85044090900",
+    "rag": "85437099906"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2542,10 +3403,14 @@
    "truth": "14049091902",
    "truthZh": "其他微生物產品",
    "pred": {
-    "nearest": "14049091902"
+    "nearest": "14049091902",
+    "llm": "38249990900",
+    "rag": "14049091902"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2554,10 +3419,14 @@
    "truth": "84869000106",
    "truthZh": "生產半導體用化學蒸著沈積器具之零件",
    "pred": {
-    "nearest": "70200019001"
+    "nearest": "70200019001",
+    "llm": "84869000008",
+    "rag": "84869000106"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2566,10 +3435,14 @@
    "truth": "62179090009",
    "truthZh": "其他紡織材料製衣服或服飾附屬品之零件",
    "pred": {
-    "nearest": "56039390000"
+    "nearest": "56039390000",
+    "llm": "59039000100",
+    "rag": "56039390000"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2578,10 +3451,14 @@
    "truth": "90189080907",
    "truthZh": "其他第９０１８節所屬之貨品",
    "pred": {
-    "nearest": "85015190007"
+    "nearest": "85015190007",
+    "llm": "90191000000",
+    "rag": "90189080907"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2590,10 +3467,14 @@
    "truth": "85167900007",
    "truthZh": "其他電熱器具",
    "pred": {
-    "nearest": "85166090009"
+    "nearest": "85166090009",
+    "llm": "85167900000",
+    "rag": "85167900007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2602,10 +3483,14 @@
    "truth": "38089420001",
    "truthZh": "消毒劑成品",
    "pred": {
-    "nearest": "23099090907"
+    "nearest": "23099090907",
+    "llm": "38249090001",
+    "rag": "14049099904"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2614,10 +3499,14 @@
    "truth": "18069099007",
    "truthZh": "其他第１８０６節所屬之貨品",
    "pred": {
-    "nearest": "18063100007"
+    "nearest": "18063100007",
+    "llm": "21011210000",
+    "rag": "21011200000"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2626,10 +3515,14 @@
    "truth": "35079000003",
    "truthZh": "其他酵素及調製酵素",
    "pred": {
-    "nearest": "23099090907"
+    "nearest": "23099090907",
+    "llm": "35079000900",
+    "rag": "35079000003"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2638,10 +3531,14 @@
    "truth": "60041090003",
    "truthZh": "其他紡織材料製針織品或鈎針織品，寬度超過３０公分且含彈性紗重量在５％及以上，但不含橡膠線者，第６００１節除外",
    "pred": {
-    "nearest": "60033000009"
+    "nearest": "60033000009",
+    "llm": "60041000100",
+    "rag": "60041090003"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2650,10 +3547,14 @@
    "truth": "21012000000",
    "truthZh": "茶或馬黛茶之萃取物、精、濃縮物及以茶、馬黛茶之萃取物、精、濃縮物或以茶、馬黛茶為主要成分之調製品",
    "pred": {
-    "nearest": "16042010119"
+    "nearest": "16042010119",
+    "llm": "21012090100",
+    "rag": "32030030904"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2662,10 +3563,14 @@
    "truth": "84099990004",
    "truthZh": "其他專用或主要用於壓縮點火內燃活塞引擎之零件",
    "pred": {
-    "nearest": "72230000908"
+    "nearest": "72230000908",
+    "llm": "84099910000",
+    "rag": "84099990004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2674,10 +3579,14 @@
    "truth": "39140000009",
    "truthZh": "以第３９０１至３９１３節之聚合物為基料之離子交換樹脂，初級狀態",
    "pred": {
-    "nearest": "22089010005"
+    "nearest": "22089010005",
+    "llm": "39140010001",
+    "rag": "39140000009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2686,10 +3595,14 @@
    "truth": "90132000003",
    "truthZh": "雷射，雷射二極體除外",
    "pred": {
-    "nearest": "85437099906"
+    "nearest": "85437099906",
+    "llm": "85414100100",
+    "rag": "85414100902"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2698,10 +3611,14 @@
    "truth": "49030010008",
    "truthZh": "兒童圖畫書",
    "pred": {
-    "nearest": "95030093903"
+    "nearest": "95030093903",
+    "llm": "49030000000",
+    "rag": "49030010008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2710,10 +3627,14 @@
    "truth": "85015290006",
    "truthZh": "其他多相交流電動機，輸出超過７５０瓦，但未超過７５瓩者",
    "pred": {
-    "nearest": "85011090007"
+    "nearest": "85011090007",
+    "llm": "85015220001",
+    "rag": "85015290006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2722,10 +3643,14 @@
    "truth": "72159000008",
    "truthZh": "其他鐵或非合金鋼條及桿",
    "pred": {
-    "nearest": "72279000905"
+    "nearest": "72279000905",
+    "llm": "72149900000",
+    "rag": "72159000008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2734,10 +3659,14 @@
    "truth": "30051090909",
    "truthZh": "其他粘敷料和其他具有粘層之物品",
    "pred": {
-    "nearest": "59061010001"
+    "nearest": "59061010001",
+    "llm": "30051000100",
+    "rag": "59061090004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2746,10 +3675,14 @@
    "truth": "54071000908",
    "truthZh": "其他高強力尼龍或其他聚醯胺或聚酯紗製之梭織物",
    "pred": {
-    "nearest": "56039490009"
+    "nearest": "56039490009",
+    "llm": "59039000901",
+    "rag": "59039030003"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2758,10 +3691,14 @@
    "truth": "84289000009",
    "truthZh": "其他升降、搬運、裝卸機器",
    "pred": {
-    "nearest": "84289000009"
+    "nearest": "84289000009",
+    "llm": "84271010000",
+    "rag": "84289000009"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2770,10 +3707,14 @@
    "truth": "75089090005",
    "truthZh": "其他鎳製品",
    "pred": {
-    "nearest": "74091910000"
+    "nearest": "74091910000",
+    "llm": "75089000000",
+    "rag": "75089090005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2782,10 +3723,14 @@
    "truth": "38089420001",
    "truthZh": "消毒劑成品",
    "pred": {
-    "nearest": "38089420001"
+    "nearest": "38089420001",
+    "llm": "23099090009",
+    "rag": "38089420001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2794,10 +3739,14 @@
    "truth": "90183900908",
    "truthZh": "其他導管、套管及類似品",
    "pred": {
-    "nearest": "90183200004"
+    "nearest": "90183200004",
+    "llm": "90183910100",
+    "rag": "90183900908"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2806,10 +3755,14 @@
    "truth": "30049099904",
    "truthZh": "其他醫藥製劑〈不包括第３００２、３００５或３００６節所列者〉包含經混合或未混合產品供治療或預防疾病用，具有劑量（包括經皮給藥形態者）或零售包裝式樣者",
    "pred": {
-    "nearest": "90183100005"
+    "nearest": "90183100005",
+    "llm": "30061000000",
+    "rag": "30059090001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2818,10 +3771,14 @@
    "truth": "21039090905",
    "truthZh": "其他第２１０３節所屬之貨品",
    "pred": {
-    "nearest": "21039090905"
+    "nearest": "21039090905",
+    "llm": "21039010000",
+    "rag": "21039090905"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2830,10 +3787,14 @@
    "truth": "38249999903",
    "truthZh": "其他化學或相關工業之未列名化學品及化學製品（包括天然產品混合物）",
    "pred": {
-    "nearest": "90279090003"
+    "nearest": "90279090003",
+    "llm": "38249990900",
+    "rag": "29269090107"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2842,10 +3803,14 @@
    "truth": "90191019008",
    "truthZh": "其他理療按摩器具",
    "pred": {
-    "nearest": "61046310005"
+    "nearest": "61046310005",
+    "llm": "90191000100",
+    "rag": "90191019008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2854,10 +3819,14 @@
    "truth": "85371090005",
    "truthZh": "其他控電或配電用器具，電壓未超過１０００伏特者",
    "pred": {
-    "nearest": "85044099900"
+    "nearest": "85044099900",
+    "llm": "85371090901",
+    "rag": "85371090005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2866,10 +3835,14 @@
    "truth": "35079000003",
    "truthZh": "其他酵素及調製酵素",
    "pred": {
-    "nearest": "35079000003"
+    "nearest": "35079000003",
+    "llm": "35079000000",
+    "rag": "35079000003"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2878,10 +3851,14 @@
    "truth": "76082010006",
    "truthZh": "鋁合金管",
    "pred": {
-    "nearest": "76042920009"
+    "nearest": "76042920009",
+    "llm": "76082000100",
+    "rag": "76042100001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2890,10 +3867,14 @@
    "truth": "84705000004",
    "truthZh": "收銀機",
    "pred": {
-    "nearest": "73089090007"
+    "nearest": "73089090007",
+    "llm": "84705000106",
+    "rag": "84705000004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2902,10 +3883,14 @@
    "truth": "85022010001",
    "truthZh": "發電機組以火花點火活塞內燃機組成，輸出未超過９３０仟伏安者",
    "pred": {
-    "nearest": "85022010001"
+    "nearest": "85022010001",
+    "llm": "85022000100",
+    "rag": "85022010001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -2914,10 +3899,14 @@
    "truth": "84145100002",
    "truthZh": "桌扇、立扇、壁扇、窗扇、吊扇或屋頂通風扇，本身裝有輸出功率不超過１２５瓦之電動機者",
    "pred": {
-    "nearest": "85176200005"
+    "nearest": "85176200005",
+    "llm": "84145190000",
+    "rag": "84145990005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2926,10 +3915,14 @@
    "truth": "44123310003",
    "truthZh": "其他素面合板（未含有竹製單板者），至少有一外層屬榿木類、梣木類、山毛櫸類、樺木類、櫻桃木類、栗木類、榆木類、桉樹類、山核桃類、七葉樹類、椴木類、槭木類、橡木類、懸鈴木類、楊樹類及白楊樹類、刺槐類、鵝掌楸類或胡桃木類等非針葉樹類製成，每層厚度不超過６公厘者",
    "pred": {
-    "nearest": "44123120003"
+    "nearest": "44123120003",
+    "llm": "44187200100",
+    "rag": "44187500008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2938,10 +3931,14 @@
    "truth": "21069099903",
    "truthZh": "其他未列名食物調製品",
    "pred": {
-    "nearest": "21069099903"
+    "nearest": "21069099903",
+    "llm": "21069090000",
+    "rag": "29054990006"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2950,10 +3947,14 @@
    "truth": "85164000003",
    "truthZh": "電熨斗",
    "pred": {
-    "nearest": "85167900007"
+    "nearest": "85167900007",
+    "llm": "85164000000",
+    "rag": "85164000003"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -2962,10 +3963,14 @@
    "truth": "38249999903",
    "truthZh": "其他化學或相關工業之未列名化學品及化學製品（包括天然產品混合物）",
    "pred": {
-    "nearest": "33079090907"
+    "nearest": "33079090907",
+    "llm": "33049900101",
+    "rag": "33079090907"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2974,10 +3979,14 @@
    "truth": "84021200004",
    "truthZh": "水蒸汽產生量每小時不超過４５噸之水管式鍋爐",
    "pred": {
-    "nearest": "85161000009"
+    "nearest": "85161000009",
+    "llm": "84021900100",
+    "rag": "84021990008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2986,10 +3995,14 @@
    "truth": "87116020007",
    "truthZh": "腳踏車，裝有電動機動力者",
    "pred": {
-    "nearest": "87141090000"
+    "nearest": "87141090000",
+    "llm": "87141000100",
+    "rag": "87141090000"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -2998,10 +4011,14 @@
    "truth": "85013119000",
    "truthZh": "其他直流電動機，輸出超過３７．５瓦，但未超過７５０瓦者",
    "pred": {
-    "nearest": "85013119000"
+    "nearest": "85013119000",
+    "llm": "85011030009",
+    "rag": "85013119000"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3010,10 +4027,14 @@
    "truth": "74081900904",
    "truthZh": "其他精煉銅線，最大橫斷面尺寸不超過６公厘者",
    "pred": {
-    "nearest": "74081900904"
+    "nearest": "74081900904",
+    "llm": "74091900100",
+    "rag": "74081900904"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3022,10 +4043,14 @@
    "truth": "21039090905",
    "truthZh": "其他第２１０３節所屬之貨品",
    "pred": {
-    "nearest": "21032000008"
+    "nearest": "21032000008",
+    "llm": "21039090000",
+    "rag": "21032000008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": false
    }
   },
   {
@@ -3034,10 +4059,14 @@
    "truth": "90183200004",
    "truthZh": "管狀金屬針及縫合針",
    "pred": {
-    "nearest": "90183200004"
+    "nearest": "90183200004",
+    "llm": "90189090000",
+    "rag": "90183200004"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3046,10 +4075,14 @@
    "truth": "70052100006",
    "truthZh": "浮式平板玻璃及表面經研磨或拋光之平板玻璃，不含金屬線，整塊著色玻璃（整體著色者）、不透明、閃爍或僅經表面研磨者",
    "pred": {
-    "nearest": "70060000000"
+    "nearest": "70060000000",
+    "llm": "90019090009",
+    "rag": "70060000000"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3058,10 +4091,14 @@
    "truth": "85176200005",
    "truthZh": "接收、轉換及傳輸或再生聲音、圖像或其他資料之機器，包括交換器及路由器",
    "pred": {
-    "nearest": "85044099900"
+    "nearest": "85044099900",
+    "llm": "85176200900",
+    "rag": "85176200005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -3070,10 +4107,14 @@
    "truth": "44013900912",
    "truthZh": "其他鋸屑、廢材（料）及殘屑材，壓縮成棍、球或類似形狀者",
    "pred": {
-    "nearest": "23021000009"
+    "nearest": "23021000009",
+    "llm": "44013000900",
+    "rag": "44014100008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3082,10 +4123,14 @@
    "truth": "05119999248",
    "truthZh": "蟲餌（熱帶魚飼餌）",
    "pred": {
-    "nearest": "23099090907"
+    "nearest": "23099090907",
+    "llm": "05119990000",
+    "rag": "05119999248"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3094,10 +4139,14 @@
    "truth": "85285200004",
    "truthZh": "能直接連接第８４７１節「自動資料處理系統」以及設計與其配合使用之其他監視器",
    "pred": {
-    "nearest": "85285910005"
+    "nearest": "85285910005",
+    "llm": "85285210900",
+    "rag": "85285910005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3106,10 +4155,14 @@
    "truth": "94032000001",
    "truthZh": "其他金屬製家具",
    "pred": {
-    "nearest": "63079090901"
+    "nearest": "63079090901",
+    "llm": "94041000000",
+    "rag": "94041000002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3118,10 +4171,14 @@
    "truth": "39219090002",
    "truthZh": "其他塑膠製板、片、薄膜、箔及扁條",
    "pred": {
-    "nearest": "76071990003"
+    "nearest": "76071990003",
+    "llm": "39211900001",
+    "rag": "48115100009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3130,10 +4187,14 @@
    "truth": "84192000005",
    "truthZh": "內、外科或實驗室用消毒器",
    "pred": {
-    "nearest": "76169990005"
+    "nearest": "76169990005",
+    "llm": "84192000101",
+    "rag": "84192000005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -3142,10 +4203,14 @@
    "truth": "95030093903",
    "truthZh": "其他玩具",
    "pred": {
-    "nearest": "95030093903"
+    "nearest": "95030093903",
+    "llm": "95030090003",
+    "rag": "95030093903"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3154,10 +4219,14 @@
    "truth": "49030010008",
    "truthZh": "兒童圖畫書",
    "pred": {
-    "nearest": "49030020006"
+    "nearest": "49030020006",
+    "llm": "49030000100",
+    "rag": "49030010008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3166,10 +4235,14 @@
    "truth": "84705000004",
    "truthZh": "收銀機",
    "pred": {
-    "nearest": "84433200001"
+    "nearest": "84433200001",
+    "llm": "84718000900",
+    "rag": "84705000004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3178,10 +4251,14 @@
    "truth": "61046210006",
    "truthZh": "棉製女用或女童用長褲、膝褲及短褲，針織或鈎針織者",
    "pred": {
-    "nearest": "61152990008"
+    "nearest": "61152990008",
+    "llm": "61046210001",
+    "rag": "61152990008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": false
    }
   },
   {
@@ -3190,10 +4267,14 @@
    "truth": "85229029902",
    "truthZh": "其他錄放音機之零件及附件",
    "pred": {
-    "nearest": "84195090009"
+    "nearest": "84195090009",
+    "llm": "85189090900",
+    "rag": "85189090001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3202,10 +4283,14 @@
    "truth": "84198100001",
    "truthZh": "製造熱飲、熱食或烹調用之機器、工廠或設備",
    "pred": {
-    "nearest": "20049090200"
+    "nearest": "20049090200",
+    "llm": "84198190900",
+    "rag": "85167900007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3214,10 +4299,14 @@
    "truth": "20059931907",
    "truthZh": "其他酸漬除外之調製或保藏蔬菜混合品，第２００６節之產品除外，每包重量在１８公斤及以上者",
    "pred": {
-    "nearest": "20059931907"
+    "nearest": "20059931907",
+    "llm": "21039090900",
+    "rag": "20059931907"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3226,10 +4315,14 @@
    "truth": "90183900908",
    "truthZh": "其他導管、套管及類似品",
    "pred": {
-    "nearest": "90183900908"
+    "nearest": "90183900908",
+    "llm": "90189090006",
+    "rag": "90183900908"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3238,10 +4331,14 @@
    "truth": "85437099906",
    "truthZh": "其他電機及器具",
    "pred": {
-    "nearest": "84716090903"
+    "nearest": "84716090903",
+    "llm": "90138090901",
+    "rag": "85437099906"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3250,10 +4347,14 @@
    "truth": "38089190009",
    "truthZh": "其他殺蟲劑成品",
    "pred": {
-    "nearest": "38089190009"
+    "nearest": "38089190009",
+    "llm": "38089110100",
+    "rag": "38089190009"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3262,10 +4363,14 @@
    "truth": "85014090001",
    "truthZh": "其他單相交流電動機",
    "pred": {
-    "nearest": "85014090001"
+    "nearest": "85014090001",
+    "llm": "85014010001",
+    "rag": "85014090001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3274,10 +4379,14 @@
    "truth": "73181300008",
    "truthZh": "鋼鐵製螺旋鈎及螺旋圈",
    "pred": {
-    "nearest": "73181900002"
+    "nearest": "73181900002",
+    "llm": "73259990000",
+    "rag": "73259910004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3286,10 +4395,14 @@
    "truth": "84332000007",
    "truthZh": "其他割草機，包括牽引車裝置之切割棒",
    "pred": {
-    "nearest": "85365090007"
+    "nearest": "85365090007",
+    "llm": "84332000100",
+    "rag": "84332000007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -3298,10 +4411,14 @@
    "truth": "84732900009",
    "truthZh": "其他第８４７０節所屬機器之零件及附件",
    "pred": {
-    "nearest": "84733000006"
+    "nearest": "84733000006",
+    "llm": "84733010000",
+    "rag": "84733000006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3310,10 +4427,14 @@
    "truth": "15119000001",
    "truthZh": "精製棕櫚油及其餾分物",
    "pred": {
-    "nearest": "15119000001"
+    "nearest": "15119000001",
+    "llm": "15119000100",
+    "rag": "15119000001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -3322,10 +4443,14 @@
    "truth": "15119000001",
    "truthZh": "精製棕櫚油及其餾分物",
    "pred": {
-    "nearest": "23099090907"
+    "nearest": "23099090907",
+    "llm": "15119010000",
+    "rag": "15119000001"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3334,10 +4459,14 @@
    "truth": "30049099904",
    "truthZh": "其他醫藥製劑〈不包括第３００２、３００５或３００６節所列者〉包含經混合或未混合產品供治療或預防疾病用，具有劑量（包括經皮給藥形態者）或零售包裝式樣者",
    "pred": {
-    "nearest": "39269016909"
+    "nearest": "39269016909",
+    "llm": "33049900006",
+    "rag": "30049099904"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3346,10 +4475,14 @@
    "truth": "18069099007",
    "truthZh": "其他第１８０６節所屬之貨品",
    "pred": {
-    "nearest": "21069099903"
+    "nearest": "21069099903",
+    "llm": "18069090003",
+    "rag": "21069030004"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3358,10 +4491,14 @@
    "truth": "38089420001",
    "truthZh": "消毒劑成品",
    "pred": {
-    "nearest": "23099090907"
+    "nearest": "23099090907",
+    "llm": "38249090900",
+    "rag": "14049099904"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3370,10 +4507,14 @@
    "truth": "85183032005",
    "truthZh": "頭戴耳機及耳機，併裝有微音器",
    "pred": {
-    "nearest": "84719090006"
+    "nearest": "84719090006",
+    "llm": "85183010001",
+    "rag": "85183032005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3382,10 +4523,14 @@
    "truth": "73089090007",
    "truthZh": "其他屬第７３０８節之貨品",
    "pred": {
-    "nearest": "72072000290"
+    "nearest": "72072000290",
+    "llm": "73259900000",
+    "rag": "73251000002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3394,10 +4539,14 @@
    "truth": "61091000006",
    "truthZh": "棉製Ｔ恤衫、汗衫及其他背心，針織或鈎針織者",
    "pred": {
-    "nearest": "62121090001"
+    "nearest": "62121090001",
+    "llm": "62121010001",
+    "rag": "61091000006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3406,10 +4555,14 @@
    "truth": "44123320001",
    "truthZh": "其他加工合板（未含有竹製單板者），至少有一外層屬榿木類、梣木類、山毛櫸類、樺木類、櫻桃木類、栗木類、榆木類、桉樹類、山核桃類、七葉樹類、椴木類、槭木類、橡木類、懸鈴木類、楊樹類及白楊樹類、刺槐類、鵝掌楸類或胡桃木類等非針葉樹類製成，每層厚度不超過６公厘者",
    "pred": {
-    "nearest": "44123120003"
+    "nearest": "44123120003",
+    "llm": "44187210001",
+    "rag": "44187500008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3418,10 +4571,14 @@
    "truth": "73269090906",
    "truthZh": "其他鋼鐵製品",
    "pred": {
-    "nearest": "90189090905"
+    "nearest": "90189090905",
+    "llm": "94059990000",
+    "rag": "90189090905"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3430,10 +4587,14 @@
    "truth": "85437099906",
    "truthZh": "其他電機及器具",
    "pred": {
-    "nearest": "85437099906"
+    "nearest": "85437099906",
+    "llm": "95030090001",
+    "rag": "85437095009"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3442,10 +4603,14 @@
    "truth": "55093200008",
    "truthZh": "多股（合股）或粗股紗，含聚丙烯腈或改質聚丙烯腈纖維棉重量在８５％及以上，非供零售用者",
    "pred": {
-    "nearest": "55093200008"
+    "nearest": "55093200008",
+    "llm": "55101200100",
+    "rag": "55093200008"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3454,10 +4619,14 @@
    "truth": "21061020003",
    "truthZh": "濃縮蛋白質及組織化蛋白質，蛋白質含量５０％及以上者",
    "pred": {
-    "nearest": "04041000297"
+    "nearest": "04041000297",
+    "llm": "35040000000",
+    "rag": "04049000904"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3466,10 +4635,14 @@
    "truth": "23099090907",
    "truthZh": "其他調製動物飼料",
    "pred": {
-    "nearest": "38249951008"
+    "nearest": "38249951008",
+    "llm": "23099090000",
+    "rag": "38249951008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": false
    }
   },
   {
@@ -3478,10 +4651,14 @@
    "truth": "73181600005",
    "truthZh": "鋼鐵螺絲帽",
    "pred": {
-    "nearest": "73181600005"
+    "nearest": "73181600005",
+    "llm": "73181610000",
+    "rag": "73181600005"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3490,10 +4667,14 @@
    "truth": "84145100002",
    "truthZh": "桌扇、立扇、壁扇、窗扇、吊扇或屋頂通風扇，本身裝有輸出功率不超過１２５瓦之電動機者",
    "pred": {
-    "nearest": "95030021009"
+    "nearest": "95030021009",
+    "llm": "95030090000",
+    "rag": "95030021009"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3502,10 +4683,14 @@
    "truth": "84798999994",
    "truthZh": "其他第８４７９節所屬之機械",
    "pred": {
-    "nearest": "90189090905"
+    "nearest": "90189090905",
+    "llm": "84798990001",
+    "rag": "84798999994"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3514,10 +4699,14 @@
    "truth": "39263000009",
    "truthZh": "塑膠製家具、車輛或類似品之配件",
    "pred": {
-    "nearest": "83016000007"
+    "nearest": "83016000007",
+    "llm": "87089990901",
+    "rag": "87081000007"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3526,10 +4715,14 @@
    "truth": "30059090001",
    "truthZh": "其他屬第３００５節之貨品",
    "pred": {
-    "nearest": "30051090909"
+    "nearest": "30051090909",
+    "llm": "30059010001",
+    "rag": "30051090909"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3538,10 +4731,14 @@
    "truth": "73269090906",
    "truthZh": "其他鋼鐵製品",
    "pred": {
-    "nearest": "73089090007"
+    "nearest": "73089090007",
+    "llm": "73269000900",
+    "rag": "72166100002"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3550,10 +4747,14 @@
    "truth": "85371090005",
    "truthZh": "其他控電或配電用器具，電壓未超過１０００伏特者",
    "pred": {
-    "nearest": "85044099900"
+    "nearest": "85044099900",
+    "llm": "85371090900",
+    "rag": "85371090005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": true,
+    "rag": true
    }
   },
   {
@@ -3562,10 +4763,14 @@
    "truth": "38089420001",
    "truthZh": "消毒劑成品",
    "pred": {
-    "nearest": "38089420001"
+    "nearest": "38089420001",
+    "llm": "38089410001",
+    "rag": "38089420001"
    },
    "ok8": {
-    "nearest": true
+    "nearest": true,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3574,10 +4779,14 @@
    "truth": "85015290006",
    "truthZh": "其他多相交流電動機，輸出超過７５０瓦，但未超過７５瓩者",
    "pred": {
-    "nearest": "85014020006"
+    "nearest": "85014020006",
+    "llm": "85015220008",
+    "rag": "85015290006"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": true
    }
   },
   {
@@ -3586,10 +4795,14 @@
    "truth": "39269016909",
    "truthZh": "其他塑膠製實驗室、衛生及醫療用之物品",
    "pred": {
-    "nearest": "20089991901"
+    "nearest": "20089991901",
+    "llm": "39269090000",
+    "rag": "40149090008"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3598,10 +4811,14 @@
    "truth": "68101990008",
    "truthZh": "其他瓦、石板、磚及其類似品，水泥製、混凝土或人造石料製，不論是否加強者均在內",
    "pred": {
-    "nearest": "19022090102"
+    "nearest": "19022090102",
+    "llm": "68101900100",
+    "rag": "68069000005"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   },
   {
@@ -3610,10 +4827,14 @@
    "truth": "71081310000",
    "truthZh": "金箔，非貨幣用",
    "pred": {
-    "nearest": "21069099903"
+    "nearest": "21069099903",
+    "llm": "44219190000",
+    "rag": "44199000204"
    },
    "ok8": {
-    "nearest": false
+    "nearest": false,
+    "llm": false,
+    "rag": false
    }
   }
  ]

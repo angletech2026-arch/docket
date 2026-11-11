@@ -42,8 +42,12 @@ A time split, and not leave-one-out, because many rulings are near-copies of eac
 | Method | 4 digits | 6 digits | 8 digits | 11 digits |
 |---|---|---|---|---|
 | Copy the nearest past ruling, no model | 35.7% | 24.7% | 23.0% | 22.7% |
-| Ask the model directly, no retrieval | not run yet | | | |
-| Model reads past rulings (what the card does) | not run yet | | | |
+| Ask the model directly, no retrieval | 61.3% | 49.0% | 18.7% | 0.0% |
+| Model reads past rulings (what the card does) | 66.0% | 58.0% | 56.7% | 55.3% |
+
+Model: `claude-haiku-5-5`, 900 calls, about US$0.56 for the whole run.
+
+Asked directly, the model usually knows the chapter and often the 6-digit international code, but it cannot recall Taiwan's national digits: 297 of the 300 codes it wrote do not exist in the tariff. Given past rulings and a list of real codes to choose from, it never returns a code that does not exist, and it is right at the duty-rate level three times as often.
 
 The numbers are read from `data/benchmark/results.json`, which the benchmark script writes. To reproduce:
 
