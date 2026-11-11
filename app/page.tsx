@@ -21,9 +21,10 @@ type Ctx = {
   setView: (v: View) => void;
   setOpenId: (id: string | null) => void;
 };
-const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
+const STEPS: { say: string; tag?: string; run?: (c: Ctx) => void }[] = [
+  // first frame: says what the viewer is about to look at, nothing spoken
   {
-    say: "I used to work at my family’s auto parts import business in Taiwan. Every step depended on one or two senior people.",
+    say: "",
     run: (c) => {
       c.setOpenId(null);
       c.setView("wall");
@@ -31,10 +32,16 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
     },
   },
   {
+    tag: "Why",
+    say: "I used to work at my family’s auto parts import business in Taiwan. Every step depended on one or two senior people.",
+  },
+  {
+    tag: "The idea",
     say: "So I broke the whole company into cards. One shipment is ten of them, from reordering to the forklift.",
   },
-  { say: "AI does most of the work on each card. A person decides." },
+  { tag: "The idea", say: "AI does most of the work on each card. A person decides." },
   {
+    tag: "Does it work?",
     say: "Every imported item needs a customs code. The first six digits are the same in the US.",
     run: (c) => {
       c.setView("wall");
@@ -42,6 +49,7 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
     },
   },
   {
+    tag: "Does it work?",
     say: "Asked directly, the model gets 19 percent. Reading past customs rulings, 62, on 300 real cases.",
     run: (c) => {
       c.setOpenId(null);
@@ -49,6 +57,7 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
     },
   },
   {
+    tag: "What the AI does not know",
     say: "A mechanic asks for two plum skewers, a water turtle and a pineapple head. That’s slang for car parts.",
     run: (c) => {
       c.setView("wall");
@@ -56,10 +65,12 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
     },
   },
   {
+    tag: "What the AI does not know",
     say: "The AI doesn’t know the third, and says so.",
     run: (c) => c.dispatch({ type: "escalate", cardId: "a0", why: "“鳳梨頭” is not in the glossary" }),
   },
   {
+    tag: "What the AI does not know",
     say: "A senior answers once. It goes into the company brain, and everyone\u2019s assistant can teach it.",
     run: (c) =>
       c.dispatch({
@@ -72,6 +83,7 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
       }),
   },
   {
+    tag: "When something goes wrong",
     say: "A typhoon delays the ship. Truck, forklift and crew are rebooked.",
     run: (c) => {
       c.setOpenId(null);
@@ -79,13 +91,16 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
     },
   },
   {
+    tag: "When something goes wrong",
     say: "Someone quits. His cards move to other people. Nothing stops.",
     run: (c) => c.dispatch({ type: "quit", personId: "jr1" }),
   },
   {
+    tag: "Next",
     say: "Today this runs on Claude. Next, a model inside the company, trained on its own cards.",
   },
   {
+    tag: "Who wants it",
     say: "The same cards run a grain importer. Chang Chun in Taiwan asked me to build this. Next, I want to bring it to US importers.",
     run: (c) => {
       c.setOpenId(null);
@@ -96,7 +111,7 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
   // last frame: nothing to say, the logic stays on screen
   { say: "" },
 ];
-const MODEL_STEP = 10;
+const MODEL_STEP = STEPS.findIndex((x) => x.tag === "Next");
 const END_STEP = STEPS.length - 1;
 
 export default function Home() {
@@ -280,7 +295,26 @@ export default function Home() {
           </div>
         </div>
       )}
-      {present && STEPS[step].say && <div className="cap">{STEPS[step].say}</div>}
+      {present && step === 0 && (
+        <div className="endcard">
+          <div className="inner">
+            <div className="brand">DOCKET</div>
+            <p className="big">
+              A small import company runs on what a few senior people know. When one of them is out, that step stops.
+            </p>
+            <p className="big">
+              Docket puts that know-how on cards. AI does most of the work on each card, and anyone can pick it up.
+            </p>
+            <p className="mono">You are about to see one shipment at an 8-person auto parts importer in Taiwan.</p>
+          </div>
+        </div>
+      )}
+      {present && STEPS[step].say && (
+        <div className="cap">
+          {STEPS[step].tag && <span className="captag">{STEPS[step].tag}</span>}
+          {STEPS[step].say}
+        </div>
+      )}
 
       {open && (
         <>
