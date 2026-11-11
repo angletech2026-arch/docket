@@ -89,7 +89,7 @@ function autoParts(): State {
       ],
       ask: "Owner decision: buy the dollars now, or wait.",
       skill: "finance", minLevel: 3, status: "owner", assignee: "own",
-      stake: 83200, stakeNote: "3% of NT$2,773,440. Margin on this shipment is NT$568,000",
+      stake: 83200, stakeNote: "3% of NT$2,773,440. The rate is locked in on the day we pay. The margin it eats only shows up months later, as the stock sells",
       due: "Fri Nov 13", opened: "Opened when the supplier invoice arrived",
     }),
     card({
@@ -206,8 +206,8 @@ function autoParts(): State {
     today: TODAY,
     people,
     shipments: [
-      { id: A, title: "Brenner, Germany", sub: "7 invoice lines · USD 86,400 · sea, 20-ft container", eta: "Mon Nov 16", margin: 568000, marginPct: 17 },
-      { id: B, title: "Nordwerk, Sweden", sub: "5 invoice lines · USD 41,200 · sea", eta: "Thu Nov 19 at WH-A", margin: 262000, marginPct: 20 },
+      { id: A, title: "Brenner, Germany", sub: "7 invoice lines · USD 86,400 · sea, 20-ft container", eta: "Mon Nov 16", margin: 568000, marginPct: 17, sold: "NT$171,000 is on goods already sold: the tender batch and open orders. The rest comes in as stock sells, over 2 to 5 months. Cash out now: NT$2,773,440." },
+      { id: B, title: "Nordwerk, Sweden", sub: "5 invoice lines · USD 41,200 · sea", eta: "Thu Nov 19 at WH-A", margin: 262000, marginPct: 20, sold: "3 open orders for shock absorbers ship on arrival. Radiators sell 18 a month, so that margin takes most of a year." },
     ],
     cards,
     glossary: [
@@ -347,7 +347,7 @@ function grain(): State {
     today: TODAY,
     people,
     shipments: [
-      { id: G, title: "Mung beans, Australia", sub: "24 t · USD 31,200 · sea, Taichung port", eta: "Wed Nov 18", margin: 80000, marginPct: 8 },
+      { id: G, title: "Mung beans, Australia", sub: "24 t · USD 31,200 · sea, Taichung port", eta: "Wed Nov 18", margin: 80000, marginPct: 8, sold: "2 t is already ordered for retail repacking. The other 22 t sells over about three months, and has to be gone before its best-before date." },
     ],
     cards,
     glossary: [],

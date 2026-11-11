@@ -134,10 +134,11 @@ function ShipmentLane({ state, shipmentId, onOpen }: { state: State; shipmentId:
           <span className="ship-title">{s.title}</span>
           <div className="ship-sub">{s.sub}</div>
           <div className={`ship-eta${late ? " late" : ""}`}>ETA {s.eta}</div>
+          <div className="ship-sold">{s.sold}</div>
         </div>
         <div className="money">
           <div className="line1">
-            Margin on this shipment <span className="num">{nt(s.margin)}</span> ({s.marginPct}%)
+            Expected margin once it has all sold <span className="num">{nt(s.margin)}</span> ({s.marginPct}%)
           </div>
           {count > 0 ? (
             <>

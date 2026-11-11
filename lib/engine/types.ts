@@ -76,9 +76,11 @@ export type Shipment = {
   title: string;
   sub: string;
   eta: string;
-  /** NT$ gross margin expected on this shipment */
+  /** NT$ gross margin expected once everything on this shipment has sold */
   margin: number;
   marginPct: number;
+  /** how much of it is already sold, and how long the rest sits in stock */
+  sold: string;
 };
 
 export type GlossaryEntry = {
