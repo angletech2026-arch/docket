@@ -240,6 +240,13 @@ tr.unknown td { background: var(--red-bg); }
 .capnote .row span { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-2); padding-top: 3px; }
 .capnote p { font-size: 13px; color: var(--ink-2); margin-top: 8px; }
 
+.endcard { position: fixed; inset: 0; z-index: 90; background: var(--paper); display: grid; place-items: center; }
+.endcard .inner { background: var(--sheet); border: 2px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); padding: 36px 44px; max-width: 860px; animation: land 0.5s ease-out; }
+.endcard .brand { font-size: 30px; margin-bottom: 14px; }
+.endcard ol { margin: 0; padding-left: 26px; font-size: 22px; line-height: 1.45; }
+.endcard li { margin: 8px 0; }
+.endcard p { margin-top: 18px; font-size: 15px; color: var(--ink-2); }
+
 /* ---------- benchmark & setup ---------- */
 .page { padding: 20px; max-width: 1180px; }
 .page h1 { font-size: 20px; margin-bottom: 4px; }

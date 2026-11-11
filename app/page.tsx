@@ -33,7 +33,7 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
   {
     say: "So I broke the whole company into cards. One shipment is ten of them, from reordering to the forklift.",
   },
-  { say: "AI does most of the work on each card. A person decides. So anyone can pick a card up." },
+  { say: "AI does most of the work on each card. A person decides." },
   {
     say: "Every imported item needs a customs code. The first six digits are the same in the US.",
     run: (c) => {
@@ -86,15 +86,18 @@ const STEPS: { say: string; run?: (c: Ctx) => void }[] = [
     say: "Today this runs on Claude. Next, a model inside the company, trained on its own cards.",
   },
   {
-    say: "The same cards run a grain importer: food inspection, expiry dates, repacking. Chang Chun, a grain importer in Taiwan, asked me to build this. Next, I want to bring it to US importers.",
+    say: "The same cards run a grain importer. Chang Chun, a grain importer in Taiwan, asked me to build this. Next, I want to bring it to US importers.",
     run: (c) => {
       c.setOpenId(null);
       c.setView("wall");
       c.dispatch({ type: "reset", company: "grain", lang: "en" });
     },
   },
+  // last frame: nothing to say, the logic stays on screen
+  { say: "" },
 ];
 const MODEL_STEP = 10;
+const END_STEP = STEPS.length - 1;
 
 export default function Home() {
   const [state, dispatch] = useReducer(reducer, "auto" as CompanyId, initialState);
@@ -262,7 +265,21 @@ export default function Home() {
           </p>
         </div>
       )}
-      {present && <div className="cap">{STEPS[step].say}</div>}
+      {present && step === END_STEP && (
+        <div className="endcard">
+          <div className="inner">
+            <div className="brand">DOCKET</div>
+            <ol>
+              <li>The know-how goes on the card, not in one person&apos;s head.</li>
+              <li>AI does most of the work on each card. A person decides.</li>
+              <li>When someone is out, the card moves. The work does not stop.</li>
+              <li>Every decision on a card becomes training data for the company&apos;s own model.</li>
+            </ol>
+            <p className="mono">github.com/angletech2026-arch/docket</p>
+          </div>
+        </div>
+      )}
+      {present && STEPS[step].say && <div className="cap">{STEPS[step].say}</div>}
 
       {open && (
         <>
