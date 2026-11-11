@@ -34,6 +34,8 @@ const N = Number(flag("n", "300"));
 const CONC = Number(flag("concurrency", "8"));
 const MODES = flag("modes", "nearest").split(",").map((s) => s.trim()).filter(Boolean);
 const RESUME = args.includes("--resume");
+// reasoning effort for the final choice in rag mode (Claude only): low | medium | high
+const EFFORT = flag("effort", "high");
 const OPENAI_KEY = process.env.LLM_API_KEY || process.env.GMI_API_KEY || "";
 // same choice as lib/llm.ts: Claude when ANTHROPIC_API_KEY is set, else an OpenAI-compatible endpoint
 const PROVIDER =
@@ -65,8 +67,8 @@ if (MODES.some((m) => m !== "nearest") && !PROVIDER) {
 }
 
 // --- same call as lib/llm.ts -------------------------------------------------
-async function chat(messages, { json = true, maxTokens = 400 } = {}) {
-  if (PROVIDER === "anthropic") return anthropicChat(messages, { model: MODEL, maxTokens });
+async function chat(messages, { json = true, maxTokens = 400, effort = "low" } = {}) {
+  if (PROVIDER === "anthropic") return anthropicChat(messages, { model: MODEL, maxTokens, effort });
   const body = { model: MODEL, messages, temperature: 0, max_tokens: maxTokens };
   if (json) body.response_format = { type: "json_object" };
   let last = "";
@@ -146,7 +148,9 @@ async function predict(mode, r) {
   const sim = engine.similar(item, 10);
   const headings = parseHeadings(await chat(headingMessages(item, sim), { maxTokens: 120 }));
   const cands = engine.candidates(item, sim, { headings });
-  const raw = parseChoice(await chat(ragMessages(item, sim, cands))).code;
+  // the engine is built on the pre-cutoff pool only, so these exemplars cannot include a 2018 ruling
+  const exemplars = engine.exemplars(item, headings, 3);
+  const raw = parseChoice(await chat(ragMessages(item, sim, cands, { headings, exemplars }), { effort: EFFORT })).code;
   return resolveCode(raw, cands, engine.byCode) || raw;
 }
 

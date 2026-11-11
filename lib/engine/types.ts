@@ -76,6 +76,8 @@ export type Shipment = {
   title: string;
   sub: string;
   eta: string;
+  /** the vessel is behind schedule */
+  late?: boolean;
   /** NT$ gross margin expected once everything on this shipment has sold */
   margin: number;
   marginPct: number;
@@ -97,8 +99,12 @@ export type Capability = { label: string; skill: Skill; minLevel: 1 | 2 | 3 };
 
 export type CompanyId = "auto" | "grain";
 
+/** The board runs in English or Traditional Chinese. The people who would use it read Chinese. */
+export type Lang = "en" | "zh";
+
 export type State = {
   company: CompanyId;
+  lang: Lang;
   companyName: string;
   companyNote: string;
   today: string;
@@ -113,7 +119,7 @@ export type State = {
 };
 
 export type Action =
-  | { type: "reset"; company: CompanyId }
+  | { type: "reset"; company: CompanyId; lang?: Lang }
   | { type: "approve"; cardId: string; note?: string }
   | { type: "escalate"; cardId: string; why: string }
   | { type: "teach"; term: string; meaning: string; sku?: string; by: string; cardId: string }

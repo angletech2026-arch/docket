@@ -21,13 +21,16 @@ type Suggestion = {
 };
 
 type Props = { card: Card; state: State; dispatch: Dispatch<Action>; onClose: () => void };
+type Tr = (en: string, zh: string) => string;
+const tr = (state: State): Tr => (en, zh) => (state.lang === "zh" ? zh : en);
 
 export function Drawer({ card, state, dispatch, onClose }: Props) {
+  const t = tr(state);
   const who = state.people.find((p) => p.id === card.assignee);
   const wide = card.kind === "ccc" && state.company === "auto";
   return (
     <aside className={`drawer${wide ? " wide" : ""}`} role="dialog" aria-label={card.stage}>
-      <button className="close" onClick={onClose} aria-label="Close">
+      <button className="close" onClick={onClose} aria-label={t("Close", "關閉")}>
         ×
       </button>
       <div className="dr-head">
@@ -35,36 +38,36 @@ export function Drawer({ card, state, dispatch, onClose }: Props) {
           <span>
             {card.shipmentId} · {card.stage}
           </span>
-          {card.status === "owner" && <span className="stamp owner">OWNER</span>}
-          {card.status === "done" && <span className="stamp done">DONE</span>}
-          {card.status === "waiting" && <span className="stamp waiting">WAITING</span>}
+          {card.status === "owner" && <span className="stamp owner">{t("OWNER", "老闆")}</span>}
+          {card.status === "done" && <span className="stamp done">{t("DONE", "完成")}</span>}
+          {card.status === "waiting" && <span className="stamp waiting">{t("WAITING", "等待")}</span>}
         </div>
         <h2>{card.title}</h2>
         <div className="dr-meta">
           <span>
-            With <b>{who?.name ?? "nobody"}</b>
-            {who ? `, ${who.role.toLowerCase()}` : ""}
+            {t("With", "在誰手上")} <b>{who?.name ?? t("nobody", "沒有人")}</b>
+            {who ? t(`, ${who.role.toLowerCase()}`, `（${who.role}）`) : ""}
           </span>
           <span>
-            Due <b>{card.due}</b>
+            {t("Due", "期限")} <b>{card.due}</b>
           </span>
           {card.stake > 0 && (
             <span>
-              At stake <b className="num">{nt(card.stake)}</b>
+              {t("At stake", "押在這個決定上")} <b className="num">{nt(card.stake)}</b>
             </span>
           )}
         </div>
       </div>
       <div className="dr-body">
         {card.kind === "ccc" && state.company === "auto" ? (
-          <CccPanel card={card} dispatch={dispatch} onClose={onClose} />
+          <CccPanel card={card} state={state} dispatch={dispatch} onClose={onClose} />
         ) : card.kind === "inquiry" && state.company === "auto" ? (
           <InquiryPanel card={card} state={state} dispatch={dispatch} onClose={onClose} />
         ) : (
           <GenericPanel card={card} state={state} dispatch={dispatch} onClose={onClose} />
         )}
 
-        <h4>History</h4>
+        <h4>{t("History", "紀錄")}</h4>
         <ul className="hist">
           {card.history.map((h, i) => (
             <li key={i}>
@@ -78,10 +81,10 @@ export function Drawer({ card, state, dispatch, onClose }: Props) {
   );
 }
 
-function Prepared({ card }: { card: Card }) {
+function Prepared({ card, t }: { card: Card; t: Tr }) {
   return (
     <>
-      <h4>Already done on this card</h4>
+      <h4>{t("Already done on this card", "這張卡上已經做好的")}</h4>
       <ul className="prep">
         {card.prepared.map((p, i) => (
           <li key={i}>{p}</li>
@@ -91,23 +94,24 @@ function Prepared({ card }: { card: Card }) {
   );
 }
 
-function StakeNote({ card }: { card: Card }) {
+function StakeNote({ card, t }: { card: Card; t: Tr }) {
   if (!card.stakeNote) return null;
   return (
     <p className="note">
-      {card.stake > 0 ? <b className="num">{nt(card.stake)}: </b> : null}
+      {card.stake > 0 ? <b className="num">{nt(card.stake)}{t(": ", "：")}</b> : null}
       {card.stakeNote}
     </p>
   );
 }
 
 function GenericPanel({ card, state, dispatch, onClose }: Props) {
+  const t = tr(state);
   const me = state.people.find((p) => p.id === card.assignee);
   const external = me?.external;
   return (
     <>
-      <Prepared card={card} />
-      <StakeNote card={card} />
+      <Prepared card={card} t={t} />
+      <StakeNote card={card} t={t} />
       {card.status !== "done" && card.ask && (
         <div className="ask">
           <p>{card.ask}</p>
@@ -120,14 +124,20 @@ function GenericPanel({ card, state, dispatch, onClose }: Props) {
                   onClose();
                 }}
               >
-                {external ? "Mark as done by the partner" : card.status === "owner" ? "Owner approves" : "Approve"}
+                {external
+                  ? t("Mark as done by the partner", "對方已完成")
+                  : card.status === "owner"
+                    ? t("Owner approves", "老闆核准")
+                    : t("Approve", "核准")}
               </button>
               {!external && card.status !== "owner" && (
                 <button
                   className="btn"
-                  onClick={() => dispatch({ type: "escalate", cardId: card.id, why: "not sure about this one" })}
+                  onClick={() =>
+                    dispatch({ type: "escalate", cardId: card.id, why: t("not sure about this one", "這張我沒把握") })
+                  }
                 >
-                  I&apos;m not sure, pass it up
+                  {t("I'm not sure, pass it up", "我沒把握，往上交")}
                 </button>
               )}
             </div>
@@ -144,9 +154,12 @@ function GenericPanel({ card, state, dispatch, onClose }: Props) {
 
 const cccCache = new Map<string, { byLine: Record<string, Suggestion>; llm: boolean }>();
 
-function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
+function CccPanel({ card, state, dispatch, onClose }: Props) {
+  const t = tr(state);
+  const zh = state.lang === "zh";
   const newLines = invoice.lines.filter((l) => !l.onFile);
-  const cached = cccCache.get(card.id);
+  const cacheKey = `${card.id}:${state.lang}`;
+  const cached = cccCache.get(cacheKey);
   const [res, setRes] = useState<Record<string, Suggestion> | null>(cached?.byLine ?? null);
   const [llm, setLlm] = useState<boolean>(cached?.llm ?? true);
   const [err, setErr] = useState<string | null>(null);
@@ -154,12 +167,13 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
   const [run, setRun] = useState(0);
 
   useEffect(() => {
-    if (cccCache.has(card.id) && run === 0) return;
+    if (cccCache.has(cacheKey) && run === 0) return;
     let live = true;
     fetch("/api/classify", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
+        lang: state.lang,
         items: newLines.map((l) => ({ name: `${l.nameZh} ${l.nameEn}`, material: l.material, use: l.use })),
       }),
     })
@@ -172,7 +186,7 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
         if (!live) return;
         const byLine: Record<string, Suggestion> = {};
         newLines.forEach((l, i) => (byLine[l.sku] = j.suggestions[i]));
-        cccCache.set(card.id, { byLine, llm: j.llm });
+        cccCache.set(cacheKey, { byLine, llm: j.llm });
         setRes(byLine);
         setLlm(j.llm);
       })
@@ -181,7 +195,7 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
       live = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [card.id, run]);
+  }, [cacheKey, run]);
 
   const valueTwd = (l: InvoiceLine) => l.qty * l.unitUsd * USD_TWD;
 
@@ -212,7 +226,10 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
       type: "setStake",
       cardId: card.id,
       stake: rounded,
-      stakeNote: "Duty on the three new lines, between the suggested code and the closest alternatives",
+      stakeNote: t(
+        "Duty on the three new lines, between the suggested code and the closest alternatives",
+        "三個新零件的關稅，建議的號列跟最接近的其他號列之間的差額",
+      ),
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [spread]);
@@ -222,20 +239,26 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
     return rate === null ? sum : sum + (rate / 100) * valueTwd(l);
   }, 0);
 
+  const conf = (c: Suggestion["confidence"]) =>
+    zh ? { high: "把握高", medium: "把握中等", low: "把握低" }[c] : `${c} confidence`;
+
   return (
     <>
       <h4>
-        {invoice.supplier} · invoice {invoice.number} · USD {(86400).toLocaleString("en-US")} at {USD_TWD.toFixed(2)}
+        {zh ? invoice.supplierZh : invoice.supplier} · {t("invoice", "發票")} {invoice.number} · USD{" "}
+        {(86400).toLocaleString("en-US")} {t("at", "匯率")} {USD_TWD.toFixed(2)}
       </h4>
       {!llm && (
         <p className="note warn">
-          No model key on this server. The codes below are copied from the nearest past ruling, which is often wrong.
-          Add a key to get real suggestions.
+          {t(
+            "No model key on this server. The codes below are copied from the nearest past ruling, which is often wrong. Add a key to get real suggestions.",
+            "這台伺服器沒有模型的 key。下面的號列只是抄最接近的舊案例，常常是錯的。加上 key 才有真的建議。",
+          )}
         </p>
       )}
       {err && (
         <p className="note warn">
-          Could not get suggestions: {err}{" "}
+          {t("Could not get suggestions:", "拿不到建議：")} {err}{" "}
           <button
             className="btn small"
             onClick={() => {
@@ -244,18 +267,18 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
               setRun((n) => n + 1);
             }}
           >
-            Try again
+            {t("Try again", "再試一次")}
           </button>
         </p>
       )}
       <table className="t">
         <thead>
           <tr>
-            <th>Line</th>
-            <th>Customs code (11 digits)</th>
-            <th>Why</th>
-            <th className="r">Value</th>
-            <th className="r">Duty</th>
+            <th>{t("Line", "品項")}</th>
+            <th>{t("Customs code (11 digits)", "報關號列（11 碼）")}</th>
+            <th>{t("Why", "理由")}</th>
+            <th className="r">{t("Value", "貨值")}</th>
+            <th className="r">{t("Duty", "關稅")}</th>
           </tr>
         </thead>
         <tbody>
@@ -269,9 +292,9 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
                   <div className="mono" style={{ fontWeight: 700 }}>
                     {l.sku}
                   </div>
-                  <div>{l.nameEn}</div>
+                  <div>{zh ? l.nameZh : l.nameEn}</div>
                   <div className="faint">
-                    {l.nameZh} · {l.qty.toLocaleString("en-US")} pcs
+                    {zh ? l.nameEn : l.nameZh} · {l.qty.toLocaleString("en-US")} {t("pcs", "個")}
                   </div>
                 </td>
                 <td style={{ width: "22%" }}>
@@ -297,38 +320,51 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
                   ) : s?.error ? (
                     <span className="no">{s.error}</span>
                   ) : err ? (
-                    <span className="faint">no suggestion</span>
+                    <span className="faint">{t("no suggestion", "沒有建議")}</span>
                   ) : (
-                    <span className="working">reading past rulings</span>
+                    <span className="working">{t("reading past rulings", "正在讀海關過去的案例")}</span>
                   )}
                 </td>
                 <td>
                   {l.onFile ? (
                     l.supersedes ? (
                       <>
-                        <span className="tag ok">carried over</span>
-                        New part number. The supplier&apos;s email says it replaces <b className="mono">{l.supersedes}</b>,
-                        same goods, so the code on file stays.
+                        <span className="tag ok">{t("carried over", "沿用")}</span>
+                        {zh ? (
+                          <>
+                            新料號。原廠 email 說它取代 <b className="mono">{l.supersedes}</b>，是同一種貨，所以沿用原本的號列。
+                          </>
+                        ) : (
+                          <>
+                            New part number. The supplier&apos;s email says it replaces{" "}
+                            <b className="mono">{l.supersedes}</b>, same goods, so the code on file stays.
+                          </>
+                        )}
                       </>
                     ) : (
                       <>
-                        <span className="tag ok">on file</span>
-                        Same part as earlier shipments.
+                        <span className="tag ok">{t("on file", "已有")}</span>
+                        {t("Same part as earlier shipments.", "跟之前進過的是同一個料。")}
                       </>
                     )
                   ) : s && !s.error ? (
                     <>
                       <span className={`tag ${s.confidence === "high" ? "hi" : s.confidence === "medium" ? "med" : "lo"}`}>
-                        {s.confidence} confidence
+                        {conf(s.confidence)}
                       </span>
-                      <span className="tag">new part</span>
+                      <span className="tag">{t("new part", "新零件")}</span>
                       {s.reason}
                       {relevant(s).length === 0 && (
-                        <div className="sim">No past ruling on goods like this. Chosen from the tariff table by description.</div>
+                        <div className="sim">
+                          {t(
+                            "No past ruling on goods like this. Chosen from the tariff table by description.",
+                            "沒有類似貨品的舊案例。這是照稅則表的品名說明選的。",
+                          )}
+                        </div>
                       )}
                       {relevant(s).length > 0 && (
                         <div className="sim">
-                          Past rulings it relied on:
+                          {t("Past rulings it relied on:", "依據的海關舊案例：")}
                           {relevant(s).map((r) => (
                             <div key={r.id}>
                               <span className="mono">{r.id}</span> ({r.date.slice(0, 4)}) {r.name.slice(0, 44)}
@@ -339,7 +375,7 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
                       )}
                       {s.alternatives.length > 0 && (
                         <div className="alt">
-                          Also considered:{" "}
+                          {t("Also considered:", "也考慮過：")}{" "}
                           {s.alternatives.map((a) => (
                             <button
                               key={a.code}
@@ -372,7 +408,7 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
           })}
           <tr>
             <td colSpan={3} className="r">
-              <b>Duty on this invoice with the codes above</b>
+              <b>{t("Duty on this invoice with the codes above", "照上面的號列，這張發票的關稅")}</b>
             </td>
             <td className="r num">{nt(86400 * USD_TWD)}</td>
             <td className="r num">
@@ -384,13 +420,18 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
 
       {spread !== null && spread > 0 && (
         <p className="note">
-          <b className="num">{nt(spread)}</b> of duty depends on which code the three new parts get. Duty rates and
-          import rules come from the customs tariff table, never from the model.
+          <b className="num">{nt(spread)}</b>{" "}
+          {t(
+            "of duty depends on which code the three new parts get. Duty rates and import rules come from the customs tariff table, never from the model.",
+            "的關稅取決於三個新零件報哪個號列。稅率和輸入規定是從海關稅則表查的，不是模型說的。",
+          )}
         </p>
       )}
       <p className="note">
-        We prepare and check. The broker&apos;s licensed staff file the declaration. The person holding this card makes
-        the call on each code, and the broker sees the reasons.
+        {t(
+          "We prepare and check. The broker's licensed staff file the declaration. The person holding this card makes the call on each code, and the broker sees the reasons.",
+          "我們負責備齊和核對，報單由報關行有證照的人簽。每個號列由拿這張卡的人決定，報關行看得到理由。",
+        )}
       </p>
 
       {card.status !== "done" && (
@@ -401,17 +442,23 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
               className="btn solid"
               disabled={!res}
               onClick={() => {
-                dispatch({ type: "approve", cardId: card.id, note: "7 codes checked" });
+                dispatch({ type: "approve", cardId: card.id, note: t("7 codes checked", "7 個號列都核對過") });
                 onClose();
               }}
             >
-              Codes checked, send to the broker
+              {t("Codes checked, send to the broker", "號列核對完，送報關行")}
             </button>
             <button
               className="btn"
-              onClick={() => dispatch({ type: "escalate", cardId: card.id, why: "not sure about a customs code" })}
+              onClick={() =>
+                dispatch({
+                  type: "escalate",
+                  cardId: card.id,
+                  why: t("not sure about a customs code", "有一個號列沒把握"),
+                })
+              }
             >
-              I&apos;m not sure, pass it up
+              {t("I'm not sure, pass it up", "我沒把握，往上交")}
             </button>
           </div>
         </div>
@@ -440,32 +487,42 @@ type Guess = { meaning: string; confidence: string; usedModel: boolean } | null;
 const guessCache = new Map<string, Guess>();
 
 function InquiryPanel({ card, state, dispatch, onClose }: Props) {
-  const rows = inquiry.terms.map((t) => {
-    const g = state.glossary.find((x) => x.term === t.term);
+  const t = tr(state);
+  const zh = state.lang === "zh";
+  const rows = inquiry.terms.map((term) => {
+    const g = state.glossary.find((x) => x.term === term.term);
     const s = g?.sku ? stock[g.sku] : undefined;
-    return { ...t, g, s };
+    return { ...term, g, s };
   });
   const unknown = rows.filter((r) => !r.g);
   const holder = state.people.find((p) => p.id === card.assignee);
-  const asked = card.history.some((h) => h.text.includes("passed it up"));
+  const asked = card.history.some((h) => /passed it up|往上交給/.test(h.text));
   const senior = holder && holder.level >= 2;
 
-  const [guess, setGuess] = useState<Guess>(guessCache.get(card.id) ?? null);
-  const [meaning, setMeaning] = useState("CV joint, the outer end of the drive shaft");
+  const cacheKey = `${card.id}:${state.lang}`;
+  const [guess, setGuess] = useState<Guess>(guessCache.get(cacheKey) ?? null);
+  const [meaning, setMeaning] = useState(
+    zh ? "外側等速接頭，在傳動軸靠輪子那一端" : "CV joint, the outer end of the drive shaft",
+  );
   const [sku, setSku] = useState("BR-CV-5521");
   const firstUnknown = unknown[0]?.term;
 
   useEffect(() => {
-    if (!firstUnknown || guessCache.has(card.id)) return;
+    if (!firstUnknown || guessCache.has(cacheKey)) return;
     let live = true;
     fetch("/api/inquiry", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ message: inquiry.message, term: firstUnknown, known: state.glossary.map((g) => g.term) }),
+      body: JSON.stringify({
+        lang: state.lang,
+        message: inquiry.message,
+        term: firstUnknown,
+        known: state.glossary.map((g) => g.term),
+      }),
     })
       .then((r) => r.json())
       .then((j: Guess) => {
-        guessCache.set(card.id, j);
+        guessCache.set(cacheKey, j);
         if (live) setGuess(j);
       })
       .catch(() => {});
@@ -473,7 +530,7 @@ function InquiryPanel({ card, state, dispatch, onClose }: Props) {
       live = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [card.id, firstUnknown]);
+  }, [cacheKey, firstUnknown]);
 
   const price = (list: number) => Math.round(list * (1 - inquiry.discountPct / 100));
   const allKnown = unknown.length === 0;
@@ -481,33 +538,42 @@ function InquiryPanel({ card, state, dispatch, onClose }: Props) {
   const reply = rows
     .map((r) => {
       if (!r.g || !r.s) return null;
-      const name = r.g.meaning.split(/[.,(]/)[0].trim();
+      const name = zh ? r.s.nameZh : r.g.meaning.split(/[.,(]/)[0].trim();
+      const p = nt(price(r.s.listTwd));
+      if (zh) {
+        return r.s.stock >= r.qty
+          ? `${r.term}（${name}）${r.qty} 個：有現貨，每個 ${p}。`
+          : `${r.term}（${name}）${r.qty} 個：現在沒貨。${r.s.arrivingZh}，每個 ${p}。要先幫您留 ${r.qty} 個嗎？`;
+      }
       return r.s.stock >= r.qty
-        ? `${r.term} (${name}) ×${r.qty}: in stock, ${nt(price(r.s.listTwd))} each.`
-        : `${r.term} (${name}) ×${r.qty}: none in stock. ${r.s.arriving}. ${nt(price(r.s.listTwd))} each. Hold ${r.qty} for you?`;
+        ? `${r.term} (${name}) ×${r.qty}: in stock, ${p} each.`
+        : `${r.term} (${name}) ×${r.qty}: none in stock. ${r.s.arriving}. ${p} each. Hold ${r.qty} for you?`;
     })
     .filter(Boolean)
     .join("\n");
 
+  const confWord = (c: string) => (zh ? ({ high: "把握高", medium: "把握中等", low: "把握低" }[c] ?? c) : `${c} confidence`);
+
   return (
     <>
       <h4>
-        {inquiry.customer} · {inquiry.channel} · tier {inquiry.tier}, {inquiry.discountPct}% off list
+        {zh ? inquiry.customerZh : inquiry.customer} · {inquiry.channel} ·{" "}
+        {t(`tier ${inquiry.tier}, ${inquiry.discountPct}% off list`, `${inquiry.tier} 級客戶，牌價打 ${100 - inquiry.discountPct} 折`)}
       </h4>
       <p className="bubble-meta">{inquiry.time}</p>
       <div className="bubble" lang="zh-Hant">
         {inquiry.message}
       </div>
 
-      <h4>What the garage is asking for</h4>
+      <h4>{t("What the garage is asking for", "修車廠要的東西")}</h4>
       <table className="t">
         <thead>
           <tr>
-            <th>Said</th>
-            <th>Means</th>
-            <th>Part</th>
-            <th className="r">Stock</th>
-            <th className="r">Price</th>
+            <th>{t("Said", "他說的")}</th>
+            <th>{t("Means", "意思")}</th>
+            <th>{t("Part", "料號")}</th>
+            <th className="r">{t("Stock", "庫存")}</th>
+            <th className="r">{t("Price", "價格")}</th>
           </tr>
         </thead>
         <tbody>
@@ -523,18 +589,21 @@ function InquiryPanel({ card, state, dispatch, onClose }: Props) {
                 {r.g ? (
                   <>
                     {r.g.meaning}
-                    <div className="faint">Glossary: {r.g.by}</div>
+                    <div className="faint">
+                      {t("Glossary:", "術語表：")} {r.g.by}
+                    </div>
                   </>
                 ) : (
                   <>
-                    <b>Not in the company glossary.</b>
+                    <b>{t("Not in the company glossary.", "公司術語表裡沒有這個詞。")}</b>
                     <div>
                       {guess === null ? (
-                        <span className="working">asking the model</span>
+                        <span className="working">{t("asking the model", "正在問模型")}</span>
                       ) : guess.usedModel ? (
                         <>
-                          The model&apos;s guess: {guess.meaning} <span className="tag lo">{guess.confidence} confidence</span>
-                          <div className="faint">A guess is not used to quote a part.</div>
+                          {t("The model's guess:", "模型猜：")} {guess.meaning}{" "}
+                          <span className="tag lo">{confWord(guess.confidence)}</span>
+                          <div className="faint">{t("A guess is not used to quote a part.", "用猜的不能拿來報價。")}</div>
                         </>
                       ) : (
                         <span className="faint">{guess.meaning}</span>
@@ -553,15 +622,19 @@ function InquiryPanel({ card, state, dispatch, onClose }: Props) {
 
       {!allKnown && !asked && (
         <div className="ask">
-          <p>One word nobody has written down yet. Ask someone who knows?</p>
+          <p>{t("One word nobody has written down yet. Ask someone who knows?", "有一個詞還沒有人寫下來過。問懂的人？")}</p>
           <div className="actions">
             <button
               className="btn solid"
               onClick={() =>
-                dispatch({ type: "escalate", cardId: card.id, why: `"${firstUnknown}" is not in the glossary` })
+                dispatch({
+                  type: "escalate",
+                  cardId: card.id,
+                  why: t(`"${firstUnknown}" is not in the glossary`, `術語表裡沒有「${firstUnknown}」`),
+                })
               }
             >
-              Pass it up with the question
+              {t("Pass it up with the question", "帶著問題往上交")}
             </button>
           </div>
         </div>
@@ -570,15 +643,24 @@ function InquiryPanel({ card, state, dispatch, onClose }: Props) {
       {!allKnown && asked && (
         <div className="teach">
           <label>
-            {senior ? `${holder?.name} answers once.` : "Waiting for an answer."} What is{" "}
-            <b lang="zh-Hant">{firstUnknown}</b>?
+            {zh ? (
+              <>
+                {senior ? `${holder?.name} 回答一次就好。` : "等人回答。"}
+                <b lang="zh-Hant">{firstUnknown}</b> 是什麼？
+              </>
+            ) : (
+              <>
+                {senior ? `${holder?.name} answers once.` : "Waiting for an answer."} What is{" "}
+                <b lang="zh-Hant">{firstUnknown}</b>?
+              </>
+            )}
           </label>
           <div className="row">
-            <input value={meaning} onChange={(e) => setMeaning(e.target.value)} aria-label="Meaning" />
-            <select value={sku} onChange={(e) => setSku(e.target.value)} aria-label="Part">
+            <input value={meaning} onChange={(e) => setMeaning(e.target.value)} aria-label={t("Meaning", "意思")} />
+            <select value={sku} onChange={(e) => setSku(e.target.value)} aria-label={t("Part", "料號")}>
               {Object.values(stock).map((s) => (
                 <option key={s.sku} value={s.sku}>
-                  {s.sku} · {s.nameEn}
+                  {s.sku} · {zh ? s.nameZh : s.nameEn}
                 </option>
               ))}
             </select>
@@ -591,12 +673,12 @@ function InquiryPanel({ card, state, dispatch, onClose }: Props) {
                   term: firstUnknown!,
                   meaning: meaning.trim(),
                   sku,
-                  by: holder?.name ?? "A senior",
+                  by: holder?.name ?? t("A senior", "老手"),
                   cardId: card.id,
                 })
               }
             >
-              Save to the glossary
+              {t("Save to the glossary", "存進術語表")}
             </button>
           </div>
         </div>
@@ -604,7 +686,7 @@ function InquiryPanel({ card, state, dispatch, onClose }: Props) {
 
       {allKnown && (
         <>
-          <h4>Reply drafted from stock and this customer&apos;s price tier</h4>
+          <h4>{t("Reply drafted from stock and this customer's price tier", "照庫存和這個客戶的價格等級擬好的回覆")}</h4>
           <div className="reply">{reply}</div>
           {card.status !== "done" && (
             <div className="ask">
@@ -613,18 +695,18 @@ function InquiryPanel({ card, state, dispatch, onClose }: Props) {
                 <button
                   className="btn solid"
                   onClick={() => {
-                    dispatch({ type: "approve", cardId: card.id, note: "reply sent on LINE" });
+                    dispatch({ type: "approve", cardId: card.id, note: t("reply sent on LINE", "已用 LINE 回覆") });
                     onClose();
                   }}
                 >
-                  Send the reply
+                  {t("Send the reply", "送出回覆")}
                 </button>
               </div>
             </div>
           )}
         </>
       )}
-      <StakeNote card={card} />
+      <StakeNote card={card} t={t} />
     </>
   );
 }

@@ -6,7 +6,7 @@ import { chat, hasKey } from "@/lib/llm";
  * The guess is shown to the person holding the card. It is never used to quote a part.
  */
 export async function POST(request: Request) {
-  let body: { message?: string; term?: string; known?: string[] };
+  let body: { message?: string; term?: string; known?: string[]; lang?: string };
   try {
     body = await request.json();
   } catch {
@@ -15,9 +15,14 @@ export async function POST(request: Request) {
   const term = (body.term ?? "").trim().slice(0, 40);
   const message = (body.message ?? "").trim().slice(0, 500);
   if (!term) return Response.json({ error: "term is required" }, { status: 400 });
+  const zh = body.lang === "zh";
 
   if (!hasKey()) {
-    return Response.json({ meaning: "No model key on this server, so there is no guess.", confidence: "", usedModel: false });
+    return Response.json({
+      meaning: zh ? "這台伺服器沒有模型的 key，所以沒有猜測。" : "No model key on this server, so there is no guess.",
+      confidence: "",
+      usedModel: false,
+    });
   }
   try {
     const out = await chat(
@@ -26,7 +31,7 @@ export async function POST(request: Request) {
           role: "system",
           content:
             "You help a Taiwanese auto parts distributor read messages from repair garages. Mechanics in Taiwan use Taiwanese (Hokkien) trade slang for parts, often Japanese loanwords written with whatever Chinese characters sound right. " +
-            "You will get one slang term that is NOT in the company's glossary. Say which car part you think it is, in English, in at most 12 words. " +
+            `You will get one slang term that is NOT in the company's glossary. Say which car part you think it is, ${zh ? "in Traditional Chinese as used in Taiwan, in at most 25 characters" : "in English, in at most 12 words"}. ` +
             'Then say how sure you are: "high", "medium" or "low". Most of this slang is not written down anywhere, so unless you are certain, answer "low". ' +
             'Reply with JSON only: {"meaning": string, "confidence": "high"|"medium"|"low"}.',
         },

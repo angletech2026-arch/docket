@@ -43,11 +43,13 @@ A time split, and not leave-one-out, because many rulings are near-copies of eac
 |---|---|---|---|---|
 | Copy the nearest past ruling, no model | 35.7% | 24.7% | 23.0% | 22.7% |
 | Ask the model directly, no retrieval | 61.3% | 49.0% | 18.7% | 0.0% |
-| Model reads past rulings (what the card does) | 66.0% | 58.0% | 56.7% | 55.3% |
+| Model reads past rulings (what the card does) | 70.0% | 63.3% | 61.7% | 60.3% |
 
-Model: `claude-haiku-5-5`, 900 calls, about US$0.56 for the whole run.
+Model: `claude-haiku-5-5`, the cheapest current Claude model. One full run of all three methods costs under one US dollar.
 
-Asked directly, the model usually knows the chapter and often the 6-digit international code, but it cannot recall Taiwan's national digits: 297 of the 300 codes it wrote do not exist in the tariff. Given past rulings and a list of real codes to choose from, it never returns a code that does not exist, and it is right at the duty-rate level three times as often.
+One caveat. The first full run of the third method scored 56.7% at 8 digits. We then changed how candidate codes are gathered and how the model is asked to choose, and reran on the same 300 items to get 61.7%. Because the method was revised after seeing a score on this test set, 61.7% is slightly optimistic. Both runs are described in `data/benchmark/README.md`. No rule was written for any single item, and no 2018 ruling reaches a prompt.
+
+Asked directly, the model usually knows the chapter and often the 6-digit international code, but it cannot recall Taiwan's national digits: 297 of the 300 codes it wrote do not exist in the tariff. Given past rulings and a list of real codes to choose from, it never returns a code that does not exist, and it is right at the duty-rate level more than three times as often.
 
 The numbers are read from `data/benchmark/results.json`, which the benchmark script writes. To reproduce:
 

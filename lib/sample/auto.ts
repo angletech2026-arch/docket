@@ -20,8 +20,9 @@ export type InvoiceLine = {
   supersedes?: string;
 };
 
-export const invoice: { supplier: string; number: string; date: string; lines: InvoiceLine[] } = {
+export const invoice: { supplier: string; supplierZh: string; number: string; date: string; lines: InvoiceLine[] } = {
   supplier: "Brenner GmbH (sample supplier)",
+  supplierZh: "Brenner GmbH（範例供應商）",
   number: "BR-INV-118204",
   date: "2026-11-04",
   lines: [
@@ -98,16 +99,25 @@ export const invoice: { supplier: string; number: string; date: string; lines: I
 
 export const invoiceTotalUsd = invoice.lines.reduce((a, l) => a + l.qty * l.unitUsd, 0);
 
-export type StockRow = { sku: string; nameEn: string; stock: number; listTwd: number; arriving?: string };
+export type StockRow = {
+  sku: string;
+  nameEn: string;
+  nameZh: string;
+  stock: number;
+  listTwd: number;
+  arriving: string;
+  arrivingZh: string;
+};
 
 export const stock: Record<string, StockRow> = {
-  "BR-SL-0812": { sku: "BR-SL-0812", nameEn: "Stabilizer link, front", stock: 9, listTwd: 520, arriving: "600 more on HB-2611" },
-  "BR-TH-3310": { sku: "BR-TH-3310", nameEn: "Thermostat, engine cooling", stock: 0, listTwd: 640, arriving: "300 on HB-2611, first shipment of this part" },
-  "BR-CV-5521": { sku: "BR-CV-5521", nameEn: "CV joint, outer", stock: 0, listTwd: 2450, arriving: "100 on HB-2611, first shipment of this part" },
+  "BR-SL-0812": { sku: "BR-SL-0812", nameEn: "Stabilizer link, front", nameZh: "前平衡桿連桿", stock: 9, listTwd: 520, arriving: "600 more on HB-2611", arrivingZh: "HB-2611 這批還有 600 支會到" },
+  "BR-TH-3310": { sku: "BR-TH-3310", nameEn: "Thermostat, engine cooling", nameZh: "引擎節溫器", stock: 0, listTwd: 640, arriving: "300 on HB-2611, first shipment of this part", arrivingZh: "HB-2611 這批會到 300 顆，是第一次進這個料" },
+  "BR-CV-5521": { sku: "BR-CV-5521", nameEn: "CV joint, outer", nameZh: "外側等速接頭", stock: 0, listTwd: 2450, arriving: "100 on HB-2611, first shipment of this part", arrivingZh: "HB-2611 這批會到 100 顆，是第一次進這個料" },
 };
 
 export const inquiry = {
   customer: "Jian-Hong Garage",
+  customerZh: "建宏汽車",
   tier: "A",
   discountPct: 12,
   channel: "LINE",

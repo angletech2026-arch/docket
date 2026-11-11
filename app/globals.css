@@ -147,7 +147,7 @@ h1, h2, h3, p { margin: 0; }
 .person .cnt { font-family: var(--mono); font-size: 12px; min-width: 14px; text-align: right; }
 .person.gone { color: var(--ink-3); }
 .person.gone .nm { text-decoration: line-through; }
-.person.gone .rl::after { content: " · left today"; color: var(--red); }
+.person .left { color: var(--red); }
 .spof { font-size: 12.5px; padding: 4px 0; border-bottom: 1px solid var(--rule-2); display: flex; justify-content: space-between; gap: 8px; }
 .spof b { color: var(--red); font-weight: 600; white-space: nowrap; }
 .gl { font-size: 12.5px; padding: 4px 0; border-bottom: 1px solid var(--rule-2); }

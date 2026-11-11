@@ -3,7 +3,8 @@
 // Duty rates and import rule codes always come from the tariff file, never from the model.
 import fs from "node:fs";
 import path from "node:path";
-import { chat, hasKey, type ChatMessage } from "@/lib/llm";
+import { anthropicChat } from "@/lib/anthropic.mjs";
+import { chat, hasKey, provider, type ChatMessage } from "@/lib/llm";
 import { createEngine, formatCode as fmt, headingMessages, parseChoice, parseHeadings, ragMessages, resolveCode } from "./core.mjs";
 
 export type TariffRow = { code: string; zh: string; en: string; duty: string; rules: string[] };
@@ -29,6 +30,7 @@ type Engine = {
   byCode: Map<string, RawTariff>;
   similar: (item: Item, k?: number, opts?: { before?: string; excludeIds?: string[] }) => RawRuling[];
   candidates: (item: Item, sim: RawRuling[], opts?: { cap?: number; headings?: string[] }) => RawTariff[];
+  exemplars: (item: Item, headings: string[], per?: number, opts?: { before?: string }) => { heading: string; rulings: RawRuling[] }[];
   closestTariff: (item: Item) => RawTariff | undefined;
   lookup: (code: string) => RawTariff | undefined;
 };
@@ -83,7 +85,7 @@ function build(
   };
 }
 
-export async function classify(item: Item, opts: { before?: string } = {}): Promise<Suggestion> {
+export async function classify(item: Item, opts: { before?: string; lang?: "en" | "zh" } = {}): Promise<Suggestion> {
   const e = load();
   const sim = e.similar(item, 10, { before: opts.before });
   let cands = e.candidates(item, sim);
@@ -106,7 +108,13 @@ export async function classify(item: Item, opts: { before?: string } = {}): Prom
     const headings = parseHeadings(await chat(headingMessages(item, sim) as ChatMessage[], { json: true, temperature: 0, maxTokens: 120 }));
     cands = e.candidates(item, sim, { headings });
     // Pass 2: the model picks one code from the list.
-    const reply = await chat(ragMessages(item, sim, cands) as ChatMessage[], { json: true, temperature: 0, maxTokens: 400 });
+    const exemplars = e.exemplars(item, headings, 3, { before: opts.before });
+    const messages = ragMessages(item, sim, cands, { headings, exemplars, lang: opts.lang }) as ChatMessage[];
+    // The final choice runs at high reasoning effort on Claude, the same setting the benchmark was run with.
+    const reply =
+      provider() === "anthropic"
+        ? await anthropicChat(messages, { effort: "high", maxTokens: 700 })
+        : await chat(messages, { json: true, temperature: 0, maxTokens: 700 });
     const choice = parseChoice(reply);
     const code = resolveCode(choice.code, cands, e.byCode);
     if (!code) {

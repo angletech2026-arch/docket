@@ -35,7 +35,7 @@ FACTS:
 ${FACTS.join("\n")}`;
 
 export async function POST(request: Request) {
-  let body: { text?: string };
+  let body: { text?: string; lang?: string };
   try {
     body = await request.json();
   } catch {
@@ -44,11 +44,17 @@ export async function POST(request: Request) {
   const text = (body.text ?? "").trim().slice(0, 4000);
   if (text.length < 40) return Response.json({ error: "Describe the business in a few sentences first." }, { status: 400 });
   if (!hasKey()) return Response.json({ error: "No model key on this server." }, { status: 503 });
+  const language =
+    body.lang === "zh"
+      ? "Write every value in Traditional Chinese as used in Taiwan, in the plain words a trading company owner would use. Keep the \"who\" field as one of the four English values. Keep customs codes, percentages and rule codes such as B01 exactly as given."
+      : "Write every value in English.";
 
   try {
     const out = await chat(
       [
-        { role: "system", content: SYSTEM },
+        { role: "system", content: `${SYSTEM}
+
+${language}` },
         { role: "user", content: text },
       ],
       { json: true, temperature: 0.2, maxTokens: 1800 },

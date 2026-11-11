@@ -11,6 +11,7 @@ export async function POST(request: Request) {
   } catch {
     return Response.json({ error: "Body must be JSON" }, { status: 400 });
   }
+  const lang = (body as { lang?: string })?.lang === "zh" ? "zh" : "en";
   const raw = (body as { items?: unknown })?.items;
   if (!Array.isArray(raw) || raw.length === 0) {
     return Response.json({ error: "Expected {items: [{name, material?, use?}]}" }, { status: 400 });
@@ -33,7 +34,7 @@ export async function POST(request: Request) {
       const i = next++;
       if (i >= items.length) return;
       try {
-        suggestions[i] = await classify(items[i]);
+        suggestions[i] = await classify(items[i], { lang });
       } catch (e) {
         suggestions[i] = { error: (e as Error).message };
       }

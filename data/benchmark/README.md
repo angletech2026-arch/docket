@@ -33,7 +33,7 @@ ruled before.
 |---|---|
 | `nearest` | No model. Finds the most similar past ruling by text (BM25 over character bigrams and word tokens) and copies its code. |
 | `llm` | The model alone: no past rulings, no candidate list. It has to produce an 11-digit code from memory. |
-| `rag` | What the app does. Pass 1: the model names likely HS 4-digit headings. Pass 2: it picks one code from a candidate list built from similar past rulings, every code under the proposed headings, and tariff descriptions that match by wording. |
+| `rag` | What the app does. Pass 1: the model names 3 to 5 likely HS 4-digit headings. Pass 2: it picks one code from a candidate list printed heading by heading: every code under the shortlisted headings, the codes of similar past rulings, and tariff lines that match by wording. Under each shortlisted heading it also sees the past rulings Customs placed there that read most like the goods. Pass 2 runs at high reasoning effort on Claude (`--effort`). |
 
 Duty rates and import rule codes are never taken from the model; they are looked up in the tariff file.
 
@@ -42,14 +42,37 @@ Duty rates and import rule codes are never taken from the model; they are looked
 ```
 node scripts/build-data.mjs                      # rebuild data/tariff.json and data/rulings.json
 node scripts/benchmark.mjs --modes nearest       # no key needed
-node scripts/benchmark.mjs --modes llm,rag --n 300 --concurrency 8 --resume   # needs LLM_API_KEY or GMI_API_KEY in .env.local
+node scripts/benchmark.mjs --modes llm,rag --n 300 --concurrency 12 --model claude-haiku-5-5
 ```
 
-Optional in `.env.local`: `LLM_BASE_URL` (default `https://api.gmi-serving.com/v1`) and `LLM_MODEL`.
+The model modes need `ANTHROPIC_API_KEY` in `.env.local`, or `LLM_API_KEY` / `GMI_API_KEY` for an
+OpenAI-compatible endpoint (`LLM_BASE_URL`, `LLM_MODEL`). `--resume` keeps predictions already in
+`results.json` and only fills in what is missing.
 
 ## Results
 
 `results.json` holds whatever the last runs produced: the per-mode counts and every test item with
 the truth and each mode's prediction. The numbers quoted anywhere else in this repo are copied from
-that file. Nothing is tuned on the test set after the fact; if a mode has not been run it is simply
-absent from the file.
+that file. If a mode has not been run it is simply absent from the file.
+
+### Run history, 2026-11-11, model `claude-haiku-5-5`, n = 300
+
+| Run | 4 digits | 6 digits | 8 digits | 11 digits | not a real code |
+|---|---|---|---|---|---|
+| `nearest` | 35.7% | 24.7% | 23.0% | 22.7% | 0 |
+| `llm` | 61.3% | 49.0% | 18.7% | 0.0% | 297 |
+| `rag`, first version | 66.0% | 58.0% | 56.7% | 55.3% | 0 |
+| `rag`, current version | 70.0% | 63.3% | 61.7% | 60.3% | 0 |
+
+The `rag` method was revised once after its first full run. The first version capped each heading
+at 45 lines, showed the model only wording-matched rulings, and ran pass 2 at low effort. The true
+code was on its candidate list for 88% of the items, yet it picked it for 55%, so the weak step was
+the choice and not the list. The current version lists whole headings (true code on the list for
+93%), groups the list by heading with the rulings Customs placed under each, tells the model that
+wording-matched rulings are often different goods, and runs the choice at high effort.
+
+That revision was made after seeing the first scores on this same test set, so the second number is
+not a clean held-out result and should be read as slightly optimistic. No rule was written for any
+individual test item, the reference pool and the test items did not change, and no 2018 ruling
+reaches a prompt. Most remaining misses are the right chapter and a rival heading: advance rulings
+are requested because the goods are hard to place.
