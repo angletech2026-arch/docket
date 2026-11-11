@@ -290,6 +290,26 @@ function Side({ state }: { state: State }) {
       )}
 
       <section>
+        <h3>{t("Where the model runs", "模型跑在哪裡")}</h3>
+        <div className="spof">
+          <span>{t("Today", "現在")}</span>
+          <span>{t("Claude, hosted", "Claude，雲端")}</span>
+        </div>
+        <div className="spof">
+          <span>{t("Next", "接下來")}</span>
+          <span style={{ textAlign: "right" }}>
+            {t("A model inside the company, trained on its own cards", "公司自己機器上的模型，用自己的卡片訓練")}
+          </span>
+        </div>
+        <p className="faint" style={{ fontSize: 11.5, marginTop: 4 }}>
+          {t(
+            "Every decision made on a card, and every answer a senior gives, is a training example that never leaves the building.",
+            "卡片上做過的每個決定、老手回答過的每一句，都是訓練資料，而且不會離開公司。",
+          )}
+        </p>
+      </section>
+
+      <section>
         <h3>{t("What just happened", "剛剛發生的事")}</h3>
         {state.log.slice(0, 12).map((l) => (
           <div key={l.id} className={`logline ${l.tone ?? ""}`}>

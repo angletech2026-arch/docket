@@ -98,11 +98,13 @@ LLM_BASE_URL=https://api.gmi-serving.com/v1
 LLM_MODEL=meta-llama/Llama-3.3-70B-Instruct
 ```
 
-## Next: the model runs inside the company
+## Next: the model runs inside the company, trained on its own cards
 
-This demo calls a hosted model. A trading company will not send its supplier prices, customer list and landed costs to someone else's server, so the plan for real use is a model running on a machine the company owns.
+This demo calls a hosted model (Claude). A trading company will not send its supplier prices, customer list and landed costs to someone else's server, so the plan for real use is a model running on a machine the company owns.
 
 The code is already split for that. Everything the model does goes through one function in `lib/llm.ts`, and its second path speaks the OpenAI-compatible protocol that local servers such as Ollama and vLLM use. Pointing `LLM_BASE_URL` at one is a configuration change. What is not done yet: running the benchmark above on an open-weight model to see how far the accuracy drops, and choosing the smallest model that still holds it. Duty rates, import rules and the past rulings never depended on the model, so they stay exact whichever model is used.
+
+Two things make us think a small local model is enough. First, the benchmark above ran on the cheapest current Claude model. We reran the first 40 test items on a larger one, `claude-sonnet-5-5`, and it got 29 right at 8 digits against 28. That is 40 items, so it only says a bigger model is not obviously better. What moved the score from 19% to 62% was the company-side material: past rulings and the list of real codes. Second, the board produces its own training data. Every decision a person makes on a card, every code they correct, every slang word a senior explains is a labelled example of how this company does this job. The plan is to train the company's model on those, so more of the work moves onto a model the company owns and none of it leaves the building.
 
 ## Outside Taiwan
 
