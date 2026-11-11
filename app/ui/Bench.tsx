@@ -9,6 +9,8 @@ type Item = {
   name: string;
   truth: string;
   truthZh: string;
+  nameEn?: string;
+  truthEn?: string;
   pred: Record<string, string | null | undefined>;
   ok8: Record<string, boolean | undefined>;
 };
@@ -150,15 +152,25 @@ export function Bench({ lang }: { lang: Lang }) {
         <tbody>
           {r.items.slice(0, 60).map((it) => (
             <tr key={it.id}>
-              <td lang="zh-Hant" style={{ maxWidth: 360 }}>
-                {it.name.slice(0, 70)}
-                {it.name.length > 70 ? "…" : ""}
+              <td style={{ maxWidth: 380 }}>
+                {!zh && it.nameEn ? (
+                  <>
+                    {it.nameEn}
+                    <div className="faint" lang="zh-Hant">
+                      {it.name.slice(0, 40)}
+                      {it.name.length > 40 ? "…" : ""}
+                    </div>
+                  </>
+                ) : (
+                  <span lang="zh-Hant">
+                    {it.name.slice(0, 70)}
+                    {it.name.length > 70 ? "…" : ""}
+                  </span>
+                )}
               </td>
               <td>
                 <span className="mono">{fmt(it.truth)}</span>
-                <div className="faint" lang="zh-Hant">
-                  {it.truthZh.slice(0, 26)}
-                </div>
+                <div className="faint">{!zh && it.truthEn ? it.truthEn.slice(0, 52) : it.truthZh.slice(0, 26)}</div>
               </td>
               {ran.map((m) => (
                 <td key={m.key} className="mono">

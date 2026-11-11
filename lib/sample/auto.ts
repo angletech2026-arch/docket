@@ -15,7 +15,7 @@ export type InvoiceLine = {
   qty: number;
   unitUsd: number;
   /** code already on the company's part list */
-  onFile?: { code: string; formatted: string; zh: string; duty: string };
+  onFile?: { code: string; formatted: string; zh: string; en: string; duty: string };
   /** this part number replaces an older one for the same goods */
   supersedes?: string;
 };
@@ -35,7 +35,7 @@ export const invoice: { supplier: string; supplierZh: string; number: string; da
       qty: 2400,
       unitUsd: 19.1,
       supersedes: "BR-0451-203",
-      onFile: { code: "87083091003", formatted: "8708.30.91.00-3", zh: "已裝配之煞車襯裏（來令）", duty: "15%" },
+      onFile: { code: "87083091003", formatted: "8708.30.91.00-3", zh: "已裝配之煞車襯裏（來令）", en: "Mounted brake linings", duty: "15%" },
     },
     {
       sku: "BR-SL-0812",
@@ -45,7 +45,7 @@ export const invoice: { supplier: string; supplierZh: string; number: string; da
       use: "connects the anti-roll bar to the suspension strut of a passenger car",
       qty: 600,
       unitUsd: 8.9,
-      onFile: { code: "87088090003", formatted: "8708.80.90.00-3", zh: "懸吊系統之零件與附件", duty: "15%" },
+      onFile: { code: "87088090003", formatted: "8708.80.90.00-3", zh: "懸吊系統之零件與附件", en: "Parts and accessories of suspension systems", duty: "15%" },
     },
     {
       sku: "BR-3397-WB6",
@@ -55,7 +55,7 @@ export const invoice: { supplier: string; supplierZh: string; number: string; da
       use: "replacement blade for windscreen wipers",
       qty: 2000,
       unitUsd: 5.6,
-      onFile: { code: "85129040008", formatted: "8512.90.40.00-8", zh: "擋風板刮刷器、去霜器及去霧器之零件", duty: "5%" },
+      onFile: { code: "85129040008", formatted: "8512.90.40.00-8", zh: "擋風板刮刷器、去霜器及去霧器之零件", en: "Parts of windscreen wipers, defrosters and demisters", duty: "5%" },
     },
     {
       sku: "BR-0242-SP4",
@@ -65,7 +65,7 @@ export const invoice: { supplier: string; supplierZh: string; number: string; da
       use: "ignition of petrol engines",
       qty: 2325,
       unitUsd: 4.8,
-      onFile: { code: "85111000004", formatted: "8511.10.00.00-4", zh: "火星塞", duty: "7.5%" },
+      onFile: { code: "85111000004", formatted: "8511.10.00.00-4", zh: "火星塞", en: "Sparking plugs", duty: "7.5%" },
     },
     {
       sku: "BR-OS-9001",

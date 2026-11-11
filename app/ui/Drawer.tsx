@@ -14,8 +14,8 @@ type Suggestion = {
   rules: string[];
   reason: string;
   confidence: "high" | "medium" | "low";
-  alternatives: { code: string; formatted: string; zh: string; duty: string }[];
-  similar: { id: string; name: string; code: string; date: string; why: string }[];
+  alternatives: { code: string; formatted: string; zh: string; en?: string; duty: string }[];
+  similar: { id: string; name: string; code: string; date: string; why: string; codeEn?: string }[];
   source: "llm+rulings" | "nearest-ruling";
   error?: string;
 };
@@ -307,7 +307,7 @@ function CccPanel({ card, state, dispatch, onClose }: Props) {
     const s = res?.[l.sku];
     if (!s || s.error) return null;
     const alt = s.alternatives.find((a) => a.code === picked[l.sku]);
-    return alt ? { code: alt.code, formatted: alt.formatted, zh: alt.zh, duty: alt.duty } : s;
+    return alt ? { code: alt.code, formatted: alt.formatted, zh: alt.zh, en: alt.en ?? "", duty: alt.duty } : s;
   };
 
   // how much duty moves between the suggestion and its closest alternatives
@@ -407,19 +407,20 @@ function CccPanel({ card, state, dispatch, onClose }: Props) {
                   </div>
                   <div>{zh ? l.nameZh : l.nameEn}</div>
                   <div className="faint">
-                    {zh ? l.nameEn : l.nameZh} · {l.qty.toLocaleString("en-US")} {t("pcs", "個")}
+                    {zh ? `${l.nameEn} · ` : ""}
+                    {l.qty.toLocaleString("en-US")} {t("pcs", "個")}
                   </div>
                 </td>
                 <td style={{ width: "22%" }}>
                   {l.onFile ? (
                     <>
                       <Code11 formatted={l.onFile.formatted} />
-                      <div className="faint">{l.onFile.zh}</div>
+                      <div className="faint">{zh ? l.onFile.zh : l.onFile.en}</div>
                     </>
                   ) : c ? (
                     <>
                       <Code11 formatted={c.formatted} />
-                      <div className="faint">{c.zh}</div>
+                      <div className="faint">{zh ? c.zh : c.en || c.zh}</div>
                       {s && s.rules.length > 0 && !picked[l.sku] && (
                         <div style={{ marginTop: 3 }}>
                           {s.rules.map((r) => (
@@ -480,8 +481,9 @@ function CccPanel({ card, state, dispatch, onClose }: Props) {
                           {t("Past rulings it relied on:", "依據的海關舊案例：")}
                           {relevant(s).map((r) => (
                             <div key={r.id}>
-                              <span className="mono">{r.id}</span> ({r.date.slice(0, 4)}) {r.name.slice(0, 44)}
-                              {r.name.length > 44 ? "…" : ""} → <span className="mono">{fmt(r.code)}</span>
+                              <span className="mono">{r.id}</span> ({r.date.slice(0, 4)}){" "}
+                              {zh ? `${r.name.slice(0, 44)}${r.name.length > 44 ? "…" : ""}` : `ruled as “${(r.codeEn ?? "").slice(0, 60)}”`} →{" "}
+                              <span className="mono">{fmt(r.code)}</span>
                             </div>
                           ))}
                         </div>
@@ -492,7 +494,7 @@ function CccPanel({ card, state, dispatch, onClose }: Props) {
                           {s.alternatives.map((a) => (
                             <button
                               key={a.code}
-                              title={a.zh}
+                              title={zh ? a.zh : a.en || a.zh}
                               onClick={() => setPicked((p) => ({ ...p, [l.sku]: p[l.sku] === a.code ? "" : a.code }))}
                               style={picked[l.sku] === a.code ? { background: "var(--mark)" } : undefined}
                             >

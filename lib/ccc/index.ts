@@ -8,7 +8,7 @@ import { chat, hasKey, provider, type ChatMessage } from "@/lib/llm";
 import { createEngine, formatCode as fmt, headingMessages, parseChoice, parseHeadings, ragMessages, resolveCode } from "./core.mjs";
 
 export type TariffRow = { code: string; zh: string; en: string; duty: string; rules: string[] };
-export type SimilarRuling = { id: string; name: string; code: string; date: string; why: string };
+export type SimilarRuling = { id: string; name: string; code: string; date: string; why: string; codeEn?: string };
 export type Suggestion = {
   code: string;
   formatted: string;
@@ -18,7 +18,7 @@ export type Suggestion = {
   rules: string[];
   reason: string;
   confidence: "high" | "medium" | "low";
-  alternatives: { code: string; formatted: string; zh: string; duty: string }[];
+  alternatives: { code: string; formatted: string; zh: string; en?: string; duty: string }[];
   similar: SimilarRuling[];
   source: "llm+rulings" | "nearest-ruling";
 };
@@ -79,8 +79,9 @@ function build(
     rules: t.r,
     reason,
     confidence,
-    alternatives: alternatives.map((a) => ({ code: a.c, formatted: fmt(a.c), zh: a.zh, duty: a.d })),
-    similar: sim.map(toSimilar),
+    alternatives: alternatives.map((a) => ({ code: a.c, formatted: fmt(a.c), zh: a.zh, en: a.en, duty: a.d })),
+    // what Customs called the goods in each cited ruling, in English, for readers who do not read Chinese
+    similar: sim.map((r) => ({ ...toSimilar(r), codeEn: lookup(r.c)?.en })),
     source,
   };
 }
