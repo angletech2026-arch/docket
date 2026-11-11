@@ -3,7 +3,7 @@
 import { useEffect, useReducer, useState } from "react";
 import { initialState, load, openStake, reducer, singlePoints } from "@/lib/engine/engine";
 import type { Card, CompanyId, Lang, State } from "@/lib/engine/types";
-import { nt } from "@/lib/fmt";
+import { nt, usd } from "@/lib/fmt";
 import { Drawer } from "./ui/Drawer";
 import { Bench } from "./ui/Bench";
 import { Setup } from "./ui/Setup";
@@ -156,8 +156,8 @@ function ShipmentLane({ state, shipmentId, onOpen }: { state: State; shipmentId:
         </div>
         <div className="money">
           <div className="line1">
-            {t("Expected margin once it has all sold", "全部賣完後的預計毛利")} <span className="num">{nt(s.margin)}</span> (
-            {s.marginPct}%)
+            {t("Expected margin once it has all sold", "全部賣完後的預計毛利")} <span className="num">{nt(s.margin)}</span>
+            {state.lang === "en" && <span className="usd">≈ {usd(s.margin)}</span>} ({s.marginPct}%)
           </div>
           {count > 0 ? (
             <>
@@ -168,7 +168,8 @@ function ShipmentLane({ state, shipmentId, onOpen }: { state: State; shipmentId:
                   </>
                 ) : (
                   <>
-                    <b>{nt(total)}</b> depends on {count} open decision{count > 1 ? "s" : ""}
+                    <b>{nt(total)}</b>
+                    <span className="usd">≈ {usd(total)}</span> depends on {count} open decision{count > 1 ? "s" : ""}
                   </>
                 )}
               </div>

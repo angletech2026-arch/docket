@@ -1,5 +1,8 @@
 export const nt = (n: number) => `NT$${Math.round(n).toLocaleString("en-US")}`;
 
+/** Rough US dollar figure for readers who do not think in NT$. 32.1 is the sample rate used across the demo. */
+export const usd = (ntd: number) => `US${(Math.round(ntd / 32.1 / 100) * 100).toLocaleString("en-US")}`;
+
 /** "15%" -> 15, "NT$22/KGM" -> null */
 export function pct(duty: string | undefined): number | null {
   if (!duty) return null;

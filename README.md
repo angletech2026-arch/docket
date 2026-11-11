@@ -106,6 +106,8 @@ The code is already split for that. Everything the model does goes through one f
 
 ## Outside Taiwan
 
+Customs codes work the same way everywhere. The first six digits are the international HS code and are identical in every country. Each country then adds its own digits, and the duty rate hangs on those: Taiwan extends the code to 11 digits and calls it a CCC code, the United States extends it to 10 and calls it an HTS code. The benchmark above reports the 6-digit level separately because that part carries over to any country unchanged.
+
 The same method applies to the US tariff schedule and CBP's published rulings. In the US, giving someone a code beyond six digits for goods being entered is customs business and needs a licensed broker. The card is already built that way round: it prepares, the importer checks, the licensed broker decides and files.
 
 ## Data and licence

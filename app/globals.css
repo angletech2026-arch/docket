@@ -191,6 +191,11 @@ table.t th { text-align: left; font-family: var(--mono); font-size: 10.5px; text
 table.t td { border-bottom: 1px solid var(--rule-2); padding: 7px 8px 7px 0; vertical-align: top; }
 table.t td.r, table.t th.r { text-align: right; padding-right: 0; }
 .code { font-family: var(--mono); font-weight: 700; font-size: 13.5px; white-space: nowrap; }
+.code .hs6 { background: var(--mark); padding: 0 2px; }
+.code .nat { color: var(--ink-2); }
+.legend { font-size: 12.5px; color: var(--ink-2); margin: 0 0 10px; display: flex; gap: 10px; align-items: baseline; }
+.legend .code { flex: none; }
+.usd { color: var(--ink-3); font-family: var(--mono); font-size: 12px; font-weight: 400; margin-left: 4px; }
 .tag { display: inline-block; font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--ink-3); color: var(--ink-2); padding: 0 5px; border-radius: 2px; margin-right: 4px; white-space: nowrap; }
 .tag.gate { border-color: var(--red); color: var(--red); }
 .tag.ok { border-color: var(--green); color: var(--green); }

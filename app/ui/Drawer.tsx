@@ -271,11 +271,21 @@ function CccPanel({ card, state, dispatch, onClose }: Props) {
           </button>
         </p>
       )}
+      <p className="legend">
+        <span className="code">
+          <span className="hs6">0000.00</span>
+          <span className="nat">.00.00-0</span>
+        </span>
+        {t(
+          "The first six digits are the international HS code, the same six the US uses at the start of its HTS code. The rest are Taiwan's own digits (the full 11 is called a CCC code here). Each country adds its own, and the duty rate hangs on them.",
+          "前 6 碼是國際通用的 HS 碼，美國的 HTS 號列開頭也是同樣這 6 碼。後面是台灣自己加的（整串 11 碼在台灣叫 CCC code）。每個國家各加各的，稅率看的就是後面這幾碼。",
+        )}
+      </p>
       <table className="t">
         <thead>
           <tr>
             <th>{t("Line", "品項")}</th>
-            <th>{t("Customs code (11 digits)", "報關號列（11 碼）")}</th>
+            <th>{t("Customs code (Taiwan, 11 digits)", "報關號列（台灣 11 碼）")}</th>
             <th>{t("Why", "理由")}</th>
             <th className="r">{t("Value", "貨值")}</th>
             <th className="r">{t("Duty", "關稅")}</th>
@@ -300,18 +310,18 @@ function CccPanel({ card, state, dispatch, onClose }: Props) {
                 <td style={{ width: "22%" }}>
                   {l.onFile ? (
                     <>
-                      <div className="code">{l.onFile.formatted}</div>
+                      <Code11 formatted={l.onFile.formatted} />
                       <div className="faint">{l.onFile.zh}</div>
                     </>
                   ) : c ? (
                     <>
-                      <div className="code">{c.formatted}</div>
+                      <Code11 formatted={c.formatted} />
                       <div className="faint">{c.zh}</div>
                       {s && s.rules.length > 0 && !picked[l.sku] && (
                         <div style={{ marginTop: 3 }}>
                           {s.rules.map((r) => (
                             <span key={r} className="tag gate">
-                              {r}
+                              {ruleLabel(r, zh)}
                             </span>
                           ))}
                         </div>
@@ -467,6 +477,25 @@ function CccPanel({ card, state, dispatch, onClose }: Props) {
   );
 }
 
+/** "9027.10.00.00-9" with the international six digits set apart from Taiwan's own. */
+function Code11({ formatted }: { formatted: string }) {
+  return (
+    <div className="code">
+      <span className="hs6">{formatted.slice(0, 7)}</span>
+      <span className="nat">{formatted.slice(7)}</span>
+    </div>
+  );
+}
+
+const RULES: Record<string, [string, string]> = {
+  B01: ["B01 plant or animal quarantine", "B01 動植物檢疫"],
+  F01: ["F01 border food inspection", "F01 食品查驗"],
+};
+function ruleLabel(code: string, zh: boolean) {
+  const r = RULES[code];
+  return r ? r[zh ? 1 : 0] : code;
+}
+
 /** Past rulings that actually bear on the answer: same 4-digit heading as the code chosen or an alternative. */
 function relevant(s: Suggestion) {
   const headings = new Set([s.code, ...s.alternatives.map((a) => a.code)].map((c) => c.slice(0, 4)));
@@ -557,7 +586,7 @@ function InquiryPanel({ card, state, dispatch, onClose }: Props) {
   return (
     <>
       <h4>
-        {zh ? inquiry.customerZh : inquiry.customer} · {inquiry.channel} ·{" "}
+        {zh ? inquiry.customerZh : inquiry.customer} · {t("on LINE, the chat app every garage in Taiwan uses", "LINE")} ·{" "}
         {t(`tier ${inquiry.tier}, ${inquiry.discountPct}% off list`, `${inquiry.tier} 級客戶，牌價打 ${100 - inquiry.discountPct} 折`)}
       </h4>
       <p className="bubble-meta">{inquiry.time}</p>
