@@ -4,6 +4,7 @@ import { useEffect, useReducer, useState } from "react";
 import { initialState, load, openStake, reducer, singlePoints } from "@/lib/engine/engine";
 import type { Card, CompanyId, Lang, State } from "@/lib/engine/types";
 import { nt, usd } from "@/lib/fmt";
+import { literal } from "@/lib/sample/auto";
 import { Drawer } from "./ui/Drawer";
 import { Bench } from "./ui/Bench";
 import { Setup } from "./ui/Setup";
@@ -280,6 +281,7 @@ function Side({ state }: { state: State }) {
           {state.glossary.map((g) => (
             <div key={g.term} className="gl">
               <span className="t">{g.term}</span>
+              {state.lang === "en" && literal[g.term] ? <i>&ldquo;{literal[g.term]}&rdquo; </i> : null}
               {g.meaning}
               <span className="by">{g.by}</span>
             </div>

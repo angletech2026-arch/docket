@@ -45,11 +45,11 @@ function autoParts(lang: Lang): State {
     card({
       id: "a0", shipmentId: A, kind: "inquiry", stage: t("Inquiry", "詢價"),
       title: t(
-        "Jian-Hong Garage on LINE: 李仔串 ×2, 水龜 ×1, 鳳梨頭 ×1 for a 2014 Altis",
+        "A garage asks on LINE for 2 \"plum skewers\", a \"water turtle\" and a \"pineapple head\". That is mechanic slang for three car parts",
         "建宏汽車 LINE 來問：李仔串 ×2、水龜 ×1、鳳梨頭 ×1，2014 年 Altis",
       ),
       prepared: [
-        t("Read the message and split it into three parts", "讀完訊息，拆成三樣零件"),
+        t("Read the message (李仔串 ×2, 水龜 ×1, 鳳梨頭 ×1, for a 2014 Toyota Altis) and split it into three parts", "讀完訊息，拆成三樣零件"),
         t("Two of the three words are in the company glossary", "三個詞裡有兩個在公司術語表裡"),
         t("One word is not. The model has a guess but is not sure", "有一個不在。模型有猜，但沒把握"),
       ],
@@ -201,9 +201,9 @@ function autoParts(lang: Lang): State {
       due: t("Tue Nov 17", "11/17（二）"), opened: t("Opened from the packing list", "照裝箱單開出"),
     }),
     card({
-      id: "a9", shipmentId: A, kind: "gov", stage: t("Tender", "標案"),
+      id: "a9", shipmentId: A, kind: "gov", stage: t("Government contract", "標案"),
       title: t(
-        "County fleet tender, batch 2 of 4 due Fri Nov 20. 60 brake pad sets, cover letter drafted",
+        "County government fleet contract, delivery 2 of 4 due Fri Nov 20. 60 brake pad sets, cover letter drafted",
         "縣府公務車標案，第 2 批（共 4 批）11/20（五）交。60 組來令片，公文已擬好",
       ),
       prepared: [
@@ -298,7 +298,7 @@ function autoParts(lang: Lang): State {
       { label: t("Check customs codes", "核對報關號列"), skill: "customs", minLevel: 1 },
       { label: t("Book trucks and forklifts", "叫貨車和堆高機"), skill: "logistics", minLevel: 1 },
       { label: t("Sign off receiving at the dock", "碼頭簽收"), skill: "warehouse", minLevel: 2 },
-      { label: t("Tender paperwork", "標案文件"), skill: "gov", minLevel: 1 },
+      { label: t("Government contract paperwork", "標案文件"), skill: "gov", minLevel: 1 },
     ],
     log: [{ id: 0, text: t("Board opened. 10 cards on HB-2611, 4 on NW-2607.", "開板。HB-2611 有 10 張卡，NW-2607 有 4 張。"), tone: "plain" }],
     seq: 100,

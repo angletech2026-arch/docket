@@ -3,7 +3,7 @@
 import { useEffect, useState, type Dispatch } from "react";
 import type { Action, Card, State } from "@/lib/engine/types";
 import { nt, pct } from "@/lib/fmt";
-import { inquiry, invoice, stock, USD_TWD, type InvoiceLine } from "@/lib/sample/auto";
+import { inquiry, invoice, literal, stock, USD_TWD, type InvoiceLine } from "@/lib/sample/auto";
 
 type Suggestion = {
   code: string;
@@ -593,6 +593,16 @@ function InquiryPanel({ card, state, dispatch, onClose }: Props) {
       <div className="bubble" lang="zh-Hant">
         {inquiry.message}
       </div>
+      {!zh && (
+        <>
+          <p className="gloss">Word for word: &ldquo;{inquiry.wordForWord}&rdquo;</p>
+          <p className="note">
+            Mechanics in Taiwan name parts after what they look like, and they say it in Taiwanese, not Mandarin. A plum
+            skewer, a water turtle and a pineapple head are three car parts. None of these words is in a parts catalogue
+            or a dictionary, so a new hire cannot look them up. They live in the heads of the senior staff.
+          </p>
+        </>
+      )}
 
       <h4>{t("What the garage is asking for", "修車廠要的東西")}</h4>
       <table className="t">
@@ -613,6 +623,7 @@ function InquiryPanel({ card, state, dispatch, onClose }: Props) {
                   {r.term}
                 </span>{" "}
                 ×{r.qty}
+                {!zh && literal[r.term] && <div className="faint">&ldquo;{literal[r.term]}&rdquo;</div>}
               </td>
               <td>
                 {r.g ? (

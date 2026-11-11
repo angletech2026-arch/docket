@@ -115,6 +115,16 @@ export const stock: Record<string, StockRow> = {
   "BR-CV-5521": { sku: "BR-CV-5521", nameEn: "CV joint, outer", nameZh: "外側等速接頭", stock: 0, listTwd: 2450, arriving: "100 on HB-2611, first shipment of this part", arrivingZh: "HB-2611 這批會到 100 顆，是第一次進這個料" },
 };
 
+/**
+ * What the slang says word for word. Mechanics in Taiwan name parts after what they look like,
+ * in Taiwanese (Hokkien), not Mandarin. None of these words is in a parts catalogue.
+ */
+export const literal: Record<string, string> = {
+  李仔串: "plum skewer",
+  水龜: "water turtle",
+  鳳梨頭: "pineapple head",
+};
+
 export const inquiry = {
   customer: "Jian-Hong Garage",
   customerZh: "建宏汽車",
@@ -123,6 +133,8 @@ export const inquiry = {
   channel: "LINE",
   time: "09:12",
   message: "老闆 Altis 14年的 李仔串前面兩支 水龜一顆 還有鳳梨頭一顆 有貨嗎 明天要",
+  /** the same message word for word, for readers who do not read Chinese */
+  wordForWord: "Boss, for a 2014 Altis: two front plum skewers, one water turtle, and one pineapple head. Got them? Need them tomorrow.",
   /** terms as they appear in the message, with quantity */
   terms: [
     { term: "李仔串", qty: 2 },

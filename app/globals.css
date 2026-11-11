@@ -214,6 +214,8 @@ table.t td.r, table.t th.r { text-align: right; padding-right: 0; }
 .bubble { background: #dff0d2; border: 1px solid #9fbf8a; border-radius: 12px 12px 12px 2px; padding: 9px 12px; font-size: 15px; display: inline-block; max-width: 480px; }
 .bubble-meta { font-size: 11.5px; color: var(--ink-3); margin: 0 0 4px 2px; }
 .term { font-size: 17px; font-weight: 700; }
+.gloss { font-size: 13.5px; font-style: italic; margin: 8px 0 0 2px; max-width: 560px; }
+.gl i { color: var(--ink-2); }
 tr.unknown td { background: var(--red-bg); }
 .teach { border: 1px solid var(--ink); padding: 10px 12px; background: #fffdf8; margin-top: 10px; }
 .teach label { display: block; font-size: 12px; color: var(--ink-2); margin-bottom: 4px; }

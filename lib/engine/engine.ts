@@ -421,7 +421,7 @@ export function reducer(state: State, action: Action): State {
         ...c,
         title: say(
           state,
-          "County fleet tender, batch 2 due Fri Nov 20. Goods reach the warehouse Thu Nov 19. It will miss",
+          "County government contract, delivery 2 due Fri Nov 20. Goods reach the warehouse Thu Nov 19. It will miss",
           "縣府公務車標案第 2 批 11/20（五）要交。貨 11/19（四）才到倉。趕不上",
         ),
         prepared: [
