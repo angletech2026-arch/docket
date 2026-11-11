@@ -323,10 +323,13 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
                       </span>
                       <span className="tag">new part</span>
                       {s.reason}
-                      {s.similar.length > 0 && (
+                      {relevant(s).length === 0 && (
+                        <div className="sim">No past ruling on goods like this. Chosen from the tariff table by description.</div>
+                      )}
+                      {relevant(s).length > 0 && (
                         <div className="sim">
-                          Past rulings read:
-                          {s.similar.slice(0, 3).map((r) => (
+                          Past rulings it relied on:
+                          {relevant(s).map((r) => (
                             <div key={r.id}>
                               <span className="mono">{r.id}</span> ({r.date.slice(0, 4)}) {r.name.slice(0, 44)}
                               {r.name.length > 44 ? "…" : ""} → <span className="mono">{fmt(r.code)}</span>
@@ -415,6 +418,12 @@ function CccPanel({ card, dispatch, onClose }: Omit<Props, "state">) {
       )}
     </>
   );
+}
+
+/** Past rulings that actually bear on the answer: same 4-digit heading as the code chosen or an alternative. */
+function relevant(s: Suggestion) {
+  const headings = new Set([s.code, ...s.alternatives.map((a) => a.code)].map((c) => c.slice(0, 4)));
+  return s.similar.filter((r) => headings.has(r.code.slice(0, 4))).slice(0, 3);
 }
 
 function fmt(code: string) {
